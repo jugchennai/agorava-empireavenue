@@ -150,7 +150,7 @@
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>${maven-surefire-plugin.version}</version>
                 <configuration>
-                    <skip>true</skip>
+                    <skip>false</skip>
                     <systemPropertyVariables>
                         <arquillian.launch>${arquillian}</arquillian.launch>
                         <arquillian>${arquillian}</arquillian>
