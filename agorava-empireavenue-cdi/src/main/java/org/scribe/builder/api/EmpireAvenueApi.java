@@ -16,17 +16,14 @@
 package org.scribe.builder.api;
 
 import org.scribe.model.OAuthConfig;
-import org.scribe.model.Verb;
-import org.scribe.utils.OAuthEncoder;
 
 /**
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
-public class EmpireAvenueApi extends DefaultApi20  {
-    
+public class EmpireAvenueApi extends DefaultApi20 {
+
     private static final String AUTHORIZE_URL = "https://www.empireavenue.com/profile/developer/authorize?client_id=%s&response_type=code&state=request_auth_code";
-    private static final String SCOPED_AUTHORIZE_URL = AUTHORIZE_URL + "&scope=%s";
 
     @Override
     public String getAccessTokenEndpoint() {
@@ -35,21 +32,8 @@ public class EmpireAvenueApi extends DefaultApi20  {
 
     @Override
     public String getAuthorizationUrl(OAuthConfig config) {
-// Preconditions
-// .checkValidUrl(config.getCallback(),
-// "Must provide a valid url as callback. StackOverflow");
 
-        // Append scope if present
-        if (config.hasScope()) {
-            return String.format(SCOPED_AUTHORIZE_URL, config.getApiKey(),
-                    OAuthEncoder.encode(config.getCallback()),
-                    OAuthEncoder.encode(config.getScope()));
-        } else {
-            return String.format(AUTHORIZE_URL, config.getApiKey());
-        }
-    }
+        return String.format(AUTHORIZE_URL, config.getApiKey());
 
-    public Verb getAccessTokenVerb() {
-        return Verb.POST;
     }
 }
