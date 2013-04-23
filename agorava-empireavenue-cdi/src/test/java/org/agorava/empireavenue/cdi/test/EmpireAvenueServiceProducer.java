@@ -33,8 +33,8 @@ public class EmpireAvenueServiceProducer {
     
     @EmpireAvenue
     @ApplicationScoped
-    @OAuthApplication(builder = SimpleOAuthAppSettingsBuilder.class, params = {@Param(name = API_KEY, value = "6afde745d6132a48a1f235634cc644b1789cc2d1be88d6f0a6"),
-            @Param(name = API_SECRET, value = "8217894278bea5a1aff29b60b80374c51ba420c7ba21943eab")})
+    @OAuthApplication(builder = SimpleOAuthAppSettingsBuilder.class, params = {@Param(name = API_KEY, value = "app_5176438330d3e"),
+            @Param(name = API_SECRET, value = "175c7c26d26dca92a04fb6c68c021192c8d178fc57b3")})
     @Produces
     public SocialMediaApiHub OAuthSettinsProducer(EmpireAvenueServicesHub service) {
         return service;
