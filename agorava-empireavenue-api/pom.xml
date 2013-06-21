@@ -23,7 +23,6 @@
     </parent>
     <artifactId>agorava-empireavenue-api</artifactId>
     <name>Agorava EmpireAvenue - API</name>
-    <version>0.5.2-SNAPSHOT</version>
     <packaging>jar</packaging>
     
     <dependencies>
@@ -32,7 +31,4 @@
             <artifactId>agorava-core-api</artifactId>
         </dependency>
     </dependencies>
-    <build>
-        <finalName>agorava-empireavenue-api</finalName>
-    </build>
 </project>

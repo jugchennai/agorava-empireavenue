@@ -15,15 +15,17 @@
  */
 package org.scribe.builder.api;
 
+import org.agorava.core.oauth.scribe.DefaultApi20Final;
+import org.agorava.core.utils.URLUtils;
 import org.scribe.model.OAuthConfig;
 
 /**
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
-public class EmpireAvenueApi extends DefaultApi20 {
+public class EmpireAvenueApi extends DefaultApi20Final {
 
-    private static final String AUTHORIZE_URL = "https://www.empireavenue.com/profile/developer/authorize?client_id=%s&response_type=code&state=request_auth_code";
+    private static final String AUTHORIZE_URL = "https://www.empireavenue.com/profile/developer/authorize?client_id=%s&redirect_uri=%s&response_type=code&state=request_auth_code";
 
     @Override
     public String getAccessTokenEndpoint() {
@@ -33,7 +35,8 @@ public class EmpireAvenueApi extends DefaultApi20 {
     @Override
     public String getAuthorizationUrl(OAuthConfig config) {
 
-        return String.format(AUTHORIZE_URL, config.getApiKey());
+        return String.format(AUTHORIZE_URL, config.getApiKey(), URLUtils.formURLEncode(config.getCallback()));
 
     }
+
 }

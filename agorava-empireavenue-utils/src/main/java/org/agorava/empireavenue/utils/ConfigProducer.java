@@ -1,11 +1,11 @@
 /*
- * Copyright 2013 Agorava.
+ * Copyright 2012 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
  *
- *      http://www.apache.org/licenses/LICENSE-2.0
+ *   http://www.apache.org/licenses/LICENSE-2.0
  *
  * Unless required by applicable law or agreed to in writing, software
  * distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,31 +13,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.cdi.test;
+
+package org.agorava.empireavenue.utils;
 
 import org.agorava.EmpireAvenue;
 import org.agorava.core.cdi.Current;
 import org.agorava.core.oauth.PropertyOAuthAppSettingsBuilder;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Produces;
 
 /**
- * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ * @author ndx
  */
-public class EmpireAvenueServiceProducer {
+public class ConfigProducer {
+
 
     @ApplicationScoped
     @Produces
     @EmpireAvenue
     public org.agorava.core.api.oauth.OAuthAppSettings produceFirstSetting() {
         PropertyOAuthAppSettingsBuilder builder = new PropertyOAuthAppSettingsBuilder();
-        return builder.build();
+        return builder.prefix("ea").build();
     }
 
-    @SessionScoped
+    @ApplicationScoped
     @Produces
     @EmpireAvenue
     @Current
@@ -45,5 +46,4 @@ public class EmpireAvenueServiceProducer {
         return session;
 
     }
-
 }
