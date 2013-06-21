@@ -15,33 +15,29 @@
  */
 package org.agorava;
 
-import javax.enterprise.event.Observes;
-import javax.enterprise.inject.Instance;
-import javax.inject.Inject;
 import org.agorava.core.api.event.OAuthComplete;
 import org.agorava.core.api.event.SocialEvent;
-import org.agorava.core.cdi.AbstractSocialMediaApiHub;
-import org.jboss.logging.Logger;
+import org.agorava.core.api.oauth.DefaultRootOAuth20;
+
+import javax.enterprise.event.Observes;
+import java.util.logging.Logger;
 
 /**
- *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
-public class EmpireAvenueServicesHub extends AbstractSocialMediaApiHub {
+@EmpireAvenue
+public class EmpireAvenueRoot extends DefaultRootOAuth20 {
 
     private static final String MEDIA_NAME = "EmpireAvenue";
-    @Inject
-    Logger log;
-    @Inject
-    Instance<EmpireAvenueBaseService> services;
+    private static Logger log = Logger.getLogger(EmpireAvenueRoot.class.getName());
 
     @Override
-    public String getSocialMediaName() {
+    public String getServiceName() {
         return MEDIA_NAME;
     }
 
     public void initMyProfile(@Observes @EmpireAvenue OAuthComplete oauthComplete) {
-        log.debug("Initializing Facebook profile");
+        log.info("Initializing EmpireAvenue profile");
         if (oauthComplete.getStatus() == SocialEvent.Status.SUCCESS) {
             //TODO:
         }

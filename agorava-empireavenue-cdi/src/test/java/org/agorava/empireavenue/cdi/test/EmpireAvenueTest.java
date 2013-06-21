@@ -15,11 +15,8 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
-import java.io.File;
-import java.io.FileNotFoundException;
-import javax.inject.Inject;
 import org.agorava.EmpireAvenue;
-import org.agorava.core.api.SocialMediaApiHub;
+import org.agorava.core.api.oauth.OAuthService;
 import org.agorava.core.api.oauth.OAuthToken;
 import org.agorava.core.oauth.scribe.OAuthTokenScribe;
 import org.agorava.empireavenue.ProfileService;
@@ -29,26 +26,30 @@ import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ShrinkWrap;
+import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.jboss.shrinkwrap.resolver.api.DependencyResolvers;
-import org.jboss.shrinkwrap.resolver.api.maven.MavenDependencyResolver;
-import static org.junit.Assert.*;
-import org.junit.Test;
 import org.junit.Before;
+import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import javax.inject.Inject;
+import java.io.FileNotFoundException;
+
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 /**
- *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 @RunWith(Arquillian.class)
 public class EmpireAvenueTest {
 
-    @Inject
-    @EmpireAvenue
-    SocialMediaApiHub serviceHub;
+
     @Inject
     ProfileService profileService;
+    @Inject
+    @EmpireAvenue
+    OAuthService service;
 
     @Deployment
     public static Archive<?> createTestArchive() throws FileNotFoundException {
@@ -56,34 +57,24 @@ public class EmpireAvenueTest {
         WebArchive ret = ShrinkWrap
                 .create(WebArchive.class, "test.war")
                 .addPackages(true, "org.agorava")
-                .addClass(EmpireAvenueServiceProducer.class)
-                .addAsLibraries(new File("../agorava-empireavenue-api/target/agorava-empireavenue-api.jar"));
-        System.out.println(System.getProperty("arquillian"));
-        if (("weld-ee-embedded-1.1".equals(System.getProperty("arquillian")) || System.getProperty("arquillian") == null)) {
-            // Don't embed dependencies that are already in the CL in the embedded container from surefire
-            /*ret.addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml")
-             .artifact("org.jboss.solder:solder-impl").resolveAs(GenericArchive.class));
-             */ } else {
-            ret.addAsLibraries(DependencyResolvers.use(MavenDependencyResolver.class).loadMetadataFromPom("pom.xml")
-                    .artifact("org.jboss.solder:solder-impl").artifact("org.scribe:scribe")
-                    .artifact("org.apache.commons:commons-lang3").artifact("org.codehaus.jackson:jackson-mapper-asl")
-                    .artifact("com.google.guava:guava").resolveAsFiles());
-        }
+                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
+                .addClass(EmpireAvenueServiceProducer.class);
+
         return ret;
     }
 
     @Before
     public void init() {
-        OAuthToken token = new OAuthTokenScribe("334872715-u75bjYqWyQSYjFMnKeTDZUn8i0QAExjUQ4ENZXH3",
-                "08QG7HVqDjkr1oH1YfBRWmd0n8EG73CuzJgTjFI0sk");
-        serviceHub.getSession().setAccessToken(token);
-        serviceHub.getService().initAccessToken();
+        OAuthToken token = new OAuthTokenScribe("",
+                "193bbfd4484a7fb154814a03e5dd1c8c3e24a1d539401d134ece20a3920bbf8fa959cda9b38bb37fb64e4b8e672");
+        service.getSession().setAccessToken(token);
+        service.initAccessToken();
     }
 
     @Test
     public void authorizationUrlTest() {
 
-        assertTrue(serviceHub.getService().getAuthorizationUrl().startsWith("http"));
+        assertTrue(service.getAuthorizationUrl().startsWith("http"));
     }
 
     @Test
