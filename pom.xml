@@ -20,7 +20,7 @@
     <parent>
         <artifactId>agorava-parent</artifactId>
         <groupId>org.agorava</groupId>
-        <version>0.5.2-SNAPSHOT</version>
+        <version>0.6.0-SNAPSHOT</version>
     </parent>
 
     <modelVersion>4.0.0</modelVersion>
@@ -64,6 +64,7 @@
     <modules>
         <module>agorava-empireavenue-api</module>
         <module>agorava-empireavenue-cdi</module>
+        <module>agorava-empireavenue-utils</module>
     </modules>
     
     
