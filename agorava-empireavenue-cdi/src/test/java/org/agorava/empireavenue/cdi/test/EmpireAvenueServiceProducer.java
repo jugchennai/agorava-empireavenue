@@ -15,20 +15,25 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
-import org.agorava.EmpireAvenue;
-import org.agorava.core.cdi.Current;
-import org.agorava.core.oauth.PropertyOAuthAppSettingsBuilder;
+import org.agorava.empireavenue.EmpireAvenue;
 
 import javax.enterprise.context.ApplicationScoped;
-import javax.enterprise.context.SessionScoped;
-import javax.enterprise.inject.Default;
 import javax.enterprise.inject.Produces;
+import org.agorava.api.oauth.application.OAuthAppSettings;
+import org.agorava.api.oauth.application.OAuthApplication;
 
 /**
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 public class EmpireAvenueServiceProducer {
+    
+    @ApplicationScoped
+    @Produces
+    @EmpireAvenue
+    @OAuthApplication
+    public OAuthAppSettings produceSettings;
 
+    /*
     @ApplicationScoped
     @Produces
     @EmpireAvenue
@@ -45,5 +50,5 @@ public class EmpireAvenueServiceProducer {
         return session;
 
     }
-
+*/
 }

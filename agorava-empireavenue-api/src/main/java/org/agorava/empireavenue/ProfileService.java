@@ -54,9 +54,6 @@ public interface ProfileService {
      *
      * @param statusMessage the message to be updated
      * @return ID of the updated status entry.
-     * @exception Exception Reached Max Items
-     * @exception Exception Success at setting the interest but could not return interests list
-     * @exception Exception If problem does not resolve, please contact Empire Avenue
      */
     Status updateStatus(String statusMessage);
 

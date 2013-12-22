@@ -19,16 +19,34 @@
     <parent>
         <artifactId>agorava-empireavenue-parent</artifactId>
         <groupId>org.agorava</groupId>
-        <version>0.5.2-SNAPSHOT</version>
+        <version>0.7.0</version>
     </parent>
     <artifactId>agorava-empireavenue-api</artifactId>
     <name>Agorava EmpireAvenue - API</name>
     <packaging>jar</packaging>
-    
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>2.3.2</version>
+                <configuration>
+                    <showDeprecation>true</showDeprecation>
+                    <debug>false</debug>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
     <dependencies>
         <dependency>
             <groupId>org.agorava</groupId>
             <artifactId>agorava-core-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>javax.inject</groupId>
+            <artifactId>javax.inject</artifactId>
         </dependency>
     </dependencies>
 </project>

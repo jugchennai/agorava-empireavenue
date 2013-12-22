@@ -15,26 +15,21 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
-import org.agorava.EmpireAvenue;
-import org.agorava.core.api.oauth.OAuthService;
-import org.agorava.core.api.oauth.OAuthToken;
-import org.agorava.core.oauth.scribe.OAuthTokenScribe;
+import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.ProfileService;
 import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.model.Status;
-import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.arquillian.junit.Arquillian;
-import org.jboss.shrinkwrap.api.*;
-import org.jboss.shrinkwrap.api.asset.EmptyAsset;
-import org.jboss.shrinkwrap.api.spec.JavaArchive;
-import org.jboss.shrinkwrap.api.spec.WebArchive;
-import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
-import java.io.FileNotFoundException;
+import org.agorava.api.atinject.Current;
+import org.agorava.api.oauth.OAuthService;
+import org.agorava.api.oauth.OAuthSession;
+import org.agorava.api.oauth.Token;
+import org.agorava.api.service.OAuthLifeCycleService;
 
 import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
@@ -43,49 +38,30 @@ import static org.junit.Assert.assertTrue;
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 @RunWith(Arquillian.class)
-public class EmpireAvenueTest {
-
+public class EmpireAvenueTest extends EmpireAvenueTestDeploy {
 
     @Inject
+    @EmpireAvenue
     ProfileService profileService;
+
     @Inject
     @EmpireAvenue
     OAuthService service;
 
-    @Deployment
-    public static Archive<?> createTestArchive() throws FileNotFoundException {
+    @Inject
+    OAuthLifeCycleService OAuthLifeCycleService;
 
-        JavaArchive testJar = ShrinkWrap.create(JavaArchive.class, "all-ea-agorava.jar")
-                .addPackages(true, new Filter<ArchivePath>() {
-                    @Override
-                    public boolean include(ArchivePath path) {
-                        return !(path.get().contains("test"));
-                    }
-                }, "org.agorava")
-                .addAsManifestResource(EmptyAsset.INSTANCE, "beans.xml");
-
-        GenericArchive[] libs = Maven.resolver()
-                .loadPomFromFile("pom.xml")
-                .resolve("org.apache.deltaspike.core:deltaspike-core-impl")
-                .withTransitivity().as(GenericArchive.class);
-
-
-        WebArchive ret = ShrinkWrap
-                .create(WebArchive.class, "test.war")
-                .addClasses(EmpireAvenueServiceProducer.class)
-                .addAsLibraries(libs)
-                .addAsLibraries(testJar)
-                .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml");
-
-        return ret;
-    }
+    @Inject
+    @EmpireAvenue
+    @Current
+    OAuthSession sessionTest;
 
     @Before
     public void init() {
-        OAuthToken token = new OAuthTokenScribe("",
+        Token token = new Token("",
                 "193bbfd4484a7fb154814a03e5dd1c8c3e24a1d539401d134ece20a3920bbf8fa959cda9b38bb37fb64e4b8e672");
-        service.getSession().setAccessToken(token);
-        service.initAccessToken();
+        sessionTest.setAccessToken(token);
+        OAuthLifeCycleService.endDance();
     }
 
     @Test

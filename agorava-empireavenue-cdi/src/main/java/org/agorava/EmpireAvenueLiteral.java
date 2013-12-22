@@ -15,6 +15,7 @@
  */
 package org.agorava;
 
+import org.agorava.empireavenue.EmpireAvenue;
 import javax.enterprise.util.AnnotationLiteral;
 
 /**

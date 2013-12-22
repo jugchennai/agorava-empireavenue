@@ -15,28 +15,32 @@
  */
 package org.agorava;
 
+import org.agorava.empireavenue.EmpireAvenue;
 import javax.inject.Inject;
-import org.agorava.core.api.oauth.OAuthService;
-import org.agorava.core.cdi.AbstractSocialMediaApi;
+import org.agorava.api.oauth.OAuthService;
+import org.agorava.spi.ProviderApiService;
 
 /**
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
-public class EmpireAvenueBaseService extends AbstractSocialMediaApi {
+public class EmpireAvenueBaseService extends ProviderApiService {
 
     public static final String API_ROOT = "https://api.empireavenue.com/";
+    
+    
     @Inject
     @EmpireAvenue
     private OAuthService service;
 
+
     @Override
-    public String buildUri(String uri) {
+    public String buildAbsoluteUri(String uri) {
         return API_ROOT + uri;
     }
 
     @Override
-    public OAuthService getService() {
+    public org.agorava.api.oauth.OAuthService getService() {
         return service;
     }
 }

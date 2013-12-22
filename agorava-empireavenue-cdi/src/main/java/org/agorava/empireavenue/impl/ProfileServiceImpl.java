@@ -15,7 +15,7 @@
  */
 package org.agorava.empireavenue.impl;
 
-import static com.google.common.collect.Maps.newHashMap;
+import java.util.HashMap;
 import java.util.Map;
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.ProfileService;
@@ -35,9 +35,11 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     @Override
     public Status updateStatus(String statusMessage) {
 
-        Map<String, Object> data = newHashMap();
-        data.put("status", statusMessage);
-        return getService().post(buildUri(SET_STATUS), data, Status.class);
+        Map<String, Object> messageParams = new HashMap();
+        messageParams.put("status", statusMessage);
+       
+       // return getService().post(buildUri(SET_STATUS), data, Status.class);
+    return getService().post(buildAbsoluteUri("statuses/update.json"), messageParams, Status.class);
     }
 
     /**
@@ -46,6 +48,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
      */
     @Override
     public ProfileInfo getProfileInfo() {
-        return getService().get(buildUri(PROFILE_INFO), ProfileInfo.class);
+        return getService().get(buildAbsoluteUri(PROFILE_INFO), ProfileInfo.class);
     }
 }
