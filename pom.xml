@@ -71,6 +71,7 @@
     <modules>
         <module>agorava-empireavenue-api</module>
         <module>agorava-empireavenue-cdi</module>
+        <module>agorava-empireavenue-utils</module>
     </modules>
     
 
