@@ -49,7 +49,7 @@ public class EmpireAvenueTest extends EmpireAvenueTestDeploy {
     OAuthService service;
 
     @Inject
-    OAuthLifeCycleService OAuthLifeCycleService;
+    OAuthLifeCycleService oAuthLifeCycleService;
 
     @Inject
     @EmpireAvenue
@@ -58,16 +58,17 @@ public class EmpireAvenueTest extends EmpireAvenueTestDeploy {
 
     @Before
     public void init() {
+    	    	
         Token token = new Token("",
                 "193bbfd4484a7fb154814a03e5dd1c8c3e24a1d539401d134ece20a3920bbf8fa959cda9b38bb37fb64e4b8e672");
         sessionTest.setAccessToken(token);
-        OAuthLifeCycleService.endDance();
+        oAuthLifeCycleService.endDance();
     }
 
     @Test
     public void authorizationUrlTest() {
 
-        assertTrue(service.getAuthorizationUrl().startsWith("http"));
+        assertTrue(service.getAuthorizationUrl().startsWith("https"));
     }
 
     @Test
