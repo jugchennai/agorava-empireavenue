@@ -17,6 +17,7 @@ package org.agorava.empireavenue;
 
 import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.model.Status;
+import org.agorava.spi.UserProfileService;
 
 /**
  * Operations on Profile Information /profile
@@ -40,7 +41,7 @@ import org.agorava.empireavenue.model.Status;
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
-public interface ProfileService {
+public interface ProfileService extends UserProfileService {
 
     static final String SET_STATUS = "profile/set/status";
     static final String PROFILE_INFO = "profile/info";

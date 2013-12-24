@@ -15,11 +15,13 @@
  */
 package org.agorava.empireavenue.model;
 
+import org.agorava.spi.UserProfile;
+
 /**
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
-public class ProfileInfo {
+public class ProfileInfo extends UserProfile {
     
     private String firstName;
     private String lastName;
@@ -28,7 +30,9 @@ public class ProfileInfo {
     private String country;
     private String location;
 
-    public ProfileInfo(String firstName, String lastName, String fullName, String joined, String country, String location) {
+    public ProfileInfo(String id,String firstName, String lastName, String fullName, String joined, String country,
+                       String location) {
+        super(id);
         this.firstName = firstName;
         this.lastName = lastName;
         this.fullName = fullName;
@@ -55,6 +59,11 @@ public class ProfileInfo {
 
     public String getFullName() {
         return fullName;
+    }
+
+    @Override
+    public String getProfileImageUrl() {
+        return "";
     }
 
     public void setFullName(String fullName) {

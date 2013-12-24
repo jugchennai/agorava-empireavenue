@@ -15,17 +15,21 @@
  */
 package org.agorava.empireavenue.impl;
 
-import java.util.HashMap;
-import java.util.Map;
 import org.agorava.EmpireAvenueBaseService;
+import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.ProfileService;
 import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.model.Status;
+import org.agorava.spi.UserProfile;
+
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
+@EmpireAvenue
 public class ProfileServiceImpl extends EmpireAvenueBaseService implements ProfileService {
 
     /**
@@ -49,5 +53,10 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     @Override
     public ProfileInfo getProfileInfo() {
         return getService().get(buildAbsoluteUri(PROFILE_INFO), ProfileInfo.class);
+    }
+
+    @Override
+    public UserProfile getUserProfile() {
+        return null;
     }
 }
