@@ -57,6 +57,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
 
     @Override
     public UserProfile getUserProfile() {
-        return null;
+        return getProfileInfo();
     }
 }

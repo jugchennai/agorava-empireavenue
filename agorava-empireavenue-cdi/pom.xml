@@ -46,7 +46,7 @@
             </plugin>
         </plugins>
     </build>
-    
+
     <dependencyManagement>
     <dependencies>
         <dependency>
@@ -58,10 +58,10 @@
         </dependency>
     </dependencies>
 </dependencyManagement>
-    
-    
+
+
     <dependencies>
-    
+
     <dependency>
     <groupId>org.jboss.arquillian.container</groupId>
     <artifactId>arquillian-weld-ee-embedded-1.1</artifactId>
@@ -80,8 +80,8 @@
     <version>1.6.4</version>
     <scope>test</scope>
 </dependency>
-    
-    
+
+
         <dependency>
     <groupId>org.jboss.arquillian.junit</groupId>
     <artifactId>arquillian-junit-container</artifactId>
@@ -103,7 +103,7 @@
             <groupId>org.agorava</groupId>
             <artifactId>agorava-empireavenue-api</artifactId>
         </dependency>
-            
+
         <dependency>
             <groupId>com.fasterxml.jackson.core</groupId>
             <artifactId>jackson-databind</artifactId>
@@ -112,6 +112,12 @@
         <dependency>
             <groupId>org.agorava</groupId>
             <artifactId>agorava-core-impl-cdi</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.agorava</groupId>
+            <artifactId>agorava-core-impl</artifactId>
+            <scope>compile</scope>
         </dependency>
 
         <dependency>
@@ -131,8 +137,8 @@
         </dependency>
 
     </dependencies>
-    
-    
+
+
     <profiles>
     <profile>
         <id>arquillian-weld-ee-embedded</id>
