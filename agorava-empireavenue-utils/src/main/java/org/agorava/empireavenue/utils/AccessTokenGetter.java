@@ -45,6 +45,7 @@ public class AccessTokenGetter {
 
         Token accessToken = lifeCycleService.getCurrentSession().getAccessToken();
         System.out.println("Your Access Token is : " + accessToken.getToken());
+        System.out.println("And your useranme is : " + lifeCycleService.getCurrentSession().getUserProfile().getFullName());
 
 
     }

@@ -39,7 +39,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     @Override
     public Status updateStatus(String statusMessage) {
 
-        Map<String, Object> messageParams = new HashMap();
+        Map<String, Object> messageParams = new HashMap<>();
         messageParams.put("status", statusMessage);
        
        // return getService().post(buildUri(SET_STATUS), data, Status.class);
@@ -57,6 +57,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
 
     @Override
     public UserProfile getUserProfile() {
-        return null;
+        return getProfileInfo();
     }
 }
