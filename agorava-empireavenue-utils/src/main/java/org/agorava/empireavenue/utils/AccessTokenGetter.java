@@ -29,9 +29,16 @@ import java.util.Scanner;
  */
 public class AccessTokenGetter {
 
+    private static Scanner in;
+
     public static void main(String[] args) {
 
-        Scanner in = new Scanner(System.in);
+        System.setProperty("http.proxyHost", "proxy.logica.com");
+        System.setProperty("http.proxyPort", "80");
+        System.setProperty("https.proxyHost", "proxy.logica.com");
+        System.setProperty("https.proxyPort", "80");
+
+        in = new Scanner(System.in);
         WeldContainer weld = new Weld().initialize();
 
         OAuthLifeCycleService lifeCycleService = weld.instance().select(OAuthLifeCycleService.class).get();
@@ -42,11 +49,9 @@ public class AccessTokenGetter {
         System.out.print("Enter your authorization code here : ");
         lifeCycleService.endDance(in.nextLine());
 
-
         Token accessToken = lifeCycleService.getCurrentSession().getAccessToken();
         System.out.println("Your Access Token is : " + accessToken.getToken());
         System.out.println("And your useranme is : " + lifeCycleService.getCurrentSession().getUserProfile().getFullName());
-
 
     }
 }

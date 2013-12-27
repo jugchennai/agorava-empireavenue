@@ -19,12 +19,16 @@ import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.ProfileService;
 import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.model.Status;
+import org.agorava.empireavenue.response.ProfileInfoResponse;
+import org.agorava.empireavenue.response.StatusResponse;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
 import javax.inject.Inject;
+
 import org.agorava.api.atinject.Current;
 import org.agorava.api.oauth.OAuthService;
 import org.agorava.api.oauth.OAuthSession;
@@ -58,29 +62,37 @@ public class EmpireAvenueTest extends EmpireAvenueTestDeploy {
 
     @Before
     public void init() {
-    	    	
-        Token token = new Token("","");
+
+        System.setProperty("http.proxyHost", "proxy.logica.com");
+        System.setProperty("http.proxyPort", "80");
+        System.setProperty("https.proxyHost", "proxy.logica.com");
+        System.setProperty("https.proxyPort", "80");
+
+        Token token = new Token("11c6b5e71b91e0e49840f388988c1cbed4bc851365f4d7d60a915668a1cc8bb", "");
         sessionTest.setAccessToken(token);
         oAuthLifeCycleService.endDance();
     }
 
     @Test
     public void authorizationUrlTest() {
-
         assertTrue(service.getAuthorizationUrl().startsWith("https"));
     }
 
+    @Ignore
     @Test
-    public void sendAUpdateTest() {
-        Status status = profileService.updateStatus("I am posting this from my program.");
-        assertNotNull(status);
-        System.out.println(status);
+    public void sendAUpdateTest() throws Exception {
+        StatusResponse statusResponse = profileService.updateStatus("Posted using Agorava API for EA");
+        assertNotNull(statusResponse);
+        System.out.println(statusResponse.getMeta());
+        System.out.println(statusResponse.getStatus().getStatus() + " = " + statusResponse.getStatus().getContentId());
     }
 
     @Test
     public void getProfileInfoTest() {
-        ProfileInfo profileInfo = profileService.getProfileInfo();
-        assertNotNull(profileInfo);
-        System.out.println(profileInfo);
+        ProfileInfoResponse profileInfoResponse = profileService.getProfileInfo();
+        assertNotNull(profileInfoResponse);
+        System.out.println(profileInfoResponse.getProfileInfo());
+        System.out.println(profileInfoResponse.getMeta());
+
     }
 }

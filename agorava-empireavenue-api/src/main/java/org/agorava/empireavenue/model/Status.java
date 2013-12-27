@@ -17,13 +17,13 @@ package org.agorava.empireavenue.model;
 
 /**
  * Represents the status
- *
+ * 
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 public class Status {
 
-    private String status;
-    private int contentId;
+    private final String status;
+    private final int contentId;
 
     public Status(String status, int contentId) {
         this.status = status;
@@ -34,15 +34,8 @@ public class Status {
         return status;
     }
 
-    public void setStatus(String status) {
-        this.status = status;
-    }
-
     public int getContentId() {
         return contentId;
     }
 
-    public void setContentId(int contentId) {
-        this.contentId = contentId;
-    }
 }

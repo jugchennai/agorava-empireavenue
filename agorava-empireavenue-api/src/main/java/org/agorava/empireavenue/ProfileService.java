@@ -17,6 +17,8 @@ package org.agorava.empireavenue;
 
 import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.model.Status;
+import org.agorava.empireavenue.response.ProfileInfoResponse;
+import org.agorava.empireavenue.response.StatusResponse;
 import org.agorava.spi.UserProfileService;
 
 /**
@@ -56,7 +58,7 @@ public interface ProfileService extends UserProfileService {
      * @param statusMessage the message to be updated
      * @return ID of the updated status entry.
      */
-    Status updateStatus(String statusMessage);
+    StatusResponse updateStatus(String statusMessage);
 
     /**
      * Returns the base information of a person's profile<br/><br/>
@@ -67,5 +69,5 @@ public interface ProfileService extends UserProfileService {
      *
      * @return ProfileInfo Profile information of the user
      */
-    ProfileInfo getProfileInfo();
+    ProfileInfoResponse getProfileInfo();
 }

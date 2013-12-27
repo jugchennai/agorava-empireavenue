@@ -20,43 +20,45 @@ import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.ProfileService;
 import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.model.Status;
+import org.agorava.empireavenue.response.ProfileInfoResponse;
+import org.agorava.empireavenue.response.StatusResponse;
 import org.agorava.spi.UserProfile;
 
 import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
+ * 
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 @EmpireAvenue
 public class ProfileServiceImpl extends EmpireAvenueBaseService implements ProfileService {
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#updateStatus(java.lang.String)
      */
     @Override
-    public Status updateStatus(String statusMessage) {
+    public StatusResponse updateStatus(String statusMessage) {
 
-        Map<String, Object> messageParams = new HashMap<>();
-        messageParams.put("status", statusMessage);
-       
-       // return getService().post(buildUri(SET_STATUS), data, Status.class);
-    return getService().post(buildAbsoluteUri("statuses/update.json"), messageParams, Status.class);
+        Map<String, Object> data = new HashMap<>();
+        data.put("status", statusMessage);
+
+        return getService().post(buildAbsoluteUri(SET_STATUS), data, StatusResponse.class);
     }
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo()
      */
     @Override
-    public ProfileInfo getProfileInfo() {
-        return getService().get(buildAbsoluteUri(PROFILE_INFO), ProfileInfo.class);
+    public ProfileInfoResponse getProfileInfo() {
+        return getService().get(buildAbsoluteUri(PROFILE_INFO), ProfileInfoResponse.class);
     }
 
     @Override
     public UserProfile getUserProfile() {
-        return getProfileInfo();
+        // return getProfileInfo();
+        return null;
     }
 }
