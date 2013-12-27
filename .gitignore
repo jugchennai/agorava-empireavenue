@@ -31,4 +31,7 @@ dist/
 build/
 target/
 
+agorava-empireavenue-cdi/src/test/resources/agorava.properties
+agorava-empireavenue-utils/src/main/resources/agorava.properties   
+
 .LCKpom.xml~

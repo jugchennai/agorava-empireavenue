@@ -33,11 +33,6 @@ public class AccessTokenGetter {
 
     public static void main(String[] args) {
 
-        System.setProperty("http.proxyHost", "proxy.logica.com");
-        System.setProperty("http.proxyPort", "80");
-        System.setProperty("https.proxyHost", "proxy.logica.com");
-        System.setProperty("https.proxyPort", "80");
-
         in = new Scanner(System.in);
         WeldContainer weld = new Weld().initialize();
 

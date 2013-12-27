@@ -63,12 +63,8 @@ public class EmpireAvenueTest extends EmpireAvenueTestDeploy {
     @Before
     public void init() {
 
-        System.setProperty("http.proxyHost", "proxy.logica.com");
-        System.setProperty("http.proxyPort", "80");
-        System.setProperty("https.proxyHost", "proxy.logica.com");
-        System.setProperty("https.proxyPort", "80");
 
-        Token token = new Token("11c6b5e71b91e0e49840f388988c1cbed4bc851365f4d7d60a915668a1cc8bb", "");
+        Token token = new Token("", "");
         sessionTest.setAccessToken(token);
         oAuthLifeCycleService.endDance();
     }
