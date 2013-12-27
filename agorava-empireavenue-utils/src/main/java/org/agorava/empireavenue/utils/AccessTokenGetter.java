@@ -33,6 +33,7 @@ public class AccessTokenGetter {
 
     public static void main(String[] args) {
 
+
         in = new Scanner(System.in);
         WeldContainer weld = new Weld().initialize();
 

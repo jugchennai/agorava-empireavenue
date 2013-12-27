@@ -17,8 +17,6 @@ package org.agorava.empireavenue.cdi.test;
 
 import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.ProfileService;
-import org.agorava.empireavenue.model.ProfileInfo;
-import org.agorava.empireavenue.model.Status;
 import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.empireavenue.response.StatusResponse;
 import org.jboss.arquillian.junit.Arquillian;
@@ -64,7 +62,7 @@ public class EmpireAvenueTest extends EmpireAvenueTestDeploy {
     public void init() {
 
 
-        Token token = new Token("", "");
+        Token token = new Token("11c6b5e71b91e0e49840f388988c1cbed4bc851365f4d7d60a915668a1cc8bb", "");
         sessionTest.setAccessToken(token);
         oAuthLifeCycleService.endDance();
     }

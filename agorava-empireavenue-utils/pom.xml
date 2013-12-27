@@ -59,4 +59,5 @@
             </build>
         </profile>
     </profiles>
+    <name>Agorava EmpireAvenue - Utils</name>
 </project>

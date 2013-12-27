@@ -17,7 +17,7 @@ package org.agorava.empireavenue.model;
 
 /**
  * Represents the status
- * 
+ *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 public class Status {
@@ -36,6 +36,17 @@ public class Status {
 
     public int getContentId() {
         return contentId;
+    }
+
+    @Override
+    public String toString() {
+
+        return new StringBuffer().append("Status [")
+                .append(status)
+                .append(",")
+                .append(contentId)
+                .append("]")
+                .toString();
     }
 
 }

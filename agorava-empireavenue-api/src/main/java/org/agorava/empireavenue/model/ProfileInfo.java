@@ -18,7 +18,7 @@ package org.agorava.empireavenue.model;
 import org.agorava.spi.UserProfile;
 
 /**
- * 
+ *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 @SuppressWarnings("serial")
@@ -488,12 +488,16 @@ public class ProfileInfo extends UserProfile {
     @Override
     public String toString() {
 
-        return new StringBuffer().append("ProfileInfo [").append(ticker + ",").append(firstName + ",")
-                .append(lastName + ",")
-                .append(fullName + ",")
-                .append(joined + ",")
-                .append(country + ",")
-                .append(totalShares + ",")
+        return new StringBuffer().append("ProfileInfo [").append(ticker).append(",").append(firstName).append(",").append(lastName)
+                .append(",")
+                .append(fullName)
+                .append(",")
+                .append(joined)
+                .append(",")
+                .append(country)
+                .append(",")
+                .append(totalShares)
+                .append(",")
                 .append(location).append("];")
                 .toString();
     }
