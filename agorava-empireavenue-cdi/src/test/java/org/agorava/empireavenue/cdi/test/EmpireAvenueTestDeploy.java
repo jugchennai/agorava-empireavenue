@@ -26,11 +26,48 @@ import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
 
 import java.io.FileNotFoundException;
+import javax.inject.Inject;
+import org.agorava.api.atinject.Current;
+import org.agorava.api.oauth.OAuthService;
+import org.agorava.api.oauth.OAuthSession;
+import org.agorava.api.oauth.Token;
+import org.agorava.api.service.OAuthLifeCycleService;
+import org.agorava.empireavenue.EmpireAvenue;
+import org.agorava.empireavenue.service.ProfileService;
+import org.junit.Before;
 
 public class EmpireAvenueTestDeploy {
+    
+	private final String TOKEN = "11c6b5e71b91e0e49840f388988c1cbed4bc851365f4d7d60a915668a1cc8bb";
+    
+    @Inject
+    @EmpireAvenue
+    protected ProfileService profileService;
+
+    @Inject
+    @EmpireAvenue
+    protected OAuthService service;
+
+    @Inject
+    protected OAuthLifeCycleService oAuthLifeCycleService;
+
+    @Inject
+    @EmpireAvenue
+    @Current
+    protected OAuthSession sessionTest;
+
+    @Before
+    public void init() {
+
+        Token token = new Token(TOKEN.trim(), "");
+        sessionTest.setAccessToken(token);
+        oAuthLifeCycleService.endDance();
+    }
+    
+    
     @Deployment
     public static Archive<?> createTestArchive() throws FileNotFoundException {
-        JavaArchive testJar = ShrinkWrap.create(JavaArchive.class, "all-agorava.jar")
+        JavaArchive testJar = ShrinkWrap.create(JavaArchive.class, "agorava-empireavenue.jar")
                 .addPackages(true, new Filter<ArchivePath>() {
                     @Override
                     public boolean include(ArchivePath path) {
@@ -55,8 +92,6 @@ public class EmpireAvenueTestDeploy {
                 .addAsLibraries(testJar)
                 .addAsWebInfResource(EmptyAsset.INSTANCE, "beans.xml")
                 .addAsWebInfResource("agorava.properties");
-
-        System.out.println(System.getProperty("arquillian"));
         return ret;
     }
 }

@@ -13,28 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.response;
 
+package org.agorava.empireavenue.jackson;
+
+import com.fasterxml.jackson.annotation.JsonCreator;
+import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
-import org.agorava.empireavenue.model.ProfileInfo;
-
-public class ProfileInfoResponse extends Response<ProfileInfo> {
-
-    public ProfileInfoResponse() {
-    }
-
-    public ProfileInfo getProfileInfo() {
-        return retrieveData();
-    }
+/**
+ *
+ * @author rajmahendrahegde
+ */
+abstract class CommunityResponseMixin {
     
-    public List<ProfileInfo> getAllProfileInfo() {
-        return retrieveAllData();
+    @JsonCreator
+    CommunityResponseMixin(@JsonProperty("meta")
+    MetaMixin meta,
+            @JsonProperty("data")
+            List<CommunityMixin> data) {
+
     }
 
-    @Override
-    public String toString() {
-        return super.toString();
-    }
+    @JsonProperty("meta")
+    abstract MetaMixin getMeta();
 
+    @JsonProperty("data")
+    abstract List<CommunityMixin> getData();
 }

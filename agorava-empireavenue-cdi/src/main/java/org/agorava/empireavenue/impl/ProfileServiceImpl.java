@@ -17,9 +17,7 @@ package org.agorava.empireavenue.impl;
 
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.EmpireAvenue;
-import org.agorava.empireavenue.ProfileService;
-import org.agorava.empireavenue.model.ProfileInfo;
-import org.agorava.empireavenue.model.Status;
+import org.agorava.empireavenue.service.ProfileService;
 import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.empireavenue.response.StatusResponse;
 import org.agorava.spi.UserProfile;
@@ -27,16 +25,19 @@ import org.agorava.spi.UserProfile;
 import java.util.HashMap;
 import java.util.Map;
 
+import org.agorava.empireavenue.response.CommunityResponse;
+
 /**
- * 
+ *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
  */
 @EmpireAvenue
 public class ProfileServiceImpl extends EmpireAvenueBaseService implements ProfileService {
 
     /**
-     * 
-     * @see org.agorava.empireavenue.ProfileService#updateStatus(java.lang.String)
+     *
+     * @see
+     * org.agorava.empireavenue.ProfileService#updateStatus(java.lang.String)
      */
     @Override
     public StatusResponse updateStatus(String statusMessage) {
@@ -48,7 +49,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
+     *
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo()
      */
     @Override
@@ -56,9 +57,99 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
         return getService().get(buildAbsoluteUri(PROFILE_INFO), ProfileInfoResponse.class);
     }
 
+    /**
+     *
+     * @return
+     */
     @Override
     public UserProfile getUserProfile() {
         // return getProfileInfo();
         return null;
     }
+
+    /**
+     *
+     * @see org.agorava.empireavenue.ProfileService#getAllCommunities()
+     */
+    @Override
+    public CommunityResponse getAllCommunities() {
+        return getService().get(buildAbsoluteUri(PROFILE_COMMUNITIES), CommunityResponse.class);
+    }
+
+    /**
+     *
+     * @see org.agorava.empireavenue.ProfileService#getAllCommunitiesFor(String)
+     */
+    @Override
+    public CommunityResponse getAllCommunitiesFor(String ticker) {
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("ticker", ticker);
+        return getService().post(buildAbsoluteUri(PROFILE_COMMUNITIES), data, CommunityResponse.class);
+    }
+
+    /**
+     *
+     * @see org.agorava.empireavenue.ProfileService#getProfileInfo(String)
+     */
+    @Override
+    public ProfileInfoResponse getProfileInfo(String ticker) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("ticker", ticker);
+        return getService().post(buildAbsoluteUri(PROFILE_INFO), data, ProfileInfoResponse.class);
+    }
+
+    /**
+     *
+     * @see org.agorava.empireavenue.ProfileService#getProfileInfo(String...)
+     */
+    @Override
+    public ProfileInfoResponse getProfileInfo(String... tickers) {
+        Map<String, Object> data = new HashMap<>();
+        StringBuilder result = new StringBuilder();
+        for (String ticker : tickers) {
+            result.append(ticker);
+            result.append(",");
+        }
+        String ticker = result.length() > 0 ? result.substring(0, result.length() - 1) : "";
+
+        data.put("ticker", ticker);
+        return getService().post(buildAbsoluteUri(PROFILE_INFO), data, ProfileInfoResponse.class);
+    }
+
+    /**
+     * @see org.agorava.empireavenue.ProfileService#getAllShareholders()
+     */
+    @Override
+    public ProfileInfoResponse getAllShareholders() {
+        return getService().get(buildAbsoluteUri(PROFILE_SHAREHOLDERS), ProfileInfoResponse.class);
+    }
+
+    /**
+     * TODO: Need a GET method with parameter
+     *
+     * @see org.agorava.empireavenue.ProfileService#getAllShareholders(int,int)
+     */
+    @Override
+    public ProfileInfoResponse getAllShareholders(int page, int maxresults) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("page", page);
+        data.put("maxresults", maxresults);
+        return getService().post(buildAbsoluteUri(PROFILE_SHAREHOLDERS), data, ProfileInfoResponse.class);
+    }
+
+    /**
+     * @see
+     * org.agorava.empireavenue.ProfileService#getAllShareholders(String,int,int)
+     */
+    @Override
+    public ProfileInfoResponse getAllShareholders(String ticker, int page,
+            int maxresults) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("ticker", ticker);
+        data.put("page", page);
+        data.put("maxresults", maxresults);
+        return getService().post(buildAbsoluteUri(PROFILE_SHAREHOLDERS), data, ProfileInfoResponse.class);
+    }
+
 }

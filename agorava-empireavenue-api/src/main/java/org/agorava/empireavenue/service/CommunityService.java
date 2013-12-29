@@ -13,28 +13,13 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.response;
 
-import java.util.List;
+package org.agorava.empireavenue.service;
 
-import org.agorava.empireavenue.model.ProfileInfo;
-
-public class ProfileInfoResponse extends Response<ProfileInfo> {
-
-    public ProfileInfoResponse() {
-    }
-
-    public ProfileInfo getProfileInfo() {
-        return retrieveData();
-    }
+/**
+ *
+ * @author rajmahendrahegde
+ */
+public interface CommunityService {
     
-    public List<ProfileInfo> getAllProfileInfo() {
-        return retrieveAllData();
-    }
-
-    @Override
-    public String toString() {
-        return super.toString();
-    }
-
 }
