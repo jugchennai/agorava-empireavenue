@@ -48,10 +48,10 @@ public abstract class Response<T> {
         return data.get(0);
     }
 
-    @SuppressWarnings("unchecked")
-    protected T[] retrieveAllData() {
+   
+    protected List<T> retrieveAllData() {
         errorCheck();
-        return (T[]) data.toArray();
+        return data;
     }
 
     private void errorCheck() {

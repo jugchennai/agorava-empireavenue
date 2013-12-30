@@ -15,14 +15,12 @@
  */
 package org.agorava.empireavenue.jackson;
 
-import org.agorava.empireavenue.model.Meta;
-import org.agorava.empireavenue.model.ProfileInfo;
+import org.agorava.empireavenue.model.*;
 
 import com.fasterxml.jackson.databind.module.SimpleModule;
 
 import org.agorava.empireavenue.model.Status;
-import org.agorava.empireavenue.response.ProfileInfoResponse;
-import org.agorava.empireavenue.response.StatusResponse;
+import org.agorava.empireavenue.response.*;
 
 @SuppressWarnings("serial")
 public class EmpireAvenueModule extends SimpleModule {
@@ -37,10 +35,12 @@ public class EmpireAvenueModule extends SimpleModule {
 
         context.setMixInAnnotations(ProfileInfo.class, ProfileInfoMixin.class);
         context.setMixInAnnotations(Status.class, StatusMixin.class);
+        context.setMixInAnnotations(Community.class, CommunityMixin.class);
 
         context.setMixInAnnotations(StatusResponse.class, StatusResponseMixin.class);
 
         context.setMixInAnnotations(ProfileInfoResponse.class, ProfileInfoResponseMixin.class);
+        context.setMixInAnnotations(CommunityResponse.class, CommunityResponseMixin.class);
 
     }
 
