@@ -38,7 +38,7 @@ import org.junit.Before;
 
 public class EmpireAvenueTestDeploy {
     
-	private final String TOKEN = "11c6b5e71b91e0e49840f388988c1cbed4bc851365f4d7d60a915668a1cc8bb";
+	private final String TOKEN = "";
     
     @Inject
     @EmpireAvenue
@@ -58,6 +58,7 @@ public class EmpireAvenueTestDeploy {
 
     @Before
     public void init() {
+ 
 
         Token token = new Token(TOKEN.trim(), "");
         sessionTest.setAccessToken(token);

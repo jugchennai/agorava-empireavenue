@@ -13,30 +13,36 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.jackson;
+package org.agorava.empireavenue.model;
 
-import java.util.List;
+import java.math.BigDecimal;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 /**
 *
 * @author Rajmahendra Hegde <rajmahendra@gmail.com>
 * @since 0.7.0
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class ProfileInfoResponseMixin extends ResponseMixin {
+public class BankBalance {
+    private BigDecimal balance;
 
-    @JsonCreator
-    ProfileInfoResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
-        super(meta);
+    public BankBalance() {
     }
 
-    @JsonProperty("data")
-    abstract List<ProfileInfoMixin> getData();
+    public BigDecimal getBalance() {
+        return balance;
+    }
+
+    public void setBalance(BigDecimal balance) {
+        this.balance = balance;
+    }
+    
+    @Override
+    public String toString() {
+        return new StringBuffer()
+        .append("BankBalance [ ")
+        .append(balance)
+        .append("]")
+        .toString();
+    }
 
 }

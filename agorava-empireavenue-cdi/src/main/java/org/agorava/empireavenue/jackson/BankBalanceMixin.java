@@ -15,28 +15,27 @@
  */
 package org.agorava.empireavenue.jackson;
 
-import java.util.List;
+import java.math.BigDecimal;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import com.fasterxml.jackson.annotation.JsonTypeName;
+
 /**
 *
 * @author Rajmahendra Hegde <rajmahendra@gmail.com>
 * @since 0.7.0
 */
+@JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
-abstract class ProfileInfoResponseMixin extends ResponseMixin {
+abstract class BankBalanceMixin {
 
     @JsonCreator
-    ProfileInfoResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
-        super(meta);
+    BankBalanceMixin(@JsonProperty("balance")
+    BigDecimal balance) {
     }
 
-    @JsonProperty("data")
-    abstract List<ProfileInfoMixin> getData();
-
+    @JsonProperty("balance")
+    abstract BigDecimal getBalance();
 }

@@ -20,7 +20,10 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
+import org.agorava.empireavenue.model.ProfileInfo;
+import org.agorava.empireavenue.response.BankBalanceResponse;
 import org.agorava.empireavenue.response.CommunityResponse;
+import org.agorava.empireavenue.response.CountResponse;
 import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.empireavenue.response.StatusResponse;
 import org.jboss.arquillian.junit.Arquillian;
@@ -81,5 +84,21 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
     	assertNotNull(profileInfoResponse);
     	assertNotNull(profileInfoResponse.getProfileInfo());
     	assertTrue(profileInfoResponse.getAllProfileInfo().size() > 0);
+    }
+    
+    @Test
+    public void getCountForTheCurrentUser() {
+        CountResponse countResponse = profileService.getCount();
+        assertNotNull(countResponse);
+        assertNotNull(countResponse.getCount());
+
+    }
+    
+    @Test
+    public void getBankBalanceOfCurrentUser() {
+        BankBalanceResponse bankBalanceResponse = profileService.getBankBalance();
+        assertNotNull(bankBalanceResponse);
+        assertNotNull(bankBalanceResponse.getBankBalance());
+
     }
 }

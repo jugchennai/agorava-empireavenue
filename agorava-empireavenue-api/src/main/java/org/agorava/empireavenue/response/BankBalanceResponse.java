@@ -13,30 +13,20 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.jackson;
+package org.agorava.empireavenue.response;
 
-import java.util.List;
+import org.agorava.empireavenue.model.BankBalance;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 /**
 *
 * @author Rajmahendra Hegde <rajmahendra@gmail.com>
 * @since 0.7.0
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class ProfileInfoResponseMixin extends ResponseMixin {
-
-    @JsonCreator
-    ProfileInfoResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
-        super(meta);
+public class BankBalanceResponse extends Response<BankBalance> {
+    public BankBalanceResponse() {}
+    
+    public BankBalance getBankBalance(){
+        return retrieveData();
     }
-
-    @JsonProperty("data")
-    abstract List<ProfileInfoMixin> getData();
 
 }

@@ -13,25 +13,25 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.jackson;
+package org.agorava.empireavenue.response;
 
 import java.util.List;
 
+import org.agorava.empireavenue.model.Count;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class StatusResponseMixin extends ResponseMixin {
-
-    @JsonCreator
-    StatusResponseMixin(@JsonProperty("meta")
-    MetaMixin meta, @JsonProperty("data")
-    List<StatusMixin> data) {
-super(meta);
+/**
+ * 
+ * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ */
+public class CountResponse extends Response<Count> {
+    public CountResponse() {
     }
 
-    @JsonProperty("data")
-    abstract List<StatusMixin> getData();
+    public Count getCount() {
+        return retrieveData();
+    }
+
+    public List<Count> getAllCount() {
+        return retrieveAllData();
+    }
 }

@@ -33,6 +33,35 @@ public class Count {
 	private int listed;
 	private int recommended;
 	
+	public Count() {
+    }
+	
+	@Override
+	public String toString() {
+	   return new StringBuffer()
+	   .append("Count [")
+	   .append(ticker)
+	   .append(",")
+	   .append(following)
+	   .append(",")
+	   .append(followers)
+	   .append(",")
+	   .append(shareholders)
+	   .append(",")
+       .append(portfolio)
+       .append(",")
+       .append(sharesOwned)
+       .append(",")
+       .append(totalThumbsUp)
+       .append(",")
+       .append(totalThumbsDown)
+       .append(",")
+       .append(listed)
+       .append(",")
+       .append(recommended)
+	   .append("]")
+	   .toString();
+	}
 	
 	public String getTicker() {
 		return ticker;

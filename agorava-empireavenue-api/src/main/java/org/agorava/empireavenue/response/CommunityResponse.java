@@ -21,9 +21,10 @@ import java.util.List;
 
 import org.agorava.empireavenue.model.Community;
 /**
- *
- * @author rajmahendrahegde
- */
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
 public class CommunityResponse extends Response<Community> {
     
     public CommunityResponse() {}

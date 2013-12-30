@@ -18,6 +18,8 @@ package org.agorava.empireavenue.impl;
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.service.ProfileService;
+import org.agorava.empireavenue.response.BankBalanceResponse;
+import org.agorava.empireavenue.response.CountResponse;
 import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.empireavenue.response.StatusResponse;
 import org.agorava.spi.UserProfile;
@@ -28,16 +30,16 @@ import java.util.Map;
 import org.agorava.empireavenue.response.CommunityResponse;
 
 /**
- *
+ * 
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ * @since 0.7.0
  */
 @EmpireAvenue
 public class ProfileServiceImpl extends EmpireAvenueBaseService implements ProfileService {
 
     /**
-     *
-     * @see
-     * org.agorava.empireavenue.ProfileService#updateStatus(java.lang.String)
+     * 
+     * @see org.agorava.empireavenue.ProfileService#updateStatus(java.lang.String)
      */
     @Override
     public StatusResponse updateStatus(String statusMessage) {
@@ -49,7 +51,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo()
      */
     @Override
@@ -58,7 +60,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     *
+     * 
      * @return
      */
     @Override
@@ -68,7 +70,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getAllCommunities()
      */
     @Override
@@ -77,7 +79,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getAllCommunitiesFor(String)
      */
     @Override
@@ -89,7 +91,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo(String)
      */
     @Override
@@ -100,7 +102,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo(String...)
      */
     @Override
@@ -127,7 +129,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
 
     /**
      * TODO: Need a GET method with parameter
-     *
+     * 
      * @see org.agorava.empireavenue.ProfileService#getAllShareholders(int,int)
      */
     @Override
@@ -139,8 +141,7 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * @see
-     * org.agorava.empireavenue.ProfileService#getAllShareholders(String,int,int)
+     * @see org.agorava.empireavenue.ProfileService#getAllShareholders(String,int,int)
      */
     @Override
     public ProfileInfoResponse getAllShareholders(String ticker, int page,
@@ -150,6 +151,53 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
         data.put("page", page);
         data.put("maxresults", maxresults);
         return getService().post(buildAbsoluteUri(PROFILE_SHAREHOLDERS), data, ProfileInfoResponse.class);
+    }
+
+    /**
+     * 
+     * @see org.agorava.empireavenue.ProfileService#getCount()
+     */
+    @Override
+    public CountResponse getCount() {
+        return getService().get(buildAbsoluteUri(PROFILE_COUNT), CountResponse.class);
+    }
+
+    /**
+     * 
+     * @see org.agorava.empireavenue.ProfileService#getCountFor(String)
+     */
+    @Override
+    public CountResponse getCountFor(String ticker) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("ticker", ticker);
+        return getService().post(buildAbsoluteUri(PROFILE_COUNT), data, CountResponse.class);
+    }
+
+    /**
+     * 
+     * @see org.agorava.empireavenue.ProfileService#getCountFor(String[])
+     */
+    @Override
+    public CountResponse getCountFor(String... tickers) {
+        Map<String, Object> data = new HashMap<>();
+        StringBuilder result = new StringBuilder();
+        for (String ticker : tickers) {
+            result.append(ticker);
+            result.append(",");
+        }
+        String ticker = result.length() > 0 ? result.substring(0, result.length() - 1) : "";
+
+        data.put("ticker", ticker);
+        return getService().post(buildAbsoluteUri(PROFILE_COUNT), data, CountResponse.class);
+    }
+
+    /**
+     * 
+     * {@inheritDoc}
+     */
+    @Override
+    public BankBalanceResponse getBankBalance() {
+        return getService().get(buildAbsoluteUri(PROFILE_BANK_BALANCE), BankBalanceResponse.class);
     }
 
 }

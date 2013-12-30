@@ -41,6 +41,12 @@ public class EmpireAvenueModule extends SimpleModule {
 
         context.setMixInAnnotations(ProfileInfoResponse.class, ProfileInfoResponseMixin.class);
         context.setMixInAnnotations(CommunityResponse.class, CommunityResponseMixin.class);
+        
+        context.setMixInAnnotations(Count.class,CountMixin.class);
+        context.setMixInAnnotations(CountResponse.class,CountResponseMixin.class);
+        
+        context.setMixInAnnotations(BankBalance.class,BankBalanceMixin.class);
+        context.setMixInAnnotations(BankBalanceResponse.class,BankBalanceResponseMixin.class);
 
     }
 

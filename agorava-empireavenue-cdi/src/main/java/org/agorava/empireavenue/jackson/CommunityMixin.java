@@ -21,12 +21,13 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- *
- * @author rajmahendrahegde
- */
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
 @JsonTypeName("meta")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public abstract class CommunityMixin {
+abstract class CommunityMixin {
 
     @JsonCreator
     CommunityMixin(@JsonProperty("community_id") int communityId,

@@ -15,7 +15,9 @@
  */
 package org.agorava.empireavenue.service;
 
+import org.agorava.empireavenue.response.BankBalanceResponse;
 import org.agorava.empireavenue.response.CommunityResponse;
+import org.agorava.empireavenue.response.CountResponse;
 import org.agorava.empireavenue.response.StatusResponse;
 import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.spi.UserProfileService;
@@ -41,6 +43,7 @@ import org.agorava.spi.UserProfileService;
  *
  *
  * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ * @since 0.7.0
  */
 public interface ProfileService extends UserProfileService {
 
@@ -49,6 +52,7 @@ public interface ProfileService extends UserProfileService {
     static final String PROFILE_COMMUNITIES = "/profile/communities";
     static final String PROFILE_SHAREHOLDERS = "/profile/shareholders";
     static final String PROFILE_COUNT="/profile/counts";
+    static final String PROFILE_BANK_BALANCE = "/profile/bank/balance";
 
     /**
      * Set statusMessage to the authenticated user's status<br/><br/>
@@ -143,6 +147,7 @@ public interface ProfileService extends UserProfileService {
     ProfileInfoResponse getAllShareholders();
     
     /**
+     * Retrieve all the Shareholders based currenlty logged in user with page and maximum results to display.
      * 
      * @param page are more than a single page request the page of results
      * @param maxresults limit results returned; range {1..100), default 100; the ?page= parameter still applies, and trusts you send the same ?maxresults= parameter
@@ -155,6 +160,7 @@ public interface ProfileService extends UserProfileService {
     ProfileInfoResponse getAllShareholders(int page, int maxresults);
     
     /**
+     * Retrieve all the Shareholders based on a token.
      * 
      * @param ticker ticker id
      * @param page are more than a single page request the page of results
@@ -166,5 +172,44 @@ public interface ProfileService extends UserProfileService {
      * 
      */
     ProfileInfoResponse getAllShareholders(String ticker,int page, int maxresults);
+    
+    /**
+     * Returns the various totals for the current user.
+     * 
+     * @return CountResponse containing the Count object.
+     * 
+     * @see org.agorava.empireavenue.service.ProfileService#getCountFor(String)
+     * @see org.agorava.empireavenue.service.ProfileService#getCountFor(String[])
+     */
+    CountResponse getCount();
+    
+    /**
+     * Returns the various totals for the given ticker.
+     * 
+     * @param ticker A ticker to which to get a Count
+     * @return CountResponse containing the Count object.
+     * 
+     * @see org.agorava.empireavenue.service.ProfileService#getCount()
+     * @see org.agorava.empireavenue.service.ProfileService#getCountFor(String[])
+     */
+    CountResponse getCountFor(String ticker);
+    
+    /**
+     * Returns the various totals for the list of given tickers.
+     * 
+     * @param tickers array of tickers to get Count
+     * @return CountResponse containing the List of Count objects.
+     * 
+     * @see org.agorava.empireavenue.service.ProfileService#getCount()
+     * @see org.agorava.empireavenue.service.ProfileService#getCountFor(String)
+     */
+    CountResponse getCountFor(String... tickers);
+    
+    /**
+     * Returns current bank balance for authenticating user
+     * 
+     * @return BankBalanceResponse returns the BankBalance object
+     */
+    BankBalanceResponse getBankBalance();
     
 }

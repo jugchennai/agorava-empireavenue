@@ -18,25 +18,21 @@ package org.agorava.empireavenue.jackson;
 import java.util.List;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 /**
 *
 * @author Rajmahendra Hegde <rajmahendra@gmail.com>
 * @since 0.7.0
 */
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class ProfileInfoResponseMixin extends ResponseMixin {
-
+abstract class BankBalanceResponseMixin extends ResponseMixin {
     @JsonCreator
-    ProfileInfoResponseMixin(@JsonProperty("meta")
+    BankBalanceResponseMixin(@JsonProperty("meta")
     MetaMixin meta,
             @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
-        super(meta);
+            List<BankBalanceMixin> data) {
+super(meta);
     }
 
     @JsonProperty("data")
-    abstract List<ProfileInfoMixin> getData();
-
+    abstract List<BankBalanceMixin> getData();
 }

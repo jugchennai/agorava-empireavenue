@@ -21,21 +21,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- *
- * @author rajmahendrahegde
- */
-abstract class CommunityResponseMixin {
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
+abstract class CommunityResponseMixin extends ResponseMixin {
     
     @JsonCreator
     CommunityResponseMixin(@JsonProperty("meta")
     MetaMixin meta,
             @JsonProperty("data")
             List<CommunityMixin> data) {
-
+super(meta);
     }
-
-    @JsonProperty("meta")
-    abstract MetaMixin getMeta();
 
     @JsonProperty("data")
     abstract List<CommunityMixin> getData();
