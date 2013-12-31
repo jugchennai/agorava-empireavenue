@@ -20,7 +20,6 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
-import org.agorava.empireavenue.model.ProfileInfo;
 import org.agorava.empireavenue.response.BankBalanceResponse;
 import org.agorava.empireavenue.response.CommunityResponse;
 import org.agorava.empireavenue.response.CountResponse;
