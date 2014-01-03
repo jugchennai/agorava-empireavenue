@@ -15,7 +15,7 @@ Agorava provides CDI beans and extensions to interact with major social network.
 * A generic API to work with JSON serialization and de-serialization
 * A generic identification API to retrieve basic user information from a Social Service
 * Specific API for Twitter, Facebook and LinkedIn
-* A multi services manager API allowing to deal with multiple OAuth applications and sessions in the same application and in different mode (by web user, in batch mode… )
+* A multi services manager API allowing to deal with multiple OAuth applications and sessions in the same application and in different mode (by web user, in batch modeâ€¦ )
 * An easy way to extend it by creating a new module for a new services using Agorava SPI.
 
 Agorava is independent of CDI implementation and fully portable between Java EE 6 and Servlet environments enhanced with CDI. It can be also used with CDI in JSE (desktop application). It has been fully tested with CDI RI implementation (JBoss Weld) and Apache OpenWebBeans. Caucho Candi was not fully tested yet but will be in the coming releases.
@@ -26,7 +26,7 @@ Prerequisite
 
 License
 -------
-Copyright 2013 Agorava.
+Copyright 2014 Agorava.
 
 Licensed under the Apache License, Version 2.0 (the "License");
 you may not use this file except in compliance with the License.

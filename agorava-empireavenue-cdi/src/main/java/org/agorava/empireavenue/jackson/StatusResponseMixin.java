@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava.
+ * Copyright 2014 Agorava.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -21,7 +21,11 @@ import java.util.List;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
-
+/**
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class StatusResponseMixin extends ResponseMixin {
 

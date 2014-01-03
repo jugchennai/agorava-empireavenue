@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava
+ * Copyright 2014 Agorava
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,16 +29,16 @@ import java.lang.annotation.Target;
 import javax.inject.Qualifier;
 import org.agorava.api.atinject.ProviderRelated;
 
-
+/**
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
 @Qualifier
 @ProviderRelated("EmpireAvenue")
 @Target({TYPE, METHOD, PARAMETER, FIELD})
 @Retention(RUNTIME)
 @Documented
-/**
- * @author rajmahendrahegde
- *
- */
 public @interface EmpireAvenue {
 
 }

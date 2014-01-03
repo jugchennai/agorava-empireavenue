@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava.
+ * Copyright 2014 Agorava.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,8 +23,10 @@ import org.agorava.api.oauth.application.OAuthAppSettings;
 import org.agorava.api.oauth.application.OAuthApplication;
 
 /**
- * @author Rajmahendra Hegde <rajmahendra@gmail.com>
- */
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
 public class EmpireAvenueServiceProducer {
     
     @ApplicationScoped

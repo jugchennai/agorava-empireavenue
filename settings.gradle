@@ -1,0 +1,1 @@
+include 'agorava-empireavenue-api', 'agorava-empireavenue-cdi', 'agorava-empireavenue-utils'

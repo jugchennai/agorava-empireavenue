@@ -1,5 +1,5 @@
 /*
- * Copyright 2013 Agorava.
+ * Copyright 2014 Agorava.
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -16,10 +16,10 @@
 package org.agorava.empireavenue.model;
 
 /**
- * Represents the status
- *
- * @author Rajmahendra Hegde <rajmahendra@gmail.com>
- */
+*
+* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @since 0.7.0
+*/
 public class Status {
 
     private final String status;
