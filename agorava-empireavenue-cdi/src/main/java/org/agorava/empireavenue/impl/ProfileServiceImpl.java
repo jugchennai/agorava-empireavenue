@@ -108,12 +108,8 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     @Override
     public ProfileInfoResponse getProfileInfo(String... tickers) {
         Map<String, Object> data = new HashMap<>();
-        StringBuilder result = new StringBuilder();
-        for (String ticker : tickers) {
-            result.append(ticker);
-            result.append(",");
-        }
-        String ticker = result.length() > 0 ? result.substring(0, result.length() - 1) : "";
+       
+        String ticker = makeCommaSeperatedFromArray(tickers);
 
         data.put("ticker", ticker);
         return getService().post(buildAbsoluteUri(PROFILE_INFO), data, ProfileInfoResponse.class);
@@ -180,12 +176,8 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     @Override
     public CountResponse getCountFor(String... tickers) {
         Map<String, Object> data = new HashMap<>();
-        StringBuilder result = new StringBuilder();
-        for (String ticker : tickers) {
-            result.append(ticker);
-            result.append(",");
-        }
-        String ticker = result.length() > 0 ? result.substring(0, result.length() - 1) : "";
+       
+        String ticker = makeCommaSeperatedFromArray(tickers);
 
         data.put("ticker", ticker);
         return getService().post(buildAbsoluteUri(PROFILE_COUNT), data, CountResponse.class);
