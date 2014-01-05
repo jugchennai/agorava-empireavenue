@@ -33,6 +33,7 @@ import org.agorava.api.oauth.OAuthSession;
 import org.agorava.api.oauth.Token;
 import org.agorava.api.service.OAuthLifeCycleService;
 import org.agorava.empireavenue.EmpireAvenue;
+import org.agorava.empireavenue.service.LeadersService;
 import org.agorava.empireavenue.service.ProfileService;
 import org.junit.Before;
 
@@ -43,12 +44,18 @@ import org.junit.Before;
 */
 public class EmpireAvenueTestDeploy {
     
-	private final String TOKEN = "";
+	private final String TOKEN = "1afda7255585efbc8b661a6248d34383f3632c2d95e91b8aaf272fe197e2f4";
     
     @Inject
     @EmpireAvenue
     protected ProfileService profileService;
 
+    @Inject
+    @EmpireAvenue
+    protected LeadersService leadersService;
+
+    
+    
     @Inject
     @EmpireAvenue
     protected OAuthService service;

@@ -23,6 +23,7 @@ import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
 import org.agorava.empireavenue.response.BankBalanceResponse;
 import org.agorava.empireavenue.response.CommunityResponse;
 import org.agorava.empireavenue.response.CountResponse;
+import org.agorava.empireavenue.response.LeadersResponse;
 import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.empireavenue.response.StatusResponse;
 import org.jboss.arquillian.junit.Arquillian;
@@ -102,4 +103,8 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
         assertNotNull(bankBalanceResponse.getBankBalance());
 
     }
+    
+    
+    
+    
 }
