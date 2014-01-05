@@ -15,18 +15,16 @@
  */
 package org.agorava.empireavenue.model;
 
-import org.agorava.spi.UserProfile;
 
 /**
  *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  */
 @SuppressWarnings("serial")
-public class Leaders extends UserProfile {
+public class Leaders {
 
-    protected Leaders(String id, String ticker,
+    protected Leaders(String ticker,
             String fullName, String country, String location) {
-    	super(id);
         this.ticker = ticker;
         this.fullName = fullName;
         this.country = country;
@@ -247,12 +245,10 @@ public class Leaders extends UserProfile {
         this.gplusScore = gplusScore;
     }
 
-    @Override
     public String getFullName() {
         return fullName;
     }
 
-    @Override
     public String getProfileImageUrl() {
         return lgPortrait;
     }
@@ -261,10 +257,9 @@ public class Leaders extends UserProfile {
     public String toString() {
 
         return new StringBuffer().append("Leaders [").append(ticker)
-                .append(",").append(ranking).append(",").append(oldRanking)
+                .append(",").append(ranking)
                 .append(",").append(fullName).append(",").append(country)
-                .append(",").append(location).append(lastTrade).append(",")
-                .append(maxShare).append(",").append(outstandingShares)
+                .append(",").append(location)
                 .append("];").toString();
     }
 }

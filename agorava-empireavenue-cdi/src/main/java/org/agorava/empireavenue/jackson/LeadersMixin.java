@@ -29,7 +29,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 public class LeadersMixin {
 
     @JsonCreator
-    LeadersMixin(@JsonProperty("id") String id, @JsonProperty("ticker") String ticker,
+    LeadersMixin(@JsonProperty("ticker") String ticker,
             @JsonProperty("full_name") String fullName,
             @JsonProperty("country") String country, @JsonProperty("location") String location) {
     }
@@ -49,6 +49,8 @@ public class LeadersMixin {
     private int ranking;
     @JsonProperty("old_ranking")
     private int oldRanking;
+    
+    
     @JsonProperty("eva_score")
     private float eavScore;
     @JsonProperty("flickr_score")
