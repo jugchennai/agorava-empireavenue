@@ -19,6 +19,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
+import org.agorava.empireavenue.model.Leaders;
 import org.agorava.empireavenue.response.LeadersResponse;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Test;
@@ -42,7 +43,9 @@ public class LeadersTest extends EmpireAvenueTestDeploy {
         assertNotNull(changeLeaders);
         assertNotNull(changeLeaders.getAllLeaders());
         assertTrue(changeLeaders.getAllLeaders().size() > 0);
-
+        for (Leaders leader : changeLeaders.getAllLeaders())
+            System.out.println(leader.toString());
+        System.out.println("--------------------------------------");
     }
 
     @Test

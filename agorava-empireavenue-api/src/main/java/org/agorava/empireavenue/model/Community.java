@@ -69,124 +69,73 @@ public class Community {
         return communityId;
     }
 
-    public void setCommunityId(int communityId) {
-        this.communityId = communityId;
-    }
 
     public String getJoined() {
         return joined;
     }
 
-    public void setJoined(String joined) {
-        this.joined = joined;
-    }
 
     public int getAdmin() {
         return admin;
     }
 
-    public void setAdmin(int admin) {
-        this.admin = admin;
-    }
 
     public int getFounder() {
         return founder;
-    }
-
-    public void setFounder(int founder) {
-        this.founder = founder;
     }
 
     public String getShortName() {
         return shortName;
     }
 
-    public void setShortName(String shortName) {
-        this.shortName = shortName;
-    }
 
     public String getType() {
         return type;
     }
 
-    public void setType(String type) {
-        this.type = type;
-    }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name) {
-        this.name = name;
-    }
 
     public String getPicLg() {
         return picLg;
     }
 
-    public void setPicLg(String picLg) {
-        this.picLg = picLg;
-    }
 
     public String getPicSm() {
         return picSm;
     }
 
-    public void setPicSm(String picSm) {
-        this.picSm = picSm;
-    }
 
     public String getLocation() {
         return location;
     }
 
-    public void setLocation(String location) {
-        this.location = location;
-    }
 
     public int getMemberCount() {
         return memberCount;
     }
 
-    public void setMemberCount(int memberCount) {
-        this.memberCount = memberCount;
-    }
 
     public float getMoney() {
         return money;
     }
 
-    public void setMoney(float money) {
-        this.money = money;
-    }
 
     public float getInfluenceScore() {
         return influenceScore;
     }
 
-    public void setInfluenceScore(float influenceScore) {
-        this.influenceScore = influenceScore;
-    }
 
     public String getVisibility() {
         return visibility;
     }
 
-    public void setVisibility(String visibility) {
-        this.visibility = visibility;
-    }
 
     public String getCountry() {
         return country;
     }
-
-    public void setCountry(String country) {
-        this.country = country;
-    }
-    
-    
-    
-    
     
 }

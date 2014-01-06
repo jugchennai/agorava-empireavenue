@@ -31,10 +31,6 @@ public class BankBalance {
     public BigDecimal getBalance() {
         return balance;
     }
-
-    public void setBalance(BigDecimal balance) {
-        this.balance = balance;
-    }
     
     @Override
     public String toString() {

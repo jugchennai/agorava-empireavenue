@@ -19,20 +19,18 @@ import java.util.List;
 import org.agorava.empireavenue.model.Leaders;
 
 /**
- *
+ * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  */
 public class LeadersResponse extends Response<Leaders> {
-    
-    
-    
+
     public LeadersResponse() {
     }
 
     public Leaders getLeaders() {
         return retrieveData();
     }
-    
+
     public List<Leaders> getAllLeaders() {
         return retrieveAllData();
     }
@@ -41,5 +39,5 @@ public class LeadersResponse extends Response<Leaders> {
     public String toString() {
         return super.toString();
     }
-    
+
 }
