@@ -21,6 +21,8 @@ import org.agorava.empireavenue.model.Leaders;
 /**
  * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @since 0.7.0
+ * 
  */
 public class LeadersResponse extends Response<Leaders> {
 
