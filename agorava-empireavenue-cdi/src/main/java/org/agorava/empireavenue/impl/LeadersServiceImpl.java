@@ -17,21 +17,18 @@ package org.agorava.empireavenue.impl;
 
 import java.util.HashMap;
 import java.util.Map;
+
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.response.LeadersResponse;
-import org.agorava.empireavenue.response.ProfileInfoResponse;
 import org.agorava.empireavenue.service.LeadersService;
-import static org.agorava.empireavenue.service.LeadersService.LEADERS_CHANGE;
-import static org.agorava.empireavenue.service.LeadersService.LEADERS_CHANGE_BRANDS;
-import static org.agorava.empireavenue.service.ProfileService.PROFILE_INFO;
 
 /**
- *
+ * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  */
 @EmpireAvenue
-public class LeadersServiceImpl extends EmpireAvenueBaseService implements LeadersService{
+public class LeadersServiceImpl extends EmpireAvenueBaseService implements LeadersService {
 
     @Override
     public LeadersResponse getAllLeadersChange() {
@@ -50,14 +47,14 @@ public class LeadersServiceImpl extends EmpireAvenueBaseService implements Leade
 
     @Override
     public LeadersResponse getAllLeadersChange(String order) {
-         Map<String, Object> data = new HashMap<>();
+        Map<String, Object> data = new HashMap<>();
         data.put("order", order);
         return getService().post(buildAbsoluteUri(LEADERS_CHANGE), data, LeadersResponse.class);
     }
 
     @Override
     public LeadersResponse getAllLeadersChangePeople(String order) {
-Map<String, Object> data = new HashMap<>();
+        Map<String, Object> data = new HashMap<>();
         data.put("order", order);
         return getService().post(buildAbsoluteUri(LEADERS_CHANGE_PEOPLE), data, LeadersResponse.class);
     }
@@ -76,49 +73,57 @@ Map<String, Object> data = new HashMap<>();
 
     @Override
     public LeadersResponse getAllLeadersDividendsPeople() {
-return getService().get(buildAbsoluteUri(LEADERS_DIVIDENDS_PEOPLE), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_DIVIDENDS_PEOPLE), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersDividendsBrands() {
-return getService().get(buildAbsoluteUri(LEADERS_DIVIDENDS_BRANDS), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_DIVIDENDS_BRANDS), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersRecent() {
-return getService().get(buildAbsoluteUri(LEADERS_RECENT), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_RECENT), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersRecentPeople() {
-return getService().get(buildAbsoluteUri(LEADERS_RECENT_PEOPLE), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_RECENT_PEOPLE), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersRecentBrands() {
-return getService().get(buildAbsoluteUri(LEADERS_RECENT_BRANDS), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_RECENT_BRANDS), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersShareprice() {
-return getService().get(buildAbsoluteUri(LEADERS_SHAREPRICE), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_SHAREPRICE), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersSharepricePeople() {
-return getService().get(buildAbsoluteUri(LEADERS_SHAREPRICE_PEOPLE), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_SHAREPRICE_PEOPLE), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersSharepriceBrands() {
-return getService().get(buildAbsoluteUri(LEADERS_SHAREPRICE_BRANDS), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_SHAREPRICE_BRANDS), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersWealth() {
-return getService().get(buildAbsoluteUri(LEADERS_WEALTH), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_WEALTH), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersWealthPeople() {
-return getService().get(buildAbsoluteUri(LEADERS_WEALTH_PEOPLE), LeadersResponse.class);    }
+        return getService().get(buildAbsoluteUri(LEADERS_WEALTH_PEOPLE), LeadersResponse.class);
+    }
 
     @Override
     public LeadersResponse getAllLeadersWealthBrands() {
-return getService().get(buildAbsoluteUri(LEADERS_WEALTH_BRANDS), LeadersResponse.class);
+        return getService().get(buildAbsoluteUri(LEADERS_WEALTH_BRANDS), LeadersResponse.class);
     }
-    
-    
-    
+
 }

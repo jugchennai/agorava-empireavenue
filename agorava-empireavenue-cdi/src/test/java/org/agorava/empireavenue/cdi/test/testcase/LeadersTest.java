@@ -25,235 +25,203 @@ import org.junit.Test;
 import org.junit.runner.RunWith;
 
 /**
- *
+ * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  */
-
 @RunWith(Arquillian.class)
-
 public class LeadersTest extends EmpireAvenueTestDeploy {
-	
-	 @Test
-	    public void authorizationUrlTest() {
-	        assertTrue(service.getAuthorizationUrl().startsWith("https"));
-	    }
-	 
-	 @Test
-	    public void getAllLeadersChangeTest() {
-		 LeadersResponse ChangeLeaders = leadersService.getAllLeadersChange();
-	        assertNotNull(ChangeLeaders);
-	        assertNotNull(ChangeLeaders.getLeaders());
-	        System.out.println("The Change Leaders are "+ ChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
 
-	 @Test
-	    public void getAllLeadersChangePeopleTest() {
-		 LeadersResponse PeopleChangeLeaders = leadersService.getAllLeadersChangePeople();
-	        assertNotNull(PeopleChangeLeaders);
-	        assertNotNull(PeopleChangeLeaders.getLeaders());
-	        System.out.println("The people Change Leaders are "+ PeopleChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersChangeBrandsTest() {
-		 LeadersResponse BrandsChangeLeaders = leadersService.getAllLeadersChangeBrands();
-	        assertNotNull(BrandsChangeLeaders);
-	        assertNotNull(BrandsChangeLeaders.getLeaders());
-	        System.out.println("The brands Change Leaders are "+ BrandsChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 @Test
-	    public void getAllLeadersChangeOrderedTest() {
-		 LeadersResponse ChangeLeaders = leadersService.getAllLeadersChange("desc");
-	        assertNotNull(ChangeLeaders);
-	        assertNotNull(ChangeLeaders.getLeaders());
-	        System.out.println("The Change Leaders are "+ ChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
+    @Test
+    public void authorizationUrlTest() {
+        assertTrue(service.getAuthorizationUrl().startsWith("https"));
+    }
 
-	 @Test
-	    public void getAllLeadersChangePeopleOrderedTest() {
-		 LeadersResponse PeopleChangeLeaders = leadersService.getAllLeadersChangePeople("desc");
-	        assertNotNull(PeopleChangeLeaders);
-	        assertNotNull(PeopleChangeLeaders.getLeaders());
-	        System.out.println("The people Change Leaders are "+ PeopleChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersChangeBrandsOrderedTest() {
-		 LeadersResponse BrandsChangeLeaders = leadersService.getAllLeadersChangeBrands("desc");
-	        assertNotNull(BrandsChangeLeaders);
-	        assertNotNull(BrandsChangeLeaders.getLeaders());
-	        System.out.println("The brands Change Leaders are "+ BrandsChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 @Test
-	    public void getAllLeadersChangeOrderedTest2() {
-		 LeadersResponse ChangeLeaders = leadersService.getAllLeadersChange("asc");
-	        assertNotNull(ChangeLeaders);
-	        assertNotNull(ChangeLeaders.getLeaders());
-	        System.out.println("The Change Leaders are "+ ChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
+    @Test
+    public void getAllLeadersChangeTest() {
+        LeadersResponse changeLeaders = leadersService.getAllLeadersChange();
+        assertNotNull(changeLeaders);
+        assertNotNull(changeLeaders.getAllLeaders());
+        assertTrue(changeLeaders.getAllLeaders().size() > 0);
 
-	 @Test
-	    public void getAllLeadersChangePeopleOrderedTest2() {
-		 LeadersResponse PeopleChangeLeaders = leadersService.getAllLeadersChangePeople("asc");
-	        assertNotNull(PeopleChangeLeaders);
-	        assertNotNull(PeopleChangeLeaders.getLeaders());
-	        System.out.println("The people Change Leaders are "+ PeopleChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersChangeBrandsOrderedTest2() {
-		 LeadersResponse BrandsChangeLeaders = leadersService.getAllLeadersChangeBrands("asc");
-	        assertNotNull(BrandsChangeLeaders);
-	        assertNotNull(BrandsChangeLeaders.getLeaders());
-	        System.out.println("The brands Change Leaders are "+ BrandsChangeLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersDividendsTest() {
-		 LeadersResponse DividendsLeaders = leadersService.getAllLeadersDividends();
-	        assertNotNull(DividendsLeaders);
-	        assertNotNull(DividendsLeaders.getLeaders());
-	        System.out.println("The Dividends Leaders are "+ DividendsLeaders.getLeaders().toString());
-		 
-	    }
-	 
+    }
 
-	 @Test
-	    public void getAllLeadersDividendsPeopleTest() {
-		 LeadersResponse PeopleDividendsLeaders = leadersService.getAllLeadersDividendsPeople();
-	        assertNotNull(PeopleDividendsLeaders);
-	        assertNotNull(PeopleDividendsLeaders.getLeaders());
-	        System.out.println("The people Dividends Leaders are "+ PeopleDividendsLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersDividendsBrandsTest() {
-		 LeadersResponse BrandsDividendsLeaders = leadersService.getAllLeadersDividendsBrands();
-	        assertNotNull(BrandsDividendsLeaders);
-	        assertNotNull(BrandsDividendsLeaders.getLeaders());
-	        System.out.println("The brands Dividends Leaders are "+ BrandsDividendsLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 @Test
-	    public void getAllLeadersRecentTest() {
-		 LeadersResponse RecentLeaders = leadersService.getAllLeadersRecent();
-	        assertNotNull(RecentLeaders);
-	        assertNotNull(RecentLeaders.getLeaders());
-	        System.out.println("The Recent Leaders are "+ RecentLeaders.getLeaders().toString());
-		 
-	    }
-	 
+    @Test
+    public void getAllLeadersChangePeopleTest() {
+        LeadersResponse peopleChangeLeaders = leadersService.getAllLeadersChangePeople();
+        assertNotNull(peopleChangeLeaders);
+        assertNotNull(peopleChangeLeaders.getAllLeaders());
+        assertTrue(peopleChangeLeaders.getAllLeaders().size() > 0);
 
-	 @Test
-	    public void getAllLeadersRecentPeopleTest() {
-		 LeadersResponse PeopleRecentLeaders = leadersService.getAllLeadersRecentPeople();
-	        assertNotNull(PeopleRecentLeaders);
-	        assertNotNull(PeopleRecentLeaders.getLeaders());
-	        System.out.println("The people Recent Leaders are "+ PeopleRecentLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersRecentBrandsTest() {
-		 LeadersResponse BrandsRecentLeaders = leadersService.getAllLeadersRecentBrands();
-	        assertNotNull(BrandsRecentLeaders);
-	        assertNotNull(BrandsRecentLeaders.getLeaders());
-	        System.out.println("The brands Recent Leaders are "+ BrandsRecentLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 @Test
-	    public void getAllLeadersSharepriceTest() {
-		 LeadersResponse SharepriceLeaders = leadersService.getAllLeadersShareprice();
-	        assertNotNull(SharepriceLeaders);
-	        assertNotNull(SharepriceLeaders.getLeaders());
-	        System.out.println("The Shareprice Leaders are "+ SharepriceLeaders.getLeaders().toString());
-		 
-	    }
-	 
+    }
 
-	 @Test
-	    public void getAllLeadersSharepricePeopleTest() {
-		 LeadersResponse PeopleSharepriceLeaders = leadersService.getAllLeadersSharepricePeople();
-	        assertNotNull(PeopleSharepriceLeaders);
-	        assertNotNull(PeopleSharepriceLeaders.getLeaders());
-	        System.out.println("The people Shareprice Leaders are "+ PeopleSharepriceLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersSharepriceBrandsTest() {
-		 LeadersResponse BrandsSharepriceLeaders = leadersService.getAllLeadersSharepriceBrands();
-	        assertNotNull(BrandsSharepriceLeaders);
-	        assertNotNull(BrandsSharepriceLeaders.getLeaders());
-	        System.out.println("The brands Shareprice Leaders are "+ BrandsSharepriceLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 @Test
-	    public void getAllLeadersWealthTest() {
-		 LeadersResponse WealthLeaders = leadersService.getAllLeadersWealth();
-	        assertNotNull(WealthLeaders);
-	        assertNotNull(WealthLeaders.getLeaders());
-	        System.out.println("The Wealth Leaders are "+ WealthLeaders.getLeaders().toString());
-		 
-	    }
-	 
+    @Test
+    public void getAllLeadersChangeBrandsTest() {
+        LeadersResponse brandsChangeLeaders = leadersService.getAllLeadersChangeBrands();
+        assertNotNull(brandsChangeLeaders);
+        assertNotNull(brandsChangeLeaders.getAllLeaders());
+        assertTrue(brandsChangeLeaders.getAllLeaders().size() > 0);
+    }
 
-	 @Test
-	    public void getAllLeadersWealthPeopleTest() {
-		 LeadersResponse PeopleWealthLeaders = leadersService.getAllLeadersWealthPeople();
-	        assertNotNull(PeopleWealthLeaders);
-	        assertNotNull(PeopleWealthLeaders.getLeaders());
-	        System.out.println("The people Wealth Leaders are "+ PeopleWealthLeaders.getLeaders().toString());
-		 
-	    }
-	 
-	 
-	 
-	 @Test
-	    public void getAllLeadersWealthBrandsTest() {
-		 LeadersResponse BrandsWealthLeaders = leadersService.getAllLeadersWealthBrands();
-	        assertNotNull(BrandsWealthLeaders);
-	        assertNotNull(BrandsWealthLeaders.getLeaders());
-	        System.out.println("The brands Wealth Leaders are "+ BrandsWealthLeaders.getLeaders().toString());
-		 
-	    }
-	 
-    
+    @Test
+    public void getAllLeadersChangeOrderedTest() {
+        LeadersResponse changeLeaders = leadersService.getAllLeadersChange("desc");
+        assertNotNull(changeLeaders);
+        assertNotNull(changeLeaders.getAllLeaders());
+        assertTrue(changeLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersChangePeopleOrderedTest() {
+        LeadersResponse peopleChangeLeaders = leadersService.getAllLeadersChangePeople("desc");
+        assertNotNull(peopleChangeLeaders);
+        assertNotNull(peopleChangeLeaders.getAllLeaders());
+        assertTrue(peopleChangeLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersChangeBrandsOrderedTest() {
+        LeadersResponse brandsChangeLeaders = leadersService.getAllLeadersChangeBrands("desc");
+        assertNotNull(brandsChangeLeaders);
+        assertNotNull(brandsChangeLeaders.getAllLeaders());
+        assertTrue(brandsChangeLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersChangeOrderedTest2() {
+        LeadersResponse changeLeaders = leadersService.getAllLeadersChange("asc");
+        assertNotNull(changeLeaders);
+        assertNotNull(changeLeaders.getLeaders());
+        assertTrue(changeLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersChangePeopleOrderedTest2() {
+        LeadersResponse peopleChangeLeaders = leadersService.getAllLeadersChangePeople("asc");
+        assertNotNull(peopleChangeLeaders);
+        assertNotNull(peopleChangeLeaders.getAllLeaders());
+        assertTrue(peopleChangeLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersChangeBrandsOrderedTest2() {
+        LeadersResponse brandsChangeLeaders = leadersService.getAllLeadersChangeBrands("asc");
+        assertNotNull(brandsChangeLeaders);
+        assertNotNull(brandsChangeLeaders.getAllLeaders());
+        assertTrue(brandsChangeLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersDividendsTest() {
+        LeadersResponse dividendsLeaders = leadersService.getAllLeadersDividends();
+        assertNotNull(dividendsLeaders);
+        assertNotNull(dividendsLeaders.getAllLeaders());
+        assertTrue(dividendsLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersDividendsPeopleTest() {
+        LeadersResponse peopleDividendsLeaders = leadersService.getAllLeadersDividendsPeople();
+        assertNotNull(peopleDividendsLeaders);
+        assertNotNull(peopleDividendsLeaders.getAllLeaders());
+        assertTrue(peopleDividendsLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersDividendsBrandsTest() {
+        LeadersResponse brandsDividendsLeaders = leadersService.getAllLeadersDividendsBrands();
+        assertNotNull(brandsDividendsLeaders);
+        assertNotNull(brandsDividendsLeaders.getAllLeaders());
+        assertTrue(brandsDividendsLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersRecentTest() {
+        LeadersResponse recentLeaders = leadersService.getAllLeadersRecent();
+        assertNotNull(recentLeaders);
+        assertNotNull(recentLeaders.getAllLeaders());
+        assertTrue(recentLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersRecentPeopleTest() {
+        LeadersResponse peopleRecentLeaders = leadersService.getAllLeadersRecentPeople();
+        assertNotNull(peopleRecentLeaders);
+        assertNotNull(peopleRecentLeaders.getAllLeaders());
+        assertTrue(peopleRecentLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersRecentBrandsTest() {
+        LeadersResponse brandsRecentLeaders = leadersService.getAllLeadersRecentBrands();
+        assertNotNull(brandsRecentLeaders);
+        assertNotNull(brandsRecentLeaders.getAllLeaders());
+        assertTrue(brandsRecentLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersSharepriceTest() {
+        LeadersResponse sharepriceLeaders = leadersService.getAllLeadersShareprice();
+        assertNotNull(sharepriceLeaders);
+        assertNotNull(sharepriceLeaders.getAllLeaders());
+        assertTrue(sharepriceLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersSharepricePeopleTest() {
+        LeadersResponse peopleSharepriceLeaders = leadersService.getAllLeadersSharepricePeople();
+        assertNotNull(peopleSharepriceLeaders);
+        assertNotNull(peopleSharepriceLeaders.getAllLeaders());
+        assertTrue(peopleSharepriceLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersSharepriceBrandsTest() {
+        LeadersResponse brandsSharepriceLeaders = leadersService.getAllLeadersSharepriceBrands();
+        assertNotNull(brandsSharepriceLeaders);
+        assertNotNull(brandsSharepriceLeaders.getAllLeaders());
+        assertTrue(brandsSharepriceLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersWealthTest() {
+        LeadersResponse wealthLeaders = leadersService.getAllLeadersWealth();
+        assertNotNull(wealthLeaders);
+        assertNotNull(wealthLeaders.getAllLeaders());
+        assertTrue(wealthLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersWealthPeopleTest() {
+        LeadersResponse peopleWealthLeaders = leadersService.getAllLeadersWealthPeople();
+        assertNotNull(peopleWealthLeaders);
+        assertNotNull(peopleWealthLeaders.getAllLeaders());
+        assertTrue(peopleWealthLeaders.getAllLeaders().size() > 0);
+
+    }
+
+    @Test
+    public void getAllLeadersWealthBrandsTest() {
+        LeadersResponse brandsWealthLeaders = leadersService.getAllLeadersWealthBrands();
+        assertNotNull(brandsWealthLeaders);
+        assertNotNull(brandsWealthLeaders.getAllLeaders());
+        assertTrue(brandsWealthLeaders.getAllLeaders().size() > 0);
+
+    }
+
 }
