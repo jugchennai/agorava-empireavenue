@@ -15,8 +15,13 @@
  */
 package org.agorava;
 
+import java.util.HashMap;
+import java.util.Map;
+
 import org.agorava.empireavenue.EmpireAvenue;
+
 import javax.inject.Inject;
+
 import org.agorava.api.oauth.OAuthService;
 import org.agorava.spi.ProviderApiService;
 
@@ -43,5 +48,15 @@ public class EmpireAvenueBaseService extends ProviderApiService {
     @Override
     public org.agorava.api.oauth.OAuthService getService() {
         return service;
+    }
+    
+    
+    protected String makeCommaSeperatedFromArray(String... arrayValue ) {
+        StringBuilder result = new StringBuilder();
+        for (String ticker : arrayValue) {
+            result.append(ticker);
+            result.append(",");
+        }
+        return result.length() > 0 ? result.substring(0, result.length() - 1) : "";
     }
 }
