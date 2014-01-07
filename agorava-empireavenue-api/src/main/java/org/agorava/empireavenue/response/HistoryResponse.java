@@ -13,31 +13,30 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.jackson;
+package org.agorava.empireavenue.response;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
+import org.agorava.empireavenue.model.History;
 
 /**
  *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  * @since 0.7.0
- * 
  */
-
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class LeadersResponseMixin extends ResponseMixin {
-
-    @JsonCreator
-    LeadersResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
-        super(meta);
+public class HistoryResponse extends Response<History> {
+     public HistoryResponse() {
     }
 
-    @JsonProperty("data")
-    abstract List<LeadersMixin> getData();
+    public History getLeaders() {
+        return retrieveData();
+    }
+
+    public List<History> getAllLeaders() {
+        return retrieveAllData();
+    }
+
+    @Override
+    public String toString() {
+        return super.toString();
+    }
 }

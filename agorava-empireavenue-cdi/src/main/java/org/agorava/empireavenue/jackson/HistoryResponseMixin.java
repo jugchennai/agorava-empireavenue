@@ -26,12 +26,10 @@ import java.util.List;
  * @since 0.7.0
  * 
  */
-
 @JsonIgnoreProperties(ignoreUnknown = true)
-abstract class LeadersResponseMixin extends ResponseMixin {
-
-    @JsonCreator
-    LeadersResponseMixin(@JsonProperty("meta")
+abstract class HistoryResponseMixin  extends ResponseMixin {
+     @JsonCreator
+    HistoryResponseMixin(@JsonProperty("meta")
     MetaMixin meta,
             @JsonProperty("data")
             List<ProfileInfoMixin> data) {
@@ -40,4 +38,5 @@ abstract class LeadersResponseMixin extends ResponseMixin {
 
     @JsonProperty("data")
     abstract List<LeadersMixin> getData();
+    
 }

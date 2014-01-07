@@ -16,11 +16,77 @@
 
 package org.agorava.empireavenue.service;
 
+import org.agorava.empireavenue.response.HistoryResponse;
+
 /**
 *
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
 * @since 0.7.0
 */
 public interface HistoryService {
+    
+    static final String HISTORY_DIVIDENDS = "history/dividends";
+    static final String HISTORY_DIVIDENDS_RECEIVED = "history/dividends/received";
+    static final String HISTORY_NETWORKSCORE = "history/networkscore";
+    static final String HISTORY_SHAREPRICE = "history/shareprice";
+    static final String HISTORY_SHAREPRICE_CLOSE = "history/shareprice/close";
+    static final String HISTORY_SHARES = "history/networkscore";
+    static final String HISTORY_SHARES_BOUGHT = "history/shares/bought";
+    static final String HISTORY_SHARES_SOLD = "history/shares/sold";
+
+
+
+
+
+    HistoryResponse getDividendsHistory();
+
+    HistoryResponse getReceivedDividendsHistory();
+
+    HistoryResponse getReceivedDividendsHistory(String ticker);
+
+    HistoryResponse getNetworkscoreHistory();
+
+    HistoryResponse getNetworkscoreHistory(String ticker);
+
+    HistoryResponse getNetworkscoreHistory(int days);
+
+    HistoryResponse getNetworkscoreHistory(String ticker, int days);
+
+    HistoryResponse getSharepriceHistory();
+
+    HistoryResponse getSharepriceHistory(String ticker);
+
+    HistoryResponse getSharepriceHistory(int hours);
+
+    HistoryResponse getSharepriceHistory(String ticker, int hours);
+
+    HistoryResponse getSharepriceCloseHistory();
+
+    HistoryResponse getSharepriceCloseHistory(String ticker);
+
+    HistoryResponse getSharepriceCloseHistory(int days);
+
+    HistoryResponse getSharepriceCloseHistory(String ticker, int days);
+
+    HistoryResponse getSharesHistory();
+
+    HistoryResponse getSharesBoughtHistory();
+
+    HistoryResponse getSharesBoughtHistory(String ticker);
+
+    HistoryResponse getSharesSoldHistory();
+
+    HistoryResponse getSharesSoldHistory(String ticker);
+    
+    
+
+    
+    
+
+
+
+
+        
+        
     
 }
