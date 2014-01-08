@@ -22,6 +22,7 @@ import org.agorava.empireavenue.response.HistoryResponse;
 *
 * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
 * @since 0.7.0
+* 
 */
 public interface HistoryService {
     
