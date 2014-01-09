@@ -22,6 +22,7 @@ import org.agorava.empireavenue.model.History;
  *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  * @since 0.7.0
+ *
  */
 public class HistoryResponse extends Response<History> {
      public HistoryResponse() {
