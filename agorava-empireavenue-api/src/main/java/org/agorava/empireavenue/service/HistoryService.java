@@ -42,7 +42,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/dividends<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the dividend history for the authenticated user.
      * 
@@ -59,7 +59,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/dividends/received<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/> <b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the dividend history for the authenticated user and the user specified.
      * 
@@ -76,10 +76,10 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/dividends/received<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param ticker The Ticker symbol whose history is queried 
      * @return HistoryResponse Returns the dividend history for the authenticated user and the user specified.
-     * 
      * @see org.agorava.empireavenue.service.HistoryService#getReceivedDividendsHistory()
      *  
      **/
@@ -93,7 +93,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
      * 
@@ -112,7 +112,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
      * 
@@ -131,8 +131,9 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param days The number of days for which the history is queried 
      * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory()
@@ -149,8 +150,10 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param days The number of days for which the history is queried 
+     * @param ticker The Ticker symbol whose history is queried 
      * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory()
@@ -170,7 +173,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the shareprice history for the the requested user. 
      * 
@@ -192,8 +195,9 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param ticker The Ticker symbol whose history is queried 
      * @return HistoryResponse Returns the shareprice history for the the requested user. 
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory()
@@ -211,8 +215,9 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param hours The number of hours for which the history is queried 
      * @return HistoryResponse Returns the shareprice history for the the requested user. 
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory()
@@ -230,8 +235,10 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param ticker The Ticker symbol whose history is queried 
+     * @param hours The number of hours for which the history is queried 
      * @return HistoryResponse Returns the shareprice history for the the requested user. 
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory()
@@ -249,7 +256,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
      * 
@@ -268,8 +275,9 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param ticker The Ticker symbol whose history is queried 
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory()
@@ -287,8 +295,10 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * 
+     * @param days The number of days for which the history is queried 
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory()
@@ -308,8 +318,9 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     * @param ticker The Ticker symbol whose history is queried 
+     * @param days The number of days for which the history is queried 
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory()
@@ -326,7 +337,7 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
      * @return HistoryResponse Returns the share purchase history for the the authenticated user.
      * 
@@ -335,21 +346,7 @@ public interface HistoryService {
      **/
     
     HistoryResponse getSharesHistory();
-    /**
-     * Returns the share purchase history for the the authenticated user and the requested user, specifically "buys". This does not bring back trades. Max: 50 results. Authenticated user must own requested user.<br/>
-     * <br/>
-     * 
-     * EmpireAvenue : https://api.empireavenue.com/history/shares/bought<br/>
-     * <br/>
-     * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
-     * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "buys".
-     * 
-     * @see org.agorava.empireavenue.service.HistoryService#getSharesBoughtHistory(String)
-     *  
-     **/
-    HistoryResponse getSharesBoughtHistory();
+
 
     /**
      * Returns the share purchase history for the the authenticated user and the requested user, specifically "buys". This does not bring back trades. Max: 50 results. Authenticated user must own requested user.<br/>
@@ -358,14 +355,15 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shares/bought<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param ticker The Ticker symbol whose history is queried 
      * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "buys".
-     * 
-     * @see org.agorava.empireavenue.service.HistoryService#getSharesBoughtHistory()
+     *
      *  
      **/
     HistoryResponse getSharesBoughtHistory(String ticker);
+
     /**
      * Returns the share purchase history for the the authenticated user and the requested user, specifically "sells". This does not bring back trades. Max: 50 results. Authenticated user must own requested user.<br/>
      * <br/>
@@ -373,26 +371,11 @@ public interface HistoryService {
      * EmpireAvenue : https://api.empireavenue.com/history/shares/sold<br/>
      * <br/>
      * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
+     * @param ticker The Ticker symbol whose history is queried 
      * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "sells".
-     * 
-     * @see org.agorava.empireavenue.service.HistoryService#getSharesBoughtHistory(String)
-     *  
-     **/
-    HistoryResponse getSharesSoldHistory();
-    /**
-     * Returns the share purchase history for the the authenticated user and the requested user, specifically "sells". This does not bring back trades. Max: 50 results. Authenticated user must own requested user.<br/>
-     * <br/>
-     * 
-     * EmpireAvenue : https://api.empireavenue.com/history/shares/sold<br/>
-     * <br/>
-     * 
-     * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
-     * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "sells".
-     * 
-     * @see org.agorava.empireavenue.service.HistoryService#getSharesBoughtHistory()
+     *
      *  
      **/
     HistoryResponse getSharesSoldHistory(String ticker);

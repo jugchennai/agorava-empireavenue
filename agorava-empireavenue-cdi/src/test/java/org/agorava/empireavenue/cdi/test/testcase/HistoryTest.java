@@ -32,6 +32,9 @@ import org.junit.runner.RunWith;
  */
 @RunWith(Arquillian.class)
 public class HistoryTest extends EmpireAvenueTestDeploy {
+    private String ticker="RMH";
+
+    private int days=20;
 
     @Test
     public void authorizationUrlTest() {
@@ -40,11 +43,11 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void getAllDividendsHistory() {
-        HistoryResponse dividendatsHistory = historyService.getDividendsHistory();
-        assertNotNull(dividendatsHistory);
-        assertNotNull(dividendatsHistory.getAllLeaders());
-        assertTrue(dividendatsHistory.getAllLeaders().size() > 0);
-        for (History history : dividendatsHistory.getAllLeaders()) {
+        HistoryResponse dividendsHistory = historyService.getDividendsHistory();
+        assertNotNull(dividendsHistory);
+        assertNotNull(dividendsHistory.getAllHistorys());
+        assertTrue(dividendsHistory.getAllHistorys().size() > 0);
+        for (History history : dividendsHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
@@ -54,21 +57,21 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
     public void getAllReceivedDividendsHistory() {
         HistoryResponse receivedDividendsHistory = historyService.getReceivedDividendsHistory();
         assertNotNull(receivedDividendsHistory);
-        assertNotNull(receivedDividendsHistory.getAllLeaders());
-        assertTrue(receivedDividendsHistory.getAllLeaders().size() > 0);
-        for (History history : receivedDividendsHistory.getAllLeaders()) {
+        assertNotNull(receivedDividendsHistory.getAllHistorys());
+        assertTrue(receivedDividendsHistory.getAllHistorys().size() > 0);
+        for (History history : receivedDividendsHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllReceivedDividendsHistory(String ticker) {
+    public void getAllReceivedDividendsHistoryWithTicker() {
         HistoryResponse receivedDividendsHistory = historyService.getReceivedDividendsHistory(ticker);
         assertNotNull(receivedDividendsHistory);
-        assertNotNull(receivedDividendsHistory.getAllLeaders());
-        assertTrue(receivedDividendsHistory.getAllLeaders().size() > 0);
-        for (History history : receivedDividendsHistory.getAllLeaders()) {
+        assertNotNull(receivedDividendsHistory.getAllHistorys());
+        assertTrue(receivedDividendsHistory.getAllHistorys().size() > 0);
+        for (History history : receivedDividendsHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
@@ -78,45 +81,45 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
     public void getAllNetworkscoreHistory() {
         HistoryResponse networkScoreHistory = historyService.getNetworkscoreHistory();
         assertNotNull(networkScoreHistory);
-        assertNotNull(networkScoreHistory.getAllLeaders());
-        assertTrue(networkScoreHistory.getAllLeaders().size() > 0);
-        for (History history : networkScoreHistory.getAllLeaders()) {
+        assertNotNull(networkScoreHistory.getAllHistorys());
+        assertTrue(networkScoreHistory.getAllHistorys().size() > 0);
+        for (History history : networkScoreHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllNetworkscoreHistory(String ticker) {
+    public void getAllNetworkscoreHistoryWithTicker() {
         HistoryResponse networkScoreHistory = historyService.getNetworkscoreHistory(ticker);
         assertNotNull(networkScoreHistory);
-        assertNotNull(networkScoreHistory.getAllLeaders());
-        assertTrue(networkScoreHistory.getAllLeaders().size() > 0);
-        for (History history : networkScoreHistory.getAllLeaders()) {
+        assertNotNull(networkScoreHistory.getAllHistorys());
+        assertTrue(networkScoreHistory.getAllHistorys().size() > 0);
+        for (History history : networkScoreHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllNetworkscoreHistory(int days) {
+    public void getAllNetworkscoreHistoryWithDays() {
         HistoryResponse networkScoreHistory = historyService.getNetworkscoreHistory(days);
         assertNotNull(networkScoreHistory);
-        assertNotNull(networkScoreHistory.getAllLeaders());
-        assertTrue(networkScoreHistory.getAllLeaders().size() > 0);
-        for (History history : networkScoreHistory.getAllLeaders()) {
+        assertNotNull(networkScoreHistory.getAllHistorys());
+        assertTrue(networkScoreHistory.getAllHistorys().size() > 0);
+        for (History history : networkScoreHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllNetworkscoreHistory(String ticker, int days) {
+    public void getAllNetworkscoreHistoryWithTickerAndDays() {
         HistoryResponse networkScoreHistory = historyService.getNetworkscoreHistory(ticker, days);
         assertNotNull(networkScoreHistory);
-        assertNotNull(networkScoreHistory.getAllLeaders());
-        assertTrue(networkScoreHistory.getAllLeaders().size() > 0);
-        for (History history : networkScoreHistory.getAllLeaders()) {
+        assertNotNull(networkScoreHistory.getAllHistorys());
+        assertTrue(networkScoreHistory.getAllHistorys().size() > 0);
+        for (History history : networkScoreHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
@@ -126,45 +129,45 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
     public void getAllSharepriceHistory() {
         HistoryResponse sharePriceHistory = historyService.getSharepriceHistory();
         assertNotNull(sharePriceHistory);
-        assertNotNull(sharePriceHistory.getAllLeaders());
-        assertTrue(sharePriceHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceHistory.getAllLeaders()) {
+        assertNotNull(sharePriceHistory.getAllHistorys());
+        assertTrue(sharePriceHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllSharepriceHistory(String ticker) {
+    public void getAllSharepriceHistoryWithTicker() {
         HistoryResponse sharePriceHistory = historyService.getSharepriceHistory(ticker);
         assertNotNull(sharePriceHistory);
-        assertNotNull(sharePriceHistory.getAllLeaders());
-        assertTrue(sharePriceHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceHistory.getAllLeaders()) {
+        assertNotNull(sharePriceHistory.getAllHistorys());
+        assertTrue(sharePriceHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllSharepriceHistory(int days) {
+    public void getAllSharepriceHistoryWithDays() {
         HistoryResponse sharePriceHistory = historyService.getSharepriceHistory(days);
         assertNotNull(sharePriceHistory);
-        assertNotNull(sharePriceHistory.getAllLeaders());
-        assertTrue(sharePriceHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceHistory.getAllLeaders()) {
+        assertNotNull(sharePriceHistory.getAllHistorys());
+        assertTrue(sharePriceHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllSharepriceHistory(String ticker, int days) {
+    public void getAllSharepriceHistoryWithTickerAndDays() {
         HistoryResponse sharePriceHistory = historyService.getSharepriceHistory(ticker, days);
         assertNotNull(sharePriceHistory);
-        assertNotNull(sharePriceHistory.getAllLeaders());
-        assertTrue(sharePriceHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceHistory.getAllLeaders()) {
+        assertNotNull(sharePriceHistory.getAllHistorys());
+        assertTrue(sharePriceHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
@@ -174,45 +177,45 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
     public void getAllSharepriceCloseHistory() {
         HistoryResponse sharePriceCloseHistory = historyService.getSharepriceCloseHistory();
         assertNotNull(sharePriceCloseHistory);
-        assertNotNull(sharePriceCloseHistory.getAllLeaders());
-        assertTrue(sharePriceCloseHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceCloseHistory.getAllLeaders()) {
+        assertNotNull(sharePriceCloseHistory.getAllHistorys());
+        assertTrue(sharePriceCloseHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceCloseHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllSharepriceCloseHistory(String ticker) {
+    public void getAllSharepriceCloseHistoryWithTicker() {
         HistoryResponse sharePriceCloseHistory = historyService.getSharepriceCloseHistory(ticker);
         assertNotNull(sharePriceCloseHistory);
-        assertNotNull(sharePriceCloseHistory.getAllLeaders());
-        assertTrue(sharePriceCloseHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceCloseHistory.getAllLeaders()) {
+        assertNotNull(sharePriceCloseHistory.getAllHistorys());
+        assertTrue(sharePriceCloseHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceCloseHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllSharepriceCloseHistory(int days) {
+    public void getAllSharepriceCloseHistoryWithDays() {
         HistoryResponse sharePriceCloseHistory = historyService.getSharepriceCloseHistory(days);
         assertNotNull(sharePriceCloseHistory);
-        assertNotNull(sharePriceCloseHistory.getAllLeaders());
-        assertTrue(sharePriceCloseHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceCloseHistory.getAllLeaders()) {
+        assertNotNull(sharePriceCloseHistory.getAllHistorys());
+        assertTrue(sharePriceCloseHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceCloseHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
     @Test
-    public void getAllSharepriceCloseHistory(String ticker, int days) {
+    public void getAllSharepriceCloseHistoryWithTickerAndDays() {
         HistoryResponse sharePriceCloseHistory = historyService.getSharepriceCloseHistory(ticker, days);
         assertNotNull(sharePriceCloseHistory);
-        assertNotNull(sharePriceCloseHistory.getAllLeaders());
-        assertTrue(sharePriceCloseHistory.getAllLeaders().size() > 0);
-        for (History history : sharePriceCloseHistory.getAllLeaders()) {
+        assertNotNull(sharePriceCloseHistory.getAllHistorys());
+        assertTrue(sharePriceCloseHistory.getAllHistorys().size() > 0);
+        for (History history : sharePriceCloseHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
@@ -222,57 +225,37 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
     public void getAllSharesHistory() {
         HistoryResponse sharesHistory = historyService.getSharesHistory();
         assertNotNull(sharesHistory);
-        assertNotNull(sharesHistory.getAllLeaders());
-        assertTrue(sharesHistory.getAllLeaders().size() > 0);
-        for (History history : sharesHistory.getAllLeaders()) {
+        assertNotNull(sharesHistory.getAllHistorys());
+        assertTrue(sharesHistory.getAllHistorys().size() > 0);
+        for (History history : sharesHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
+
+
 
     @Test
     public void getAllSharesBoughtHistory() {
-        HistoryResponse sharesBoughtHistory = historyService.getSharesBoughtHistory();
+        HistoryResponse sharesBoughtHistory = historyService.getSharesBoughtHistory(ticker);
         assertNotNull(sharesBoughtHistory);
-        assertNotNull(sharesBoughtHistory.getAllLeaders());
-        assertTrue(sharesBoughtHistory.getAllLeaders().size() > 0);
-        for (History history : sharesBoughtHistory.getAllLeaders()) {
+        assertNotNull(sharesBoughtHistory.getAllHistorys());
+        assertTrue(sharesBoughtHistory.getAllHistorys().size() > 0);
+        for (History history : sharesBoughtHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");
     }
 
-    @Test
-    public void getAllSharesBoughtHistory(String ticker) {
-        HistoryResponse sharesBoughtHistory = historyService.getSharesBoughtHistory(ticker);
-        assertNotNull(sharesBoughtHistory);
-        assertNotNull(sharesBoughtHistory.getAllLeaders());
-        assertTrue(sharesBoughtHistory.getAllLeaders().size() > 0);
-        for (History history : sharesBoughtHistory.getAllLeaders()) {
-            System.out.println(history.toString());
-        }
-        System.out.println("--------------------------------------");
-    }
+
 
     @Test
     public void getAllSharesSoldHistory() {
-        HistoryResponse sharesSoldHistory = historyService.getSharesSoldHistory();
-        assertNotNull(sharesSoldHistory);
-        assertNotNull(sharesSoldHistory.getAllLeaders());
-        assertTrue(sharesSoldHistory.getAllLeaders().size() > 0);
-        for (History history : sharesSoldHistory.getAllLeaders()) {
-            System.out.println(history.toString());
-        }
-        System.out.println("--------------------------------------");
-    }
-
-    @Test
-    public void getAllSharesSoldHistory(String ticker) {
         HistoryResponse sharesSoldHistory = historyService.getSharesSoldHistory(ticker);
         assertNotNull(sharesSoldHistory);
-        assertNotNull(sharesSoldHistory.getAllLeaders());
-        assertTrue(sharesSoldHistory.getAllLeaders().size() > 0);
-        for (History history : sharesSoldHistory.getAllLeaders()) {
+        assertNotNull(sharesSoldHistory.getAllHistorys());
+        assertTrue(sharesSoldHistory.getAllHistorys().size() > 0);
+        for (History history : sharesSoldHistory.getAllHistorys()) {
             System.out.println(history.toString());
         }
         System.out.println("--------------------------------------");

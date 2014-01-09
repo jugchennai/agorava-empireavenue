@@ -32,11 +32,11 @@ abstract class HistoryResponseMixin  extends ResponseMixin {
     HistoryResponseMixin(@JsonProperty("meta")
     MetaMixin meta,
             @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
+            List<HistoryMixin> data) {
         super(meta);
     }
 
     @JsonProperty("data")
-    abstract List<LeadersMixin> getData();
+    abstract List<HistoryMixin> getData();
     
 }

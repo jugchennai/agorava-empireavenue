@@ -52,8 +52,8 @@ public class HistoryMixin {
     private float foursquare;
     @JsonProperty("gplus")
     private float gplus;
-    @JsonProperty("instagram")
-    private float instagram;
+   @JsonProperty("instagram")
+   private float instagram;
     @JsonProperty("linkedin")
     private float linkedin;
     @JsonProperty("twitter")
@@ -72,7 +72,7 @@ public class HistoryMixin {
     private String smPortrait;
     @JsonProperty("ticker")
     private String ticker;
-    
+
     
     
     

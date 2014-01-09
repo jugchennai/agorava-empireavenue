@@ -15,6 +15,8 @@
  */
 package org.agorava.empireavenue.model;
 
+import java.util.Date;
+
 /**
  *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
@@ -48,8 +50,7 @@ public class History {
     private String fullName;
     private String smPortrait;
     private String ticker;
-
-    /**
+   /**
      * @return the dividend
      */
     public float getDividend() {
@@ -70,13 +71,12 @@ public class History {
         return date;
     }
 
-    /**
-     * @param date the date to set
-     */
-    public void setDate(String date) {
+   /**
+    * @param date the date to set
+    */
+   public void setDate(String date) {
         this.date = date;
     }
-
     /**
      * @return the price
      */
@@ -95,7 +95,7 @@ public class History {
      * @return the eav
      */
     public float getEav() {
-        return eav;
+       return eav;
     }
 
     /**
@@ -182,7 +182,7 @@ public class History {
         return instagram;
     }
 
-    /**
+   /**
      * @param instagram the instagram to set
      */
     public void setInstagram(float instagram) {
@@ -195,7 +195,6 @@ public class History {
     public float getLinkedin() {
         return linkedin;
     }
-
     /**
      * @param linkedin the linkedin to set
      */
@@ -231,7 +230,7 @@ public class History {
         this.wordpress = wordpress;
     }
 
-    /**
+  /**
      * @return the youtube
      */
     public float getYoutube() {
@@ -240,7 +239,7 @@ public class History {
 
     /**
      * @param youtube the youtube to set
-     */
+    */
     public void setYoutube(float youtube) {
         this.youtube = youtube;
     }
@@ -263,7 +262,7 @@ public class History {
      * @return the type
      */
     public String getType() {
-        return type;
+       return type;
     }
 
     /**
@@ -275,7 +274,7 @@ public class History {
 
     /**
      * @return the fullName
-     */
+    */
     public String getFullName() {
         return fullName;
     }
@@ -295,7 +294,7 @@ public class History {
     }
 
     /**
-     * @param smPortrait the smPortrait to set
+    * @param smPortrait the smPortrait to set
      */
     public void setSmPortrait(String smPortrait) {
         this.smPortrait = smPortrait;
@@ -303,7 +302,7 @@ public class History {
 
     /**
      * @return the ticker
-     */
+    */
     public String getTicker() {
         return ticker;
     }
@@ -314,7 +313,7 @@ public class History {
     public void setTicker(String ticker) {
         this.ticker = ticker;
     }
-    
+
      @Override
     public String toString() {
 
@@ -324,6 +323,5 @@ public class History {
                 .append(",").append(price)
                 .append("];").toString();
     }
-
 
 }

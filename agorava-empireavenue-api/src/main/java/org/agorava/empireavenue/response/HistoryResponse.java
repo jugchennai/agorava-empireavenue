@@ -27,11 +27,11 @@ public class HistoryResponse extends Response<History> {
      public HistoryResponse() {
     }
 
-    public History getLeaders() {
+    public History getHistory() {
         return retrieveData();
     }
 
-    public List<History> getAllLeaders() {
+    public List<History> getAllHistorys() {
         return retrieveAllData();
     }
 

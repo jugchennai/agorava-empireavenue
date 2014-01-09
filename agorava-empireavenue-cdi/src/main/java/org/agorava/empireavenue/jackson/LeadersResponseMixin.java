@@ -34,7 +34,7 @@ abstract class LeadersResponseMixin extends ResponseMixin {
     LeadersResponseMixin(@JsonProperty("meta")
     MetaMixin meta,
             @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
+            List<LeadersMixin> data) {
         super(meta);
     }
 
