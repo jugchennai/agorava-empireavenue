@@ -16,24 +16,23 @@
 package org.agorava.empireavenue.response;
 
 import java.util.List;
-import org.agorava.empireavenue.model.Leaders;
+import org.agorava.empireavenue.model.History;
 
 /**
- * 
+ *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  * @since 0.7.0
- * 
+ *
  */
-public class LeadersResponse extends Response<Leaders> {
-
-    public LeadersResponse() {
+public class HistoryResponse extends Response<History> {
+     public HistoryResponse() {
     }
 
-    public Leaders getLeaders() {
+    public History getHistory() {
         return retrieveData();
     }
 
-    public List<Leaders> getAllLeaders() {
+    public List<History> getAllHistorys() {
         return retrieveAllData();
     }
 
@@ -41,5 +40,4 @@ public class LeadersResponse extends Response<Leaders> {
     public String toString() {
         return super.toString();
     }
-
 }

@@ -23,6 +23,8 @@ import java.util.List;
 /**
  *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @since 0.7.0
+ * 
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -32,7 +34,7 @@ abstract class LeadersResponseMixin extends ResponseMixin {
     LeadersResponseMixin(@JsonProperty("meta")
     MetaMixin meta,
             @JsonProperty("data")
-            List<ProfileInfoMixin> data) {
+            List<LeadersMixin> data) {
         super(meta);
     }
 

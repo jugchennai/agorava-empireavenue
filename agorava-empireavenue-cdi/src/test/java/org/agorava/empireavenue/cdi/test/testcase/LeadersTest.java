@@ -28,6 +28,7 @@ import org.junit.runner.RunWith;
 /**
  * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @since 0.7.0
  */
 @RunWith(Arquillian.class)
 public class LeadersTest extends EmpireAvenueTestDeploy {
