@@ -26,6 +26,7 @@ import org.agorava.empireavenue.service.LeadersService;
 /**
  * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @since 0.7.0
  */
 @EmpireAvenue
 public class LeadersServiceImpl extends EmpireAvenueBaseService implements LeadersService {

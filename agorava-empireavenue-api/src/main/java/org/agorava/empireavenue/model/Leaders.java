@@ -18,6 +18,8 @@ package org.agorava.empireavenue.model;
 /**
  * 
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @since 0.7.0
+ * 
  */
 public class Leaders {
 
