@@ -15,6 +15,7 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
+import org.agorava.empireavenue.service.PortfolioService;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ArchivePath;
@@ -58,6 +59,10 @@ public class EmpireAvenueTestDeploy {
     @Inject
     @EmpireAvenue
     protected HistoryService historyService;
+
+    @Inject
+    @EmpireAvenue
+    protected PortfolioService portfolioService;
     
     @Inject
     @EmpireAvenue

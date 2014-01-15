@@ -58,8 +58,9 @@ public class EmpireAvenueModule extends SimpleModule {
         
         context.setMixInAnnotations(History.class,HistoryMixin.class);
         context.setMixInAnnotations(HistoryResponse.class,HistoryResponseMixin.class);
-        
-        
+
+        context.setMixInAnnotations(Portfolio.class,PortfolioMixin.class);
+        context.setMixInAnnotations(PortfolioResponse.class,PortfolioResponseMixin.class);
 
     }
 
