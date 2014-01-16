@@ -36,9 +36,9 @@ public class SearchMixin {
     }
 
 
-    @JsonProperty("full_Name")
+    @JsonProperty("full_name")
     private String fullName;
-    @JsonProperty("lastTrade")
+    @JsonProperty("last_trade")
     private float lastTrade;
     @JsonProperty("close")
     private float close;
@@ -56,28 +56,12 @@ public class SearchMixin {
     private String created;
     @JsonProperty("max_shares")
     private int maxShares;
+    @JsonProperty("trading_status")
+    private int tradingStatus;
 
-    @JsonProperty("eva_score")
-    private float eavScore;
-    @JsonProperty("flickr_score")
-    private float flickrScore;
-    @JsonProperty("twitter_score")
-    private float twitterScore;
-    @JsonProperty("facebook_score")
-    private float facebookScore;
-    @JsonProperty("facebookpage_score")
-    private float facebookpageScore;
-    @JsonProperty("youtube_score")
-    private float youtubeScore;
-    @JsonProperty("linkedin_score")
-    private float linkedinScore;
-    @JsonProperty("foursquare_score")
-    private float foursquareScore;
-    @JsonProperty("instagram_score")
-    private float instagramScore;
-    @JsonProperty("wordpress_score")
-    private float wordpressScore;
-    @JsonProperty("gplus_score")
-    private float gplusScore;
+
+
+
+
 
 }

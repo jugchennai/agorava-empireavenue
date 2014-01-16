@@ -22,8 +22,7 @@ package org.agorava.empireavenue.model;
  */
 public class Search {
 
-    protected Search(String ticker,String fullName) {
-        this.ticker = ticker;
+    protected Search() {
     }
 
 
@@ -39,6 +38,7 @@ public class Search {
     private String location;
     private String created;
     private int maxShares;
+    private String tradingStatus;
 
     private float eavScore;
     private float flickrScore;
@@ -141,6 +141,15 @@ public class Search {
     public void setMaxShares(int maxShares) {
         this.maxShares = maxShares;
     }
+
+    public String getTradingStatus() {
+        return tradingStatus;
+    }
+
+    public void setTradingStatus(String tradingStatus) {
+        this.tradingStatus = tradingStatus;
+    }
+
 
     public float getEavScore() {
         return eavScore;

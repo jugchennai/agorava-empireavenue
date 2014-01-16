@@ -47,13 +47,13 @@ public interface SharesService {
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
      * @param ticker              // The ticker of the shares for which the commission is enquired
-     * @param numberofshares    // The number of shares
+     * @param numberOfShares    // The number of shares
      * @return SharesResponse Returns the commission to be charged between authenticating user and other user.
      *
      *
      */
 
-    SharesResponse getSharesCommission(String ticker,int numberofshares);
+    SharesResponse getSharesCommission(String ticker,int numberOfShares);
 
 
 

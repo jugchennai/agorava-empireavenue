@@ -1,6 +1,7 @@
 package org.agorava.empireavenue.impl;
 
 import org.agorava.EmpireAvenueBaseService;
+import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.response.ListsResponse;
 import org.agorava.empireavenue.service.ListsService;
 
@@ -11,6 +12,7 @@ import java.util.Map;
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  * @since 0.7.0
  */
+@EmpireAvenue
 public class ListsServiceImpl extends EmpireAvenueBaseService implements ListsService {
 
     @Override

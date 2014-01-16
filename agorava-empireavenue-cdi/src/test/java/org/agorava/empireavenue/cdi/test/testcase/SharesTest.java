@@ -32,7 +32,7 @@ import static org.junit.Assert.assertTrue;
 @RunWith(Arquillian.class)
 public class SharesTest extends EmpireAvenueTestDeploy {
 
-    private String ticker="RMH";
+    private String ticker="EAV";
     private int numberOfShares=20;
 
 
@@ -44,7 +44,7 @@ public class SharesTest extends EmpireAvenueTestDeploy {
     }
 
     @Test
-    public void getAllDividendsHistory() {
+    public void commissionChargesTest() {
         SharesResponse sharesCommission = sharesService.getSharesCommission(ticker,numberOfShares);
         assertNotNull(sharesCommission);
         assertNotNull(sharesCommission.getCommission());
