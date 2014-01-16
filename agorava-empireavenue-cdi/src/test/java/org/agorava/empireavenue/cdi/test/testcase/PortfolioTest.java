@@ -21,7 +21,7 @@ public class PortfolioTest extends EmpireAvenueTestDeploy {
 
     private static String ticker="RMH";
     private static int page=10;
-    private static int maxresults=101;
+    private static Integer maxresults=101;
 
 
     @Test
@@ -57,7 +57,7 @@ public class PortfolioTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void getAllBasePortfolioInfoWithTicker() {
-        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio();
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(ticker);
         assertNotNull(basePortfolioInfo);
         assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
         for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
@@ -66,5 +66,149 @@ public class PortfolioTest extends EmpireAvenueTestDeploy {
         System.out.println("--------------------------------------");
     }
 
+    @Test
+    public void getAllBasePortfolioInfoWithPage() {
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(page);
+        assertNotNull(basePortfolioInfo);
+        assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
 
+    @Test
+    public void getAllBasePortfolioInfoWithMaxResults() {
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(maxresults);
+        assertNotNull(basePortfolioInfo);
+        assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllBasePortfolioInfoWithPageAndMaxResults() {
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(page,maxresults);
+        assertNotNull(basePortfolioInfo);
+        assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllBasePortfolioInfoWithTickerAndPage() {
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(ticker,page);
+        assertNotNull(basePortfolioInfo);
+        assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllBasePortfolioInfoWithTickerAndMaxResult() {
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(ticker,maxresults);
+        assertNotNull(basePortfolioInfo);
+        assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllBasePortfolioInfoWithTickerPageAndMaxResult() {
+        PortfolioResponse basePortfolioInfo = portfolioService.getBasePortfolio(ticker,page,maxresults);
+        assertNotNull(basePortfolioInfo);
+        assertTrue(basePortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : basePortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+// Full portfolio of a specific user
+
+
+     @Test
+    public void getAllFullPortfolioInfoWithTicker() {
+        PortfolioResponse fullPortfolio = portfolioService.getFullPortfolio(ticker);
+        assertNotNull(fullPortfolio);
+        assertTrue(fullPortfolio.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolio.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllFullPortfolioInfoWithPage() {
+        PortfolioResponse fullPortfolioInfo = portfolioService.getFullPortfolio(page);
+        assertNotNull(fullPortfolioInfo);
+        assertTrue(fullPortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllFullPortfolioInfoWithMaxResults() {
+        PortfolioResponse fullPortfolioInfo = portfolioService.getFullPortfolio(maxresults);
+        assertNotNull(fullPortfolioInfo);
+        assertTrue(fullPortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllFullPortfolioInfoWithPageAndMaxResults() {
+        PortfolioResponse fullPortfolioInfo = portfolioService.getFullPortfolio(page,maxresults);
+        assertNotNull(fullPortfolioInfo);
+        assertTrue(fullPortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllFullPortfolioInfoWithTickerAndPage() {
+        PortfolioResponse fullPortfolioInfo = portfolioService.getFullPortfolio(ticker,page);
+        assertNotNull(fullPortfolioInfo);
+        assertTrue(fullPortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllFullPortfolioInfoWithTickerAndMaxResult() {
+        PortfolioResponse fullPortfolioInfo = portfolioService.getFullPortfolio(ticker,maxresults);
+        assertNotNull(fullPortfolioInfo);
+        assertTrue(fullPortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
+    @Test
+    public void getAllFullPortfolioInfoWithTickerPageAndMaxResult() {
+        PortfolioResponse fullPortfolioInfo = portfolioService.getFullPortfolio(ticker,page,maxresults);
+        assertNotNull(fullPortfolioInfo);
+        assertTrue(fullPortfolioInfo.getAllPortfolioInfo().size() > 0);
+        for (Portfolio portfolio : fullPortfolioInfo.getAllPortfolioInfo()) {
+            System.out.println(portfolio.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
 }

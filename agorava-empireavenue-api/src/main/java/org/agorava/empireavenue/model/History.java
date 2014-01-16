@@ -15,16 +15,15 @@
  */
 package org.agorava.empireavenue.model;
 
-import java.util.Date;
 
 /**
  *
  * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
  * @since 0.7.0
- * 
+ *
  */
 public class History {
-    
+
     public History(String date)
     {
         this.date=date;
