@@ -44,36 +44,7 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
     }
 
 
-    @Override
-    public PortfolioResponse getBasePortfolio(int page) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("page", page);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE),data, PortfolioResponse.class);    }
 
-    @Override
-    public PortfolioResponse getBasePortfolio(Integer maxresults) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("maxresults", maxresults);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE),data, PortfolioResponse.class);
-
-    }
-
-    @Override
-    public PortfolioResponse getBasePortfolio(String ticker, int page) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("ticker", ticker);
-        data.put("page", page);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE),data, PortfolioResponse.class);
-
-    }
-
-    @Override
-    public PortfolioResponse getBasePortfolio(String ticker, Integer maxresults) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("ticker", ticker);
-        data.put("maxresults", maxresults);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE),data, PortfolioResponse.class);
-    }
 
     @Override
     public PortfolioResponse getBasePortfolio(String ticker, int page, Integer maxresults) {
@@ -96,19 +67,6 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
         return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
     }
 
-    @Override
-    public PortfolioResponse getFullPortfolio(int page) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("page", page);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
-    }
-
-    @Override
-    public PortfolioResponse getFullPortfolio(Integer maxresults) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("maxresults", maxresults);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
-    }
 
     @Override
     public PortfolioResponse getFullPortfolio(int page, float maxresults) {
@@ -118,21 +76,7 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
         return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
     }
 
-    @Override
-    public PortfolioResponse getFullPortfolio(String ticker, int page) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("page", page);
-        data.put("ticker", ticker);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
-    }
 
-    @Override
-    public PortfolioResponse getFullPortfolio(String ticker, Integer maxresults) {
-        Map<String, Object> data = new HashMap<>();
-        data.put("maxresults", maxresults);
-        data.put("ticker", ticker);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
-    }
 
     @Override
     public PortfolioResponse getFullPortfolio(String ticker, int page, Integer maxresults) {

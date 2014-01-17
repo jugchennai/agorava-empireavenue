@@ -55,11 +55,7 @@ public interface PortfolioService {
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
      * @return HistoryResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,java.lang.Integer);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
      *
@@ -77,60 +73,13 @@ public interface PortfolioService {
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
      * @return HistoryResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio()
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,java.lang.Integer);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
      *
      */
     PortfolioResponse   getBasePortfolio(String ticker);
 
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue : https://api.empireavenue.com/portfolio/base<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return HistoryResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio();
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
-     *
-     */
-    PortfolioResponse   getBasePortfolio(int page);
-
-
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue : https://api.empireavenue.com/portfolio/base<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return HistoryResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio()
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
-     *
-     *
-     */
-    PortfolioResponse   getBasePortfolio(Integer maxresults);
 
 
     /**
@@ -143,10 +92,7 @@ public interface PortfolioService {
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
      * @return PortfolioResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio();
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
@@ -154,47 +100,6 @@ public interface PortfolioService {
      */
     PortfolioResponse   getBasePortfolio(int page,Integer maxresults);
 
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue :https://api.empireavenue.com/portfolio/base<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return PortfolioResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio();
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
-     */
-
-    PortfolioResponse   getBasePortfolio(String ticker,int page);
-
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue :https://api.empireavenue.com/portfolio/base<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return PortfolioResponse Returns the Base Portfolio information for a specific user.
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio();
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int,java.lang.Integer);
-     */
-
-    PortfolioResponse   getBasePortfolio(String ticker,Integer maxresults);
 
 
     /**
@@ -208,11 +113,7 @@ public interface PortfolioService {
      *
      * @return PortfolioResponse Returns the Base Portfolio information for a specific user.
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio();
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(Integer)
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String)
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,int);
-     * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(String,java.lang.Integer);
      * @see org.agorava.empireavenue.service.PortfolioService#getBasePortfolio(int,java.lang.Integer);
      *
      *
@@ -264,70 +165,7 @@ public interface PortfolioService {
      *
      *
      */
-    PortfolioResponse   getFullPortfolio(int page);
-
-
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue : https://api.empireavenue.com/portfolio/get<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return PortfolioResponse Returns the Full Portfolio information for a specific user.
-     *
-     *
-     */
-    PortfolioResponse   getFullPortfolio(Integer maxresults);
-
-
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue : https://api.empireavenue.com/portfolio/get<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return PortfolioResponse Returns the Full Portfolio information for a specific user.
-     *
-     *
-     */
     PortfolioResponse   getFullPortfolio(int page,float maxresults);
-
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue : https://api.empireavenue.com/portfolio/get<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return PortfolioResponse Returns the Full Portfolio information for a specific user.
-     *
-     *
-     */
-    PortfolioResponse   getFullPortfolio(String ticker,int page);
-
-
-    /**
-     * Returns the Base Portfolio information for a specific user<br/>
-     * <br/>
-     *
-     * EmpireAvenue : https://api.empireavenue.com/portfolio/get<br/>
-     * <br/>
-     *
-     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     *
-     * @return PortfolioResponse Returns the Full Portfolio information for a specific user.
-     *
-     *
-     */
-    PortfolioResponse   getFullPortfolio(String ticker,Integer maxresults);
 
 
     /**
