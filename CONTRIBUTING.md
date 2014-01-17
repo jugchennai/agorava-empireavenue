@@ -13,28 +13,23 @@ GET
 Profile Information   - rajmahendra
     profile/notifications - Pending
 
-Lists
-    lists/get
-    lists/members
-    lists/listedby
-    lists/recommendedby
+Lists - kalakkumkarthikeyan
 
 Leaders - kalakkumkarthikeyan
 
 History - kalakkumkarthikeyan
 
-Shares
-    shares/commission/get
+Shares -kalakkumkarthikeyan
 
-Portfolio - kalakkumkarthikeyan
+Portfolio (Working) - kalakkumkarthikeyan
 
-Search
-    search/recent
+Search-kalakkumkarthikeyan
 
 Community
     community/info
     community/personal/list
     community/recent/list
+    
 
 POST
 ====
