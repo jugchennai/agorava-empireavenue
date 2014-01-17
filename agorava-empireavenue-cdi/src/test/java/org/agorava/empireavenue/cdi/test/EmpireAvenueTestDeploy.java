@@ -15,6 +15,8 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
+import org.agorava.empireavenue.model.Lists;
+import org.agorava.empireavenue.service.*;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.Archive;
 import org.jboss.shrinkwrap.api.ArchivePath;
@@ -33,9 +35,6 @@ import org.agorava.api.oauth.OAuthSession;
 import org.agorava.api.oauth.Token;
 import org.agorava.api.service.OAuthLifeCycleService;
 import org.agorava.empireavenue.EmpireAvenue;
-import org.agorava.empireavenue.service.HistoryService;
-import org.agorava.empireavenue.service.LeadersService;
-import org.agorava.empireavenue.service.ProfileService;
 import org.junit.Before;
 
 /**
@@ -58,7 +57,25 @@ public class EmpireAvenueTestDeploy {
     @Inject
     @EmpireAvenue
     protected HistoryService historyService;
-    
+
+    @Inject
+    @EmpireAvenue
+    protected PortfolioService portfolioService;
+
+
+    @Inject
+    @EmpireAvenue
+    protected SharesService sharesService;
+
+
+    @Inject
+    @EmpireAvenue
+    protected SearchService searchService;
+
+    @Inject
+    @EmpireAvenue
+    protected ListsService listsService;
+
     @Inject
     @EmpireAvenue
     protected OAuthService service;

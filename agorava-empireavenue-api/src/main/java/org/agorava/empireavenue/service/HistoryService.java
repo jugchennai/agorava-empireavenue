@@ -19,11 +19,29 @@ package org.agorava.empireavenue.service;
 import org.agorava.empireavenue.response.HistoryResponse;
 
 /**
-*
-* @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
-* @since 0.7.0
-* 
-*/
+ * Operations on Portfolio   /Portfolio
+ *
+ *
+ * EmpireAvenue Info:<br/>
+ * URI: https://api.empireavenue.com/ <br/>
+ * Rate Limit: User <br/>
+ * Authentication: Required<br/><br/>
+ *
+ * API Calls<br/>
+ * history/dividends<br/>
+ * history/dividends/received<br/>
+ * history/networkscore<br/>
+ * history/shareprice<br/>
+ * history/shareprice/close<br/>
+ * history/shares<br/>
+ * history/shares/bought<br/>
+ * history/shares/sold <br/>
+ *
+ *
+ * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @since 0.7.0
+ *
+ */
 public interface HistoryService {
     
     static final String HISTORY_DIVIDENDS = "history/dividends";
@@ -36,7 +54,7 @@ public interface HistoryService {
     static final String HISTORY_SHARES_SOLD = "history/shares/sold";
 
     /**
-     * Returns the dividend history for the authenticated user<br/>
+     * Returns the Full Portfolio information for a specific user<br/>
      * <br/>
      * 
      * EmpireAvenue : https://api.empireavenue.com/history/dividends<br/>
@@ -44,7 +62,7 @@ public interface HistoryService {
      * 
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
-     * @return HistoryResponse Returns the dividend history for the authenticated user.
+     * @return HistoryResponse Returns the Full Portfolio information for a specific user.
      * 
      * 
      */
@@ -53,7 +71,7 @@ public interface HistoryService {
     HistoryResponse getDividendsHistory();
     
     /**
-     * Returns the dividend history for the authenticated user and the user specified<br/>
+     * Returns the Full Portfolio information for a specific user and the user specified<br/>
      * <br/>
      * 
      * EmpireAvenue : https://api.empireavenue.com/history/dividends/received<br/>
@@ -61,7 +79,7 @@ public interface HistoryService {
      * 
      * <b>Rate Limit</b>: User <br/> <b>Authentication</b>: Required
      * 
-     * @return HistoryResponse Returns the dividend history for the authenticated user and the user specified.
+     * @return HistoryResponse Returns the Full Portfolio information for a specific user and the user specified.
      * 
      * @see org.agorava.empireavenue.service.HistoryService#getReceivedDividendsHistory(String)
      *  
@@ -70,7 +88,7 @@ public interface HistoryService {
     HistoryResponse getReceivedDividendsHistory();
     
     /**
-     * Returns the dividend history for the authenticated user and the user specified<br/>
+     * Returns the Full Portfolio information for a specific user and the user specified<br/>
      * <br/>
      * 
      * EmpireAvenue : https://api.empireavenue.com/history/dividends/received<br/>
@@ -78,8 +96,8 @@ public interface HistoryService {
      * 
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      * 
-     * @param ticker The Ticker symbol whose history is queried 
-     * @return HistoryResponse Returns the dividend history for the authenticated user and the user specified.
+     * @param ticker The Ticker symbol of whose history is queried
+     * @return HistoryResponse Returns the Full Portfolio information for a specific user and the user specified.
      * @see org.agorava.empireavenue.service.HistoryService#getReceivedDividendsHistory()
      *  
      **/
