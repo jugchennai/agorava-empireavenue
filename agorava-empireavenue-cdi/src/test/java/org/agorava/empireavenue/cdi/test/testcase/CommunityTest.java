@@ -34,7 +34,9 @@ import static org.junit.Assert.assertTrue;
  */
 @RunWith(Arquillian.class)
 public class CommunityTest extends EmpireAvenueTestDeploy {
-    private String communities="123,253";
+    private String communitiy_1="undefined";
+    private String communitiy_2="undefined";
+    private String communitiy_3="undefined";
 
     private int pages=2;
     @Test
@@ -55,7 +57,7 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void communitiesInfo() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(communities);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(communitiy_1,communitiy_2,communitiy_3);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
         assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
@@ -64,6 +66,23 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
         }
         System.out.println("--------------------------------------");
     }
+
+    //check duplicate entries, System should return only three result sets in spite of duplicate entry
+
+    @Test
+    public void communitiesInfoTest2() {
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(communitiy_1,communitiy_1,communitiy_2,communitiy_2,communitiy_3,communitiy_3);
+        assertNotNull(communityServiceCommunitiesInfo);
+        assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
+        assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
+        assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() == 3);
+
+        for (Community community : communityServiceCommunitiesInfo.getAllCommunity()) {
+            System.out.println(community.toString());
+        }
+        System.out.println("--------------------------------------");
+    }
+
 
     @Test
     public void listOfPersonalCommunitiesTest() {
