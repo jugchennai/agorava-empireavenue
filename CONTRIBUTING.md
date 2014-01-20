@@ -25,11 +25,7 @@ Portfolio - kalakkumkarthikeyan
 
 Search-kalakkumkarthikeyan
 
-Community
-    community/info
-    community/personal/list
-    community/recent/list
-    
+Community - kalakkumkarthikeyan (working)
 
 POST
 ====
