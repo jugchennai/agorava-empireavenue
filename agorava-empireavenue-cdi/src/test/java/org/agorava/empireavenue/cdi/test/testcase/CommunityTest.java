@@ -34,9 +34,9 @@ import static org.junit.Assert.assertTrue;
  */
 @RunWith(Arquillian.class)
 public class CommunityTest extends EmpireAvenueTestDeploy {
-    private String communitiy_1="undefined";
-    private String communitiy_2="undefined";
-    private String communitiy_3="undefined";
+    private String communitiy_1="265";
+    private String communitiy_2="1762";
+    private String communitiy_3="3426";
 
     private int pages=2;
     @Test
@@ -46,7 +46,7 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void communityInfoTest() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(20);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(265);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
         assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
