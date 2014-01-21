@@ -25,17 +25,44 @@ Portfolio - kalakkumkarthikeyan
 
 Search-kalakkumkarthikeyan
 
-Community - kalakkumkarthikeyan (working)
+Community - kalakkumkarthikeyan (Yet to test)
 
 POST
 ====
-Lists
-    lists/add
-    lists/remove
-
+Lists -kalakkumkarthikeyan
+   
 Profile - rajmahendra
 
-Shares
-    shares/buy
-    shares/sell
+Shares -kalakkumkarthikeyan
+
+
+
+Testing and Documentation 
+=================
+
+GET
+===
+Profile Information 
+
+Lists -
+
+Leaders -
+
+History - 
+
+Shares -
+
+Portfolio - 
+
+Search-
+
+Community -
+
+POST
+====
+Lists -
+   
+Profile - 
+
+Shares -
 
