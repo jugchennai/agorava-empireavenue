@@ -28,7 +28,7 @@ import org.agorava.empireavenue.response.SharesResponse;
  * API Calls<br/>
  * shares/commission/get<br/>
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  **/

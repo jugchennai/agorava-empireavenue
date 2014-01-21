@@ -18,7 +18,7 @@ package org.agorava.empireavenue.response;
 import org.agorava.empireavenue.model.Status;
 /**
 *
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @author Rajmahendra Hegde  
 * @since 0.7.0
 */
 public class StatusResponse extends Response<Status> {

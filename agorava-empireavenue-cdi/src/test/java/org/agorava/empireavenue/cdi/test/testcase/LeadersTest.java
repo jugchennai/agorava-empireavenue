@@ -27,7 +27,7 @@ import org.junit.runner.RunWith;
 
 /**
  * 
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)

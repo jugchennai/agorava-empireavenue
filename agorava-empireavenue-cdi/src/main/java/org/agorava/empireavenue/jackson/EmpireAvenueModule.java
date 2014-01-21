@@ -24,7 +24,7 @@ import org.agorava.empireavenue.response.*;
 
 /**
 *
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @author Rajmahendra Hegde  
 * @since 0.7.0
 */
 @SuppressWarnings("serial")

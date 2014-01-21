@@ -23,7 +23,7 @@ import org.agorava.empireavenue.model.Shares;
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 abstract class SharesResponseMixin extends ResponseMixin {

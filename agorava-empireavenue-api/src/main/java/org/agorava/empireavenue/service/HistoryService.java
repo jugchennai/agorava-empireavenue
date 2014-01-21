@@ -38,7 +38,7 @@ import org.agorava.empireavenue.response.HistoryResponse;
  * history/shares/sold <br/>
  *
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  */

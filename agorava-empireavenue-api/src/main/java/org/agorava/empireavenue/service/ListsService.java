@@ -33,7 +33,7 @@ import org.agorava.empireavenue.response.ListsResponse;
  * lists/listedby<br/>
  * lists/recommendedby<br/>
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  */

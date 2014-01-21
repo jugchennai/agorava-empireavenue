@@ -32,7 +32,7 @@ import org.agorava.empireavenue.response.CommunityResponse;
  * community/personal/list<br/>
  * community/recent/list<br/>
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  */

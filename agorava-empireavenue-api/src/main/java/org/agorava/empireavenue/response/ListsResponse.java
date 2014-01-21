@@ -5,7 +5,7 @@ import org.agorava.empireavenue.model.Lists;
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 public class ListsResponse extends Response<Lists>{
