@@ -32,7 +32,7 @@ import org.agorava.empireavenue.response.PortfolioResponse;
  * portfolio/base<br/>
  * portfolio/get<br/>
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  */

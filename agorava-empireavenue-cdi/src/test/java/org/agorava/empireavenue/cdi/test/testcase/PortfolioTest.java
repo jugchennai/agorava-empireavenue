@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>@EmpireAvenue
+ * @author Karthikeyan Annamalai  @EmpireAvenue
  * @since 0.7.0
  *
  */

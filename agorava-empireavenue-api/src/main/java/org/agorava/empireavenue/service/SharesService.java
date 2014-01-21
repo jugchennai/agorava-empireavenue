@@ -28,7 +28,7 @@ import org.agorava.empireavenue.response.SharesResponse;
  * API Calls<br/>
  * shares/commission/get<br/>
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  **/
@@ -76,12 +76,12 @@ public interface SharesService {
      * @param numberOfShares    // The number of shares
      * @param sharePrice    // The price of shares
      * @return SharesResponse Returns buying status (Success ) and related charges.
-     * @see org.agorava.empireavenue.service.SharesService#sellShares(String, int, float)
+     * @see org.agorava.empireavenue.service.SharesService#sellShares(String, int, double)
      *
      *
      */
 
-    SharesResponse buyShares(String ticker,int numberOfShares,float sharePrice);
+    SharesResponse buyShares(String ticker,int numberOfShares,double sharePrice);
 
     /**
      * Returns the commission to be charged between authenticating user and other user. You should be passing in the number of shares that you want the commission for.<br/>
@@ -96,10 +96,10 @@ public interface SharesService {
      * @param numberOfShares    // The number of shares
      * @param sharePrice    // The price of shares
      * @return SharesResponse Returns selling status (Success ) and related charges.
-     * @see org.agorava.empireavenue.service.SharesService#buyShares(String, int, float)
+     * @see org.agorava.empireavenue.service.SharesService#buyShares(String, int,double)
      *
      */
-    SharesResponse sellShares(String ticker,int numberOfShares,float sharePrice);
+    SharesResponse sellShares(String ticker,int numberOfShares,double sharePrice);
 
 
 

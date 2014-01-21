@@ -12,7 +12,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)
@@ -268,7 +268,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
         System.out.println("--------------------------------------");
     }
 
-    @Ignore
+
     @Test
     public void addListTest() {
         ListsResponse listsResponse = listsService.addToList(ticker, "friends");
@@ -281,7 +281,6 @@ public class ListsTest extends EmpireAvenueTestDeploy {
    }
 
 
-    @Ignore
     @Test
     public void removeFromListTest() {
         ListsResponse listsResponse = listsService.removeFromList(ticker, "friends");

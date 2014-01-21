@@ -16,7 +16,6 @@
 
 package org.agorava.empireavenue;
 
-
 import java.lang.annotation.Documented;
 import static java.lang.annotation.ElementType.FIELD;
 import static java.lang.annotation.ElementType.METHOD;
@@ -30,13 +29,14 @@ import javax.inject.Qualifier;
 import org.agorava.api.atinject.ProviderRelated;
 
 /**
-*
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
-* @since 0.7.0
-*/
+ * The Interface EmpireAvenue.
+ *
+ * @author Rajmahendra Hegde  
+ * @since 0.7.0
+ */
 @Qualifier
 @ProviderRelated("EmpireAvenue")
-@Target({TYPE, METHOD, PARAMETER, FIELD})
+@Target({ TYPE, METHOD, PARAMETER, FIELD })
 @Retention(RUNTIME)
 @Documented
 public @interface EmpireAvenue {

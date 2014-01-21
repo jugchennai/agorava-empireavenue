@@ -27,7 +27,7 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)

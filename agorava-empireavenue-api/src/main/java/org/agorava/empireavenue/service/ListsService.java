@@ -39,7 +39,7 @@ import org.agorava.empireavenue.response.ListsResponse;
  * lists/add</br>
  * lists/remove</br>
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  *
  */

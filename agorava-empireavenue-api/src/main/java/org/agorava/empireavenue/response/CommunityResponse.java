@@ -22,12 +22,16 @@ import java.util.List;
 import org.agorava.empireavenue.model.Community;
 /**
 *
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @author Rajmahendra Hegde  
 * @since 0.7.0
 */
 public class CommunityResponse extends Response<Community> {
     
     public CommunityResponse() {}
+    
+    public Community getCommunity(){
+        return retrieveData();
+    }
     
     public List<Community> getAllCommunity(){
         return retrieveAllData();

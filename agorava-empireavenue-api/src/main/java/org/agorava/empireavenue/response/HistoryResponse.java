@@ -20,7 +20,7 @@ import org.agorava.empireavenue.model.History;
 
 /**
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  */

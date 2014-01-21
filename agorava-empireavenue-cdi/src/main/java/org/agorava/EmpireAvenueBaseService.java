@@ -27,7 +27,7 @@ import org.agorava.spi.ProviderApiService;
 
 /**
 *
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @author Rajmahendra Hegde  
 * @since 0.7.0
 */
 public class EmpireAvenueBaseService extends ProviderApiService {

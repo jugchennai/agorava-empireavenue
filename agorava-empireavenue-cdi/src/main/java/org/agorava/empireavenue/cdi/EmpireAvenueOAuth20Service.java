@@ -11,7 +11,7 @@ import org.agorava.oauth.OAuth20FinalServiceImpl;
 /**
 *
 *@author Antoine Sabot-Durand
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
+* @author Rajmahendra Hegde  
 * @since 0.7.0
 */
 @GenericBean

@@ -19,45 +19,90 @@ import java.util.List;
 
 import org.agorava.empireavenue.EmpireAvenueException;
 import org.agorava.empireavenue.model.Meta;
+
 /**
-*
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
-* @since 0.7.0
-*/
+ * The Class Response.
+ *
+ * @author Rajmahendra Hegde  
+ * @param <T> the generic type
+ * @since 0.7.0
+ */
 public abstract class Response<T> {
+    
+    /** The meta. */
     private Meta meta;
+    
+    /** The data. */
     private List<T> data;
 
+    /**
+     * Gets the data.
+     *
+     * @return the data
+     */
+    @SuppressWarnings("unused")
     private List<T> getData() {
         return data;
     }
 
-    private void setData(List<T> data) {
+    /**
+     * Sets the data.
+     *
+     * @param data the new data
+     */
+    @SuppressWarnings("unused")
+    private void setData(final List<T> data) {
         this.data = data;
     }
 
+    /**
+     * Instantiates a new response.
+     */
     public Response() {
     }
 
+    /**
+     * Instantiates a new response.
+     *
+     * @param meta the meta
+     */
     public Response(Meta meta) {
         this.meta = meta;
     }
 
+    /**
+     * Gets the meta.
+     *
+     * @return the meta
+     */
     public Meta getMeta() {
         return meta;
     }
 
+    /**
+     * Retrieve data.
+     *
+     * @return the t
+     */
     protected T retrieveData() {
         errorCheck();
         return data.get(0);
     }
 
    
+    /**
+     * Retrieve all data.
+     *
+     * @return the list
+     */
     protected List<T> retrieveAllData() {
         errorCheck();
         return data;
     }
 
+    /**
+     * Error check.
+     */
     private void errorCheck() {
         if (meta.getError() != null)
             throw new EmpireAvenueException("EmpireAvenueError: " + meta.getError());
@@ -66,6 +111,9 @@ public abstract class Response<T> {
 
     }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public String toString() {
         return super.toString();

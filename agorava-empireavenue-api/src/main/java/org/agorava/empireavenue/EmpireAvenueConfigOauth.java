@@ -21,24 +21,37 @@ import org.agorava.api.service.OAuthEncoder;
 import org.agorava.spi.ProviderConfigOauth20Final;
 
 /**
+ * The Class EmpireAvenueConfigOauth.
+ *
  * @author Antoine Sabot-Durand
  */
 @EmpireAvenue
 public class EmpireAvenueConfigOauth extends ProviderConfigOauth20Final {
+    
+    /** The Constant AUTHORIZE_URL. */
     private static final String AUTHORIZE_URL = "https://www.empireavenue.com/profile/developer/authorize?client_id=%s&redirect_uri=%s&response_type=code&state=request_auth_code";
 
-        @Override
-        public String getAccessTokenEndpoint() {
-            return "https://api.empireavenue.com/oauth/token";
-        }
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getAccessTokenEndpoint() {
+        return "https://api.empireavenue.com/oauth/token";
+    }
 
-        @Override
-        public String getAuthorizationUrl(OAuthAppSettings config) {
+    /**
+     * {@inheritDoc}
+     */
+    @Override
+    public String getAuthorizationUrl(OAuthAppSettings config) {
 
-            return String.format(AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
+        return String.format(AUTHORIZE_URL, config.getApiKey(), OAuthEncoder.encode(config.getCallback()));
 
-        }
+    }
 
+    /**
+     * {@inheritDoc}
+     */
     @Override
     public OAuth.OAuthVersion getOAuthVersion() {
         return OAuth.OAuthVersion.OTHER;

@@ -25,10 +25,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * 
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
- *
+ * 
  */
 @EmpireAvenue
 public class CommunityServiceImpl extends EmpireAvenueBaseService implements CommunityService {
@@ -36,19 +36,17 @@ public class CommunityServiceImpl extends EmpireAvenueBaseService implements Com
     public CommunityResponse getCommunitiesInfo(int communityId) {
         Map<String, Object> data = new HashMap<>();
         data.put("community_id", communityId);
-        return getService().post(buildAbsoluteUri(COMMUNITY_INFO),data, CommunityResponse.class);
+        return getService().post(buildAbsoluteUri(COMMUNITY_INFO), data, CommunityResponse.class);
 
     }
 
     @Override
-    public CommunityResponse getCommunitiesInfo(String...communityId ) {
+    public CommunityResponse getCommunitiesInfo(String... communityId) {
         Map<String, Object> data = new HashMap<>();
-
         String communityIds = makeCommaSeperatedFromArray(communityId);
+        data.put("community_id", communityIds);
 
-        data.put("community_id", communityId);
-
-        return getService().post(buildAbsoluteUri(COMMUNITY_INFO),data, CommunityResponse.class);
+        return getService().post(buildAbsoluteUri(COMMUNITY_INFO), data, CommunityResponse.class);
     }
 
     @Override
@@ -60,7 +58,8 @@ public class CommunityServiceImpl extends EmpireAvenueBaseService implements Com
     public CommunityResponse getListOfPersonalCommunities(int pageLimit) {
         Map<String, Object> data = new HashMap<>();
         data.put("page", pageLimit);
-        return getService().post(buildAbsoluteUri(COMMUNITY__PERSONAL_LIST),data, CommunityResponse.class);    }
+        return getService().post(buildAbsoluteUri(COMMUNITY__PERSONAL_LIST), data, CommunityResponse.class);
+    }
 
     @Override
     public CommunityResponse getLatestCommunities() {

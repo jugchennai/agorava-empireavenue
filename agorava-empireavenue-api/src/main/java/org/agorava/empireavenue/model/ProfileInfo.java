@@ -19,7 +19,7 @@ import org.agorava.spi.UserProfile;
 
 /**
  * 
- * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ * @author Rajmahendra Hegde  
  * @since 0.7.0
  */
 @SuppressWarnings("serial")

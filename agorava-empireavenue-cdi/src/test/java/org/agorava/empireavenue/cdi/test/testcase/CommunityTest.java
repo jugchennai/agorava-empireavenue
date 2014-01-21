@@ -28,17 +28,17 @@ import static org.junit.Assert.assertTrue;
 
 /**
  *
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  *
  */
 @RunWith(Arquillian.class)
 public class CommunityTest extends EmpireAvenueTestDeploy {
-    private String communitiy_1="265";
-    private String communitiy_2="1762";
-    private String communitiy_3="3426";
+    private String twitter="265";
+    private String wordPress="628";
+    private String amazonReview="3891";
 
-    private int pages=2;
+    private int pages=1;
     @Test
     public void authorizationUrlTest() {
         assertTrue(service.getAuthorizationUrl().startsWith("https"));
@@ -46,18 +46,18 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void communityInfoTest() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(265);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter);
         assertNotNull(communityServiceCommunitiesInfo);
-        assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
-        assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
-        for (Community community : communityServiceCommunitiesInfo.getAllCommunity())
-            System.out.println(community.toString());
+        assertNotNull(communityServiceCommunitiesInfo.getCommunity());
+      
+      
+            System.out.println(communityServiceCommunitiesInfo.getCommunity().toString());
         System.out.println("--------------------------------------");
     }
 
     @Test
     public void communitiesInfo() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(communitiy_1,communitiy_2,communitiy_3);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter,wordPress,amazonReview);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
         assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
@@ -71,7 +71,7 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void communitiesInfoTest2() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(communitiy_1,communitiy_1,communitiy_2,communitiy_2,communitiy_3,communitiy_3);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter,wordPress,amazonReview,twitter,wordPress,amazonReview);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
         assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
