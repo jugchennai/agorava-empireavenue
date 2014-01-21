@@ -26,13 +26,13 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)
 public class SharesTest extends EmpireAvenueTestDeploy {
 
-    private String ticker="EAV";
+    private String ticker="RMH";
     private int numberOfShares=20;
 
 
@@ -48,6 +48,7 @@ public class SharesTest extends EmpireAvenueTestDeploy {
         SharesResponse sharesCommission = sharesService.getSharesCommission(ticker,numberOfShares);
         assertNotNull(sharesCommission);
         assertNotNull(sharesCommission.getCommission());
+        System.out.println(sharesCommission.getCommission().getCommission());
         System.out.println("--------------------------------------");
     }
 }

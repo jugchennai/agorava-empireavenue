@@ -21,7 +21,7 @@ import org.agorava.empireavenue.model.Search;
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  */
 public class SearchResponse  extends Response<Search> {

@@ -17,7 +17,7 @@ package org.agorava.empireavenue.model;
 
 /**
  * 
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlook.com>
+ * @author Karthikeyan Annamalai  
  * @since 0.7.0
  * 
  */

@@ -42,7 +42,7 @@ import org.agorava.spi.UserProfileService;
  * profile/notifications<br/>
  *
  *
- * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ * @author Rajmahendra Hegde  
  * @since 0.7.0
  */
 public interface ProfileService extends UserProfileService {
