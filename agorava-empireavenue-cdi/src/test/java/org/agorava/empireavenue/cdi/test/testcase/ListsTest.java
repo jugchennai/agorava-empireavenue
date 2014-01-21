@@ -4,6 +4,7 @@ import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
 import org.agorava.empireavenue.model.Lists;
 import org.agorava.empireavenue.response.ListsResponse;
 import org.jboss.arquillian.junit.Arquillian;
+import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -265,5 +266,29 @@ public class ListsTest extends EmpireAvenueTestDeploy {
         for (Lists list : listsResponse.getAllListInfo())
             System.out.println(list.toString());
         System.out.println("--------------------------------------");
+    }
+
+
+    @Test
+    public void addListTest() {
+        ListsResponse listsResponse = listsService.addToList(ticker, "friends");
+        assertNotNull(listsResponse);
+        assertNotNull(listsResponse.getListInfo());
+
+        System.out.println(" ::::::::: The List Type ID   :" + listsResponse.getListInfo().getListTypeId());
+        System.out.println(" ::::::::: Maximum users      :" +listsResponse.getListInfo().getMaxUsers());
+        System.out.println(" ::::::::: User Count         :" +listsResponse.getListInfo().getUserCount());
+   }
+
+
+    @Test
+    public void removeFromListTest() {
+        ListsResponse listsResponse = listsService.removeFromList(ticker, "friends");
+        assertNotNull(listsResponse);
+        assertNotNull(listsResponse.getListInfo());
+
+        System.out.println(" ::::::::: The List Type ID   :" + listsResponse.getListInfo().getListTypeId());
+        System.out.println(" ::::::::: Maximum users      :" +listsResponse.getListInfo().getMaxUsers());
+        System.out.println(" ::::::::: User Count         :" +listsResponse.getListInfo().getUserCount());
     }
 }

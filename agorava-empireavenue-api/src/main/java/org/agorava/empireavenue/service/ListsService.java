@@ -28,12 +28,18 @@ import org.agorava.empireavenue.response.ListsResponse;
  * Authentication: Required<br/><br/>
  *
  * API Calls<br/>
+ *
+ * GET
  * lists/get<br/>
  * lists/members<br/>
  * lists/listedby<br/>
  * lists/recommendedby<br/>
  *
- * @author Karthikeyan Annamalai  
+ * POST
+ * lists/add</br>
+ * lists/remove</br>
+ *
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  *
  */
@@ -45,6 +51,10 @@ public interface ListsService {
     static final String LISTS_MEMBERS = "lists/members";
     static final String LISTS_LISTEDBY = "lists/listedby";
     static final String LISTS_RECOMMENDEDBY = "lists/recommendedby";
+
+    static final String LISTS_ADD = "lists/add";
+    static final String LISTS_REMOVE = "lists/remove";
+
 
     /**
      * Returns the lists and information about the lists that a person has. Note, Private lists are not returned unless you are fetching for the authenticated user<br/>
@@ -212,7 +222,7 @@ public interface ListsService {
      * Returns the users on the site who have listed TICKER as a "Recommended Buy".
      * <br/>
      *
-     * EmpireAvenue : https://api.empireavenue.com/recommendedby<br/>
+     * EmpireAvenue : https://api.empireavenue.com/lists/recommendedby<br/>
      * <br/>
      *
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
@@ -230,7 +240,7 @@ public interface ListsService {
      * Returns the users on the site who have listed TICKER as a "Recommended Buy".
      * <br/>
      *
-     * EmpireAvenue : https://api.empireavenue.com/recommendedby<br/>
+     * EmpireAvenue : https://api.empireavenue.com/lists/recommendedby<br/>
      * <br/>
      *
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
@@ -247,7 +257,7 @@ public interface ListsService {
      * Returns the users on the site who have listed TICKER as a "Recommended Buy".
      * <br/>
      *
-     * EmpireAvenue : https://api.empireavenue.com/recommendedby<br/>
+     * EmpireAvenue : https://api.empireavenue.com/lists/recommendedby<br/>
      * <br/>
      *
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
@@ -264,7 +274,7 @@ public interface ListsService {
      * Returns the users on the site who have listed TICKER as a "Recommended Buy".
      * <br/>
      *
-     * EmpireAvenue : https://api.empireavenue.com/recommendedby<br/>
+     * EmpireAvenue : https://api.empireavenue.com/lists/recommendedby<br/>
      * <br/>
      *
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
@@ -276,5 +286,45 @@ public interface ListsService {
      *
      */
     ListsResponse getRecommendedUsers(String ticker,int page);
+
+
+
+
+    /**
+     *  Adds the given ticker into the mentioned lists of authenticated user.
+     * <br/>
+     *
+     * EmpireAvenue : https://api.empireavenue.com/lists/add<br/>
+     * <br/>
+     *
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
+     * @return ListsResponse On Success the list type,max user of the list and current user count will be returned as a ListsResponse.
+     * @see org.agorava.empireavenue.service.ListsService#removeFromList(String ,String)
+     *
+     */
+    ListsResponse addToList(String ticker,String list);
+
+
+
+
+
+
+
+    /**
+     *  Removes the given ticker from the mentioned lists of authenticated user.
+     * <br/>
+     *
+     * EmpireAvenue : https://api.empireavenue.com/lists/remove<br/>
+     * <br/>
+     *
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
+     * @return ListsResponse On Success the list type,max user of the list and current user count will be returned as a ListsResponse.
+     * @see org.agorava.empireavenue.service.ListsService#addToList(String ,String)
+     *
+     */
+    ListsResponse removeFromList(String ticker,String list);
+
 
 }

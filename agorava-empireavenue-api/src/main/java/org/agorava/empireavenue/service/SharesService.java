@@ -37,6 +37,12 @@ public interface SharesService {
     static final String SHARES_COMMISSION = "shares/commission/get";
 
 
+
+    static final String SHARES_BUY= "shares/buy";
+    static final String SHARES_SELL = "shares/sell";
+
+
+
     /**
      * Returns the commission to be charged between authenticating user and other user. You should be passing in the number of shares that you want the commission for.<br/>
      * <br/>
@@ -55,6 +61,45 @@ public interface SharesService {
 
     SharesResponse getSharesCommission(String ticker,int numberOfShares);
 
+
+
+    /**
+     * Buy Shares from requested ticker. Trading falls under separate daily limits aside from the limits set by the API as well. Abuse of the Trading Shares API will result in the application and the IP addresses being permanently banned from Empire Avenue.<br/>
+     * <br/>
+     *
+     * EmpireAvenue : https://api.empireavenue.com/search/recent<br/>
+     * <br/>
+     *
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
+     * @param ticker              // The ticker of the shares that is to be bought
+     * @param numberOfShares    // The number of shares
+     * @param sharePrice    // The price of shares
+     * @return SharesResponse Returns buying status (Success ) and related charges.
+     * @see org.agorava.empireavenue.service.SharesService#sellShares(String, int, double)
+     *
+     *
+     */
+
+    SharesResponse buyShares(String ticker,int numberOfShares,double sharePrice);
+
+    /**
+     * Returns the commission to be charged between authenticating user and other user. You should be passing in the number of shares that you want the commission for.<br/>
+     * <br/>
+     *
+     * EmpireAvenue : https://api.empireavenue.com/search/recent<br/>
+     * <br/>
+     *
+     * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
+     * @param ticker              // The ticker of the shares this is to be sold
+     * @param numberOfShares    // The number of shares
+     * @param sharePrice    // The price of shares
+     * @return SharesResponse Returns selling status (Success ) and related charges.
+     * @see org.agorava.empireavenue.service.SharesService#buyShares(String, int,double)
+     *
+     */
+    SharesResponse sellShares(String ticker,int numberOfShares,double sharePrice);
 
 
 

@@ -32,8 +32,9 @@ import static org.junit.Assert.assertTrue;
 @RunWith(Arquillian.class)
 public class SharesTest extends EmpireAvenueTestDeploy {
 
-    private String ticker="RMH";
-    private int numberOfShares=20;
+    private String ticker="ARKARTHICK";
+    private int numberOfShares=160;
+    private double sharePrice=195.54;
 
 
 
@@ -51,4 +52,29 @@ public class SharesTest extends EmpireAvenueTestDeploy {
         System.out.println(sharesCommission.getCommission().getCommission());
         System.out.println("--------------------------------------");
     }
+
+
+    @Test
+    public void buySharesTest() {
+        SharesResponse buyShares = sharesService.buyShares(ticker, numberOfShares,sharePrice);
+        assertNotNull(buyShares);
+        assertNotNull(buyShares.getCommission());
+        assert (buyShares.getCommission().isSuccess());
+
+        System.out.println("--------------------------------------");
+    }
+
+
+
+    @Test
+    public void sellSharesTest() {
+        SharesResponse sellShares = sharesService.sellShares(ticker, numberOfShares,sharePrice);
+        assertNotNull(sellShares);
+        assertNotNull(sellShares.getCommission());
+        assert (sellShares.getCommission().isSuccess());
+
+        System.out.println("--------------------------------------");
+    }
+
+
 }
