@@ -34,6 +34,7 @@ public class SharesTest extends EmpireAvenueTestDeploy {
 
     private String ticker="EAV";
     private int numberOfShares=20;
+    private float sharePrice=20;
 
 
 
@@ -50,4 +51,29 @@ public class SharesTest extends EmpireAvenueTestDeploy {
         assertNotNull(sharesCommission.getCommission());
         System.out.println("--------------------------------------");
     }
+
+
+    @Test
+    public void buySharesTest() {
+        SharesResponse buyShares = sharesService.buyShares(ticker, numberOfShares,sharePrice);
+        assertNotNull(buyShares);
+        assertNotNull(buyShares.getCommission());
+        assert (buyShares.getCommission().isSuccess());
+
+        System.out.println("--------------------------------------");
+    }
+
+
+
+    @Test
+    public void sellSharesTest() {
+        SharesResponse buyShares = sharesService.sellShares(ticker, numberOfShares,sharePrice);
+        assertNotNull(buyShares);
+        assertNotNull(buyShares.getCommission());
+        assert (buyShares.getCommission().isSuccess());
+
+        System.out.println("--------------------------------------");
+    }
+
+
 }

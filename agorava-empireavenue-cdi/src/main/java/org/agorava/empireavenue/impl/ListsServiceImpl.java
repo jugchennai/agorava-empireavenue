@@ -110,4 +110,23 @@ public class ListsServiceImpl extends EmpireAvenueBaseService implements ListsSe
         data.put("page", page);
         return getService().post(buildAbsoluteUri(LISTS_RECOMMENDEDBY), data, ListsResponse.class);
     }
+
+
+    @Override
+    public ListsResponse addToList(String ticker, String list) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("ticker", ticker);
+        data.put("list", list);
+        return getService().post(buildAbsoluteUri(LISTS_ADD), data, ListsResponse.class);
+    }
+
+
+    @Override
+    public ListsResponse removeFromList(String ticker, String list) {
+        Map<String, Object> data = new HashMap<>();
+        data.put("ticker", ticker);
+        data.put("list", list);
+        return getService().post(buildAbsoluteUri(LISTS_REMOVE), data, ListsResponse.class);
+
+    }
 }

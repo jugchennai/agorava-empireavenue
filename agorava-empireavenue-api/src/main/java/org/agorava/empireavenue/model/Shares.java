@@ -23,9 +23,50 @@ package org.agorava.empireavenue.model;
 public class Shares {
 
     private float commission;
+    private boolean success; // buying status
+    private int sharesOwned;
+    private float bankBalance;
+    private float totalCharged;
+    private float totalEarned;
 
-    public Shares(float commission ) {
-        this.commission=commission;
+
+
+
+    public Shares() {
+    }
+
+
+
+    public int getSharesOwned() {
+        return sharesOwned;
+    }
+
+    public void setSharesOwned(int sharesOwned) {
+        this.sharesOwned = sharesOwned;
+    }
+
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public void setSuccess(boolean success) {
+        this.success = success;
+    }
+
+    public float getBankBalance() {
+        return bankBalance;
+    }
+
+    public void setBankBalance(float bankBalance) {
+        this.bankBalance = bankBalance;
+    }
+
+    public float getTotalCharged() {
+        return totalCharged;
+    }
+
+    public void setTotalCharged(float totalCharged) {
+        this.totalCharged = totalCharged;
     }
 
 
@@ -36,6 +77,15 @@ public class Shares {
     public void setCommission(float commission) {
         this.commission = commission;
     }
+
+    public float getTotalEarned() {
+        return totalEarned;
+    }
+
+    public void setTotalEarned(float totalEarned) {
+        this.totalEarned = totalEarned;
+    }
+
 
     @Override
     public String toString() {

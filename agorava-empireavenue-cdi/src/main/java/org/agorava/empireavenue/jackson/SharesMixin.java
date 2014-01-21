@@ -33,6 +33,32 @@ abstract class SharesMixin {
     @JsonCreator
     public SharesMixin(@JsonProperty("commission")float balance) {
     }
+
+
+    @JsonProperty("success")
+    private boolean success;
+
+    @JsonProperty("shares_owned")
+    private int sharesOwned;
+
+    @JsonProperty("bank_balance")
+    private float bankBalance;
+
+    @JsonProperty("total_charged")
+    private float totalCharged;
+
+
+
+    @JsonProperty("total_earned")
+    private float totalEarned;
+
+
+
     @JsonProperty("commission")
     abstract float getCommission();
+
+
+
+
+
 }
