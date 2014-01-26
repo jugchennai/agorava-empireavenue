@@ -15,27 +15,19 @@
  */
 package org.agorava.empireavenue.cdi.test.testcase;
 
-import static org.junit.Assert.assertEquals;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
-import org.agorava.empireavenue.response.BankBalanceResponse;
-import org.agorava.empireavenue.response.CommunityResponse;
-import org.agorava.empireavenue.response.CountResponse;
-import org.agorava.empireavenue.response.LeadersResponse;
-import org.agorava.empireavenue.response.ProfileInfoResponse;
-import org.agorava.empireavenue.response.StatusResponse;
+import org.agorava.empireavenue.response.*;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static org.junit.Assert.*;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @RunWith(Arquillian.class)
 public class ProfileInfoTest extends EmpireAvenueTestDeploy {
 
@@ -48,10 +40,10 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
     @Ignore
     @Test
     public void sendAUpdateTest() throws Exception {
-    	String message = "Posted using Agorava API for EA";
+        String message = "Posted using Agorava API for EA";
         StatusResponse statusResponse = profileService.updateStatus(message);
         assertNotNull(statusResponse);
-        assertEquals(message,statusResponse.getStatus().getStatus());
+        assertEquals(message, statusResponse.getStatus().getStatus());
     }
 
     @Test
@@ -61,17 +53,17 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
         assertNotNull(profileInfoResponse.getProfileInfo());
 
     }
-    
-    
+
+
     @Test
     public void getAllCommunityForCurrentUser() {
         CommunityResponse communityResponse = profileService.getAllCommunities();
         assertNotNull(communityResponse);
         assertNotNull(communityResponse.getAllCommunity());
         assertTrue(communityResponse.getAllCommunity().size() > 0);
-        
+
     }
-    
+
     @Test
     public void getAllCommunityForMYSODOTCOM() {
         CommunityResponse communityResponse = profileService.getAllCommunitiesFor("MYSODOTCOM");
@@ -79,15 +71,15 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
         assertNotNull(communityResponse.getAllCommunity());
         assertTrue(communityResponse.getAllCommunity().size() > 0);
     }
-    
+
     @Test
     public void getAllShareholders() {
-    	ProfileInfoResponse profileInfoResponse = profileService.getAllShareholders();
-    	assertNotNull(profileInfoResponse);
-    	assertNotNull(profileInfoResponse.getProfileInfo());
-    	assertTrue(profileInfoResponse.getAllProfileInfo().size() > 0);
+        ProfileInfoResponse profileInfoResponse = profileService.getAllShareholders();
+        assertNotNull(profileInfoResponse);
+        assertNotNull(profileInfoResponse.getProfileInfo());
+        assertTrue(profileInfoResponse.getAllProfileInfo().size() > 0);
     }
-    
+
     @Test
     public void getCountForTheCurrentUser() {
         CountResponse countResponse = profileService.getCount();
@@ -95,7 +87,7 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
         assertNotNull(countResponse.getCount());
 
     }
-    
+
     @Test
     public void getBankBalanceOfCurrentUser() {
         BankBalanceResponse bankBalanceResponse = profileService.getBankBalance();
@@ -103,8 +95,6 @@ public class ProfileInfoTest extends EmpireAvenueTestDeploy {
         assertNotNull(bankBalanceResponse.getBankBalance());
 
     }
-    
-    
-    
-    
+
+
 }

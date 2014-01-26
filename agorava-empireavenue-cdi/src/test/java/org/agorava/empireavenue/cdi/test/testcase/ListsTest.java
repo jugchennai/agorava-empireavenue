@@ -4,7 +4,6 @@ import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
 import org.agorava.empireavenue.model.Lists;
 import org.agorava.empireavenue.response.ListsResponse;
 import org.jboss.arquillian.junit.Arquillian;
-import org.junit.Ignore;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
@@ -12,15 +11,15 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)
 public class ListsTest extends EmpireAvenueTestDeploy {
 
-    private static String ticker="RMH";
-    private static int page=2;
-    private static Integer maxresults=101;
+    private static String ticker = "RMH";
+    private static int page = 2;
+    private static Integer maxresults = 101;
 
     @Test
     public void authorizationUrlTest() {
@@ -38,6 +37,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
             System.out.println(list.toString());
         System.out.println("--------------------------------------");
     }
+
     @Test
     public void listInfoTestWithTicker() {
         ListsResponse listsResponse = listsService.getListInfo(ticker);
@@ -48,7 +48,6 @@ public class ListsTest extends EmpireAvenueTestDeploy {
             System.out.println(list.toString());
         System.out.println("--------------------------------------");
     }
-
 
 
     //"friends","watch","recommend_buy","private","favourite"
@@ -110,10 +109,9 @@ public class ListsTest extends EmpireAvenueTestDeploy {
     }
 
 
-
     @Test
     public void friendsListMembersTestWithPage() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("friends",page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("friends", page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -124,7 +122,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void watchListMembersTestWithPage() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("watch",page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("watch", page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -135,7 +133,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void recommendBuyListMembersTestWithPage() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("recommend_buy",page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("recommend_buy", page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -146,7 +144,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void privateListMembersTestWithPage() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("private",page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("private", page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -157,7 +155,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void favouriteListMembersTestWithPage() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("favourite",page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("favourite", page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -169,7 +167,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void friendsListMembersTestWithPageAndTicker() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("friends",ticker,page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("friends", ticker, page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -180,7 +178,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void watchListMembersTestWithPageAndTicker() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("watch",ticker,page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("watch", ticker, page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -191,7 +189,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void recommendBuyListMembersTestWithPageAndTicker() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("recommend_buy",ticker,page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("recommend_buy", ticker, page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -202,7 +200,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void privateListMembersTestWithPageAndTicker() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("private",ticker,page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("private", ticker, page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -213,7 +211,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void favouriteListMembersTestWithPageAndTicker() {
-        ListsResponse listsResponse = listsService.getListMembersInfo("favourite",ticker,page);
+        ListsResponse listsResponse = listsService.getListMembersInfo("favourite", ticker, page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -259,7 +257,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void listedUsersTestWithPageLimitAndTicket() {
-        ListsResponse listsResponse = listsService.getListedUsers(ticker,page);
+        ListsResponse listsResponse = listsService.getListedUsers(ticker, page);
         assertNotNull(listsResponse);
         assertNotNull(listsResponse.getAllListInfo());
         assertTrue(listsResponse.getAllListInfo().size() > 0);
@@ -276,9 +274,9 @@ public class ListsTest extends EmpireAvenueTestDeploy {
         assertNotNull(listsResponse.getListInfo());
 
         System.out.println(" ::::::::: The List Type ID   :" + listsResponse.getListInfo().getListTypeId());
-        System.out.println(" ::::::::: Maximum users      :" +listsResponse.getListInfo().getMaxUsers());
-        System.out.println(" ::::::::: User Count         :" +listsResponse.getListInfo().getUserCount());
-   }
+        System.out.println(" ::::::::: Maximum users      :" + listsResponse.getListInfo().getMaxUsers());
+        System.out.println(" ::::::::: User Count         :" + listsResponse.getListInfo().getUserCount());
+    }
 
 
     @Test
@@ -288,7 +286,7 @@ public class ListsTest extends EmpireAvenueTestDeploy {
         assertNotNull(listsResponse.getListInfo());
 
         System.out.println(" ::::::::: The List Type ID   :" + listsResponse.getListInfo().getListTypeId());
-        System.out.println(" ::::::::: Maximum users      :" +listsResponse.getListInfo().getMaxUsers());
-        System.out.println(" ::::::::: User Count         :" +listsResponse.getListInfo().getUserCount());
+        System.out.println(" ::::::::: Maximum users      :" + listsResponse.getListInfo().getMaxUsers());
+        System.out.println(" ::::::::: User Count         :" + listsResponse.getListInfo().getUserCount());
     }
 }

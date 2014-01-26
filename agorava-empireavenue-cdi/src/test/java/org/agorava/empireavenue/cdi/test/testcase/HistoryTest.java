@@ -19,22 +19,21 @@ import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
 import org.agorava.empireavenue.model.History;
 import org.agorava.empireavenue.response.HistoryResponse;
 import org.jboss.arquillian.junit.Arquillian;
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 @RunWith(Arquillian.class)
 public class HistoryTest extends EmpireAvenueTestDeploy {
-    private String ticker="RMH";
+    private String ticker = "RMH";
 
-    private int days=20;
+    private int days = 20;
 
     @Test
     public void authorizationUrlTest() {
@@ -234,7 +233,6 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
     }
 
 
-
     @Test
     public void getAllSharesBoughtHistory() {
         HistoryResponse sharesBoughtHistory = historyService.getSharesBoughtHistory(ticker);
@@ -246,7 +244,6 @@ public class HistoryTest extends EmpireAvenueTestDeploy {
         }
         System.out.println("--------------------------------------");
     }
-
 
 
     @Test

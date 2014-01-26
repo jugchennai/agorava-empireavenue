@@ -15,7 +15,12 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
-import org.agorava.empireavenue.model.Lists;
+import org.agorava.api.atinject.Current;
+import org.agorava.api.oauth.OAuthService;
+import org.agorava.api.oauth.OAuthSession;
+import org.agorava.api.oauth.Token;
+import org.agorava.api.service.OAuthLifeCycleService;
+import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.service.*;
 import org.jboss.arquillian.container.test.api.Deployment;
 import org.jboss.shrinkwrap.api.Archive;
@@ -26,26 +31,19 @@ import org.jboss.shrinkwrap.api.asset.EmptyAsset;
 import org.jboss.shrinkwrap.api.spec.JavaArchive;
 import org.jboss.shrinkwrap.api.spec.WebArchive;
 import org.jboss.shrinkwrap.resolver.api.maven.Maven;
-
-import java.io.FileNotFoundException;
-import javax.inject.Inject;
-import org.agorava.api.atinject.Current;
-import org.agorava.api.oauth.OAuthService;
-import org.agorava.api.oauth.OAuthSession;
-import org.agorava.api.oauth.Token;
-import org.agorava.api.service.OAuthLifeCycleService;
-import org.agorava.empireavenue.EmpireAvenue;
 import org.junit.Before;
 
+import javax.inject.Inject;
+import java.io.FileNotFoundException;
+
 /**
-*
-* @author Rajmahendra Hegde <rajmahendra@gmail.com>
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde <rajmahendra@gmail.com>
+ * @since 0.7.0
+ */
 public class EmpireAvenueTestDeploy {
-    
-	private final String TOKEN = "";
-    
+
+    private final String TOKEN = "";
+
     @Inject
     @EmpireAvenue
     protected ProfileService profileService;
@@ -81,7 +79,6 @@ public class EmpireAvenueTestDeploy {
     protected CommunityService communityService;
 
 
-
     @Inject
     @EmpireAvenue
     protected OAuthService service;
@@ -96,14 +93,14 @@ public class EmpireAvenueTestDeploy {
 
     @Before
     public void init() {
- 
+
 
         Token token = new Token(TOKEN.trim(), "");
         sessionTest.setAccessToken(token);
         oAuthLifeCycleService.endDance();
     }
-    
-    
+
+
     @Deployment
     public static Archive<?> createTestArchive() throws FileNotFoundException {
         JavaArchive testJar = ShrinkWrap.create(JavaArchive.class, "agorava-empireavenue.jar")

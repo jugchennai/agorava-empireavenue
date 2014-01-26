@@ -26,17 +26,15 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)
 public class SharesTest extends EmpireAvenueTestDeploy {
 
-    private String ticker="ARKARTHICK";
-    private int numberOfShares=160;
-    private double sharePrice=195.54;
-
-
+    private String ticker = "ARKARTHICK";
+    private int numberOfShares = 160;
+    private double sharePrice = 195.54;
 
 
     @Test
@@ -46,7 +44,7 @@ public class SharesTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void commissionChargesTest() {
-        SharesResponse sharesCommission = sharesService.getSharesCommission(ticker,numberOfShares);
+        SharesResponse sharesCommission = sharesService.getSharesCommission(ticker, numberOfShares);
         assertNotNull(sharesCommission);
         assertNotNull(sharesCommission.getCommission());
         System.out.println(sharesCommission.getCommission().getCommission());
@@ -56,7 +54,7 @@ public class SharesTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void buySharesTest() {
-        SharesResponse buyShares = sharesService.buyShares(ticker, numberOfShares,sharePrice);
+        SharesResponse buyShares = sharesService.buyShares(ticker, numberOfShares, sharePrice);
         assertNotNull(buyShares);
         assertNotNull(buyShares.getCommission());
         assert (buyShares.getCommission().isSuccess());
@@ -65,10 +63,9 @@ public class SharesTest extends EmpireAvenueTestDeploy {
     }
 
 
-
     @Test
     public void sellSharesTest() {
-        SharesResponse sellShares = sharesService.sellShares(ticker, numberOfShares,sharePrice);
+        SharesResponse sellShares = sharesService.sellShares(ticker, numberOfShares, sharePrice);
         assertNotNull(sellShares);
         assertNotNull(sellShares.getCommission());
         assert (sellShares.getCommission().isSuccess());

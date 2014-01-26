@@ -15,9 +15,6 @@
  */
 package org.agorava.empireavenue.cdi.test.testcase;
 
-import static org.junit.Assert.assertNotNull;
-import static org.junit.Assert.assertTrue;
-
 import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
 import org.agorava.empireavenue.model.Leaders;
 import org.agorava.empireavenue.response.LeadersResponse;
@@ -25,9 +22,11 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import static org.junit.Assert.assertNotNull;
+import static org.junit.Assert.assertTrue;
+
 /**
- * 
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 @RunWith(Arquillian.class)
