@@ -15,7 +15,6 @@
  */
 package org.agorava.empireavenue.model;
 
-import org.agorava.spi.UserProfile;
 
 /**
  * 
@@ -23,7 +22,7 @@ import org.agorava.spi.UserProfile;
  * @since 0.7.0
  */
 @SuppressWarnings("serial")
-public class ProfileInfo extends UserProfile {
+public class ProfileInfo {
 
     private String ticker;
     private String firstName;
@@ -78,7 +77,7 @@ public class ProfileInfo extends UserProfile {
 
     public ProfileInfo(String id, String ticker, String firstName, String lastName,
             String fullName, String joined, String country, String location) {
-        super(id);
+        
         this.ticker = ticker;
         this.firstName = firstName;
         this.lastName = lastName;
@@ -86,6 +85,10 @@ public class ProfileInfo extends UserProfile {
         this.joined = joined;
         this.country = country;
         this.location = location;
+    }
+    
+    public ProfileInfo() {
+    	
     }
 
     public String getTicker() {
@@ -301,10 +304,5 @@ public class ProfileInfo extends UserProfile {
                 .toString();
     }
 
-    @Override
-    public String getProfileImageUrl() {
-        
-        return smPortrait;
-    }
 
 }
