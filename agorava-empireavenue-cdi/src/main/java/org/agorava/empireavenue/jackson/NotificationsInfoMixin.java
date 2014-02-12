@@ -15,8 +15,6 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 abstract class NotificationsInfoMixin {
 
 
-
-
     @JsonCreator
     NotificationsInfoMixin() {
     }
@@ -158,7 +156,6 @@ abstract class NotificationsInfoMixin {
 
     @JsonProperty("subject")
     private String subject;
-
 
 
 }

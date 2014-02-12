@@ -15,14 +15,14 @@
  */
 package org.agorava.empireavenue.response;
 
+import org.agorava.empireavenue.model.ProfileInfo;
+
 import java.util.List;
 
-import org.agorava.empireavenue.model.ProfileInfo;
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class ProfileInfoResponse extends Response<ProfileInfo> {
 
     public ProfileInfoResponse() {
@@ -31,7 +31,7 @@ public class ProfileInfoResponse extends Response<ProfileInfo> {
     public ProfileInfo getProfileInfo() {
         return retrieveData();
     }
-    
+
     public List<ProfileInfo> getAllProfileInfo() {
         return retrieveAllData();
     }

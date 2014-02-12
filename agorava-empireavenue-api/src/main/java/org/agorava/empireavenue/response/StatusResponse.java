@@ -16,11 +16,11 @@
 package org.agorava.empireavenue.response;
 
 import org.agorava.empireavenue.model.Status;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class StatusResponse extends Response<Status> {
 
     public StatusResponse() {

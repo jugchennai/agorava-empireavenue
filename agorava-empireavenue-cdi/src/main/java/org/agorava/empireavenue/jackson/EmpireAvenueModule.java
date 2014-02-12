@@ -15,15 +15,11 @@
  */
 package org.agorava.empireavenue.jackson;
 
-import org.agorava.empireavenue.model.*;
-
 import com.fasterxml.jackson.databind.module.SimpleModule;
-
-import org.agorava.empireavenue.model.Status;
+import org.agorava.empireavenue.model.*;
 import org.agorava.empireavenue.response.*;
 
 /**
- *
  * @author Rajmahendra Hegde
  * @since 0.7.0
  */
@@ -47,35 +43,29 @@ public class EmpireAvenueModule extends SimpleModule {
         context.setMixInAnnotations(ProfileInfoResponse.class, ProfileInfoResponseMixin.class);
         context.setMixInAnnotations(CommunityResponse.class, CommunityResponseMixin.class);
 
-        context.setMixInAnnotations(Count.class,CountMixin.class);
-        context.setMixInAnnotations(CountResponse.class,CountResponseMixin.class);
+        context.setMixInAnnotations(Count.class, CountMixin.class);
+        context.setMixInAnnotations(CountResponse.class, CountResponseMixin.class);
 
-        context.setMixInAnnotations(BankBalance.class,BankBalanceMixin.class);
-        context.setMixInAnnotations(BankBalanceResponse.class,BankBalanceResponseMixin.class);
+        context.setMixInAnnotations(BankBalance.class, BankBalanceMixin.class);
+        context.setMixInAnnotations(BankBalanceResponse.class, BankBalanceResponseMixin.class);
 
-        context.setMixInAnnotations(Leaders.class,LeadersMixin.class);
-        context.setMixInAnnotations(LeadersResponse.class,LeadersResponseMixin.class);
+        context.setMixInAnnotations(Leaders.class, LeadersMixin.class);
+        context.setMixInAnnotations(LeadersResponse.class, LeadersResponseMixin.class);
 
-        context.setMixInAnnotations(History.class,HistoryMixin.class);
-        context.setMixInAnnotations(HistoryResponse.class,HistoryResponseMixin.class);
+        context.setMixInAnnotations(History.class, HistoryMixin.class);
+        context.setMixInAnnotations(HistoryResponse.class, HistoryResponseMixin.class);
 
-        context.setMixInAnnotations(Portfolio.class,PortfolioMixin.class);
-        context.setMixInAnnotations(PortfolioResponse.class,PortfolioResponseMixin.class);
+        context.setMixInAnnotations(Portfolio.class, PortfolioMixin.class);
+        context.setMixInAnnotations(PortfolioResponse.class, PortfolioResponseMixin.class);
 
-        context.setMixInAnnotations(Shares.class,SharesMixin.class);
-        context.setMixInAnnotations(SharesResponse.class,SharesResponseMixin.class);
+        context.setMixInAnnotations(Shares.class, SharesMixin.class);
+        context.setMixInAnnotations(SharesResponse.class, SharesResponseMixin.class);
 
-        context.setMixInAnnotations(Search.class,SearchMixin.class);
-        context.setMixInAnnotations(SearchResponse.class,SearchResponseMixin.class);
+        context.setMixInAnnotations(Search.class, SearchMixin.class);
+        context.setMixInAnnotations(SearchResponse.class, SearchResponseMixin.class);
 
-        context.setMixInAnnotations(Lists.class,ListsMixin.class);
-        context.setMixInAnnotations(ListsResponse.class,ListsResponseMixin.class);
-
-        context.setMixInAnnotations(Notifications.class,NotificationsMixin.class);
-        context.setMixInAnnotations(NotificationsInfo.class,NotificationsInfoMixin.class);
-        context.setMixInAnnotations(NotificationsResponse.class,NotificationsResponseMixin.class);
-
-
+        context.setMixInAnnotations(Lists.class, ListsMixin.class);
+        context.setMixInAnnotations(ListsResponse.class, ListsResponseMixin.class);
     }
 
 }

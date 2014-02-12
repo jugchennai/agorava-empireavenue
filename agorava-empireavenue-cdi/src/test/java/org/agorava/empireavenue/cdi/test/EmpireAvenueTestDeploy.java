@@ -78,6 +78,10 @@ public class EmpireAvenueTestDeploy {
     @EmpireAvenue
     protected CommunityService communityService;
 
+    @Inject
+    @EmpireAvenue
+    protected NotificationsService notificationsService;
+
 
     @Inject
     @EmpireAvenue

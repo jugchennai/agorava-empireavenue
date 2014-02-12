@@ -18,10 +18,9 @@ package org.agorava.empireavenue.model;
 import java.math.BigDecimal;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class BankBalance {
     private BigDecimal balance;
 
@@ -31,14 +30,14 @@ public class BankBalance {
     public BigDecimal getBalance() {
         return balance;
     }
-    
+
     @Override
     public String toString() {
         return new StringBuffer()
-        .append("BankBalance [ ")
-        .append(balance)
-        .append("]")
-        .toString();
+                .append("BankBalance [ ")
+                .append(balance)
+                .append("]")
+                .toString();
     }
 
 }

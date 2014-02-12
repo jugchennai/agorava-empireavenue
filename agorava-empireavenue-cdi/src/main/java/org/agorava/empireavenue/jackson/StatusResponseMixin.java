@@ -15,25 +15,24 @@
  */
 package org.agorava.empireavenue.jackson;
 
-import java.util.List;
-
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class StatusResponseMixin extends ResponseMixin {
 
     @JsonCreator
     StatusResponseMixin(@JsonProperty("meta")
-    MetaMixin meta, @JsonProperty("data")
-    List<StatusMixin> data) {
-super(meta);
+                        MetaMixin meta, @JsonProperty("data")
+                        List<StatusMixin> data) {
+        super(meta);
     }
 
     @JsonProperty("data")

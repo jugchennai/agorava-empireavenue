@@ -20,21 +20,20 @@ import org.agorava.empireavenue.response.CommunityResponse;
 
 /**
  * Operations on Portfolio   /Portfolio
- *
- *
+ * <p/>
+ * <p/>
  * EmpireAvenue Info:<br/>
  * URI: https://api.empireavenue.com/ <br/>
  * Rate Limit: User <br/>
  * Authentication: Required<br/><br/>
- *
+ * <p/>
  * API Calls<br/>
  * community/info<br/>
  * community/personal/list<br/>
  * community/recent/list<br/>
  *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 public interface CommunityService {
 
@@ -47,16 +46,15 @@ public interface CommunityService {
     /**
      * Returns Information about a community<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/community/info<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
      * @param communityId The unique community id
      * @return CommunityResponse Returns community Information for given Community id .
      * @see org.agorava.empireavenue.service.CommunityService#getCommunitiesInfo(java.lang.String...)
-     *
      */
 
 
@@ -65,77 +63,62 @@ public interface CommunityService {
     /**
      * Returns Information about a community<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/community/info<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
      * @param communityId comma delimited string of integer community ids
      * @return CommunityResponse Returns community Information for given list of Community id .
      * @see org.agorava.empireavenue.service.CommunityService#getCommunitiesInfo(int)
-     *
      */
     CommunityResponse getCommunitiesInfo(String... communityId);
 
 
-
-
     /**
      * Returns a full list of Personal Communities<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/community/info<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
      * @return CommunityResponse Returns a full list of Personal Communities
      * @see org.agorava.empireavenue.service.CommunityService#getListOfPersonalCommunities(int)
-     *
      */
     CommunityResponse getListOfPersonalCommunities();
 
 
-
-
     /**
      * Returns a full list of Personal Communities<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/community/info<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
+     *
      * @param pageLimit Specific page number of results (e.g. page=2  will return page 2 of the result set)
      * @return CommunityResponse Returns a full list of Personal Communities with the
      * @see org.agorava.empireavenue.service.CommunityService#getListOfPersonalCommunities()
-     *
      */
     CommunityResponse getListOfPersonalCommunities(int pageLimit);
-
 
 
     /**
      * Returns the latest communities that were created<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/community/info<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * @return CommunityResponse Returns the last 50 communities that were created
      *
+     * @return CommunityResponse Returns the last 50 communities that were created
      */
     CommunityResponse getLatestCommunities();
-
-
-
-
-
-
-
-
-
-
 
 
 }

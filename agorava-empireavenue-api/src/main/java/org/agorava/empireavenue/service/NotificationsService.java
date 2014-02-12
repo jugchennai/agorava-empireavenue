@@ -13,28 +13,31 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-package org.agorava.empireavenue.jackson;
 
-import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonTypeName;
+package org.agorava.empireavenue.service;
 
-import java.math.BigDecimal;
+import org.agorava.empireavenue.response.NotificationsResponse;
 
 /**
- * @author Rajmahendra Hegde
+ * Operations on Notifications
+ * <p/>
+ * <p/>
+ * EmpireAvenue Info:<br/>
+ * URI: https://api.empireavenue.com/profile/notifications <br/>
+ * Rate Limit: User <br/>
+ * Authentication: Required<br/><br/>
+ * <p/>
+ * API Calls<br/>
+ * profile/notifications<br/>
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
-@JsonTypeName("data")
-@JsonIgnoreProperties(ignoreUnknown = true)
-abstract class BankBalanceMixin {
+public interface NotificationsService {
 
-    @JsonCreator
-    BankBalanceMixin(@JsonProperty("balance")
-                     BigDecimal balance) {
-    }
 
-    @JsonProperty("balance")
-    abstract BigDecimal getBalance();
+    static final String NOTIFICATIONS_ALL = "profile/notifications";
+
+    NotificationsResponse getAllNotification();
+
+
 }

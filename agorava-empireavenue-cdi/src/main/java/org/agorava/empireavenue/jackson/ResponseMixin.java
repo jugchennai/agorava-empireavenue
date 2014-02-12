@@ -17,15 +17,15 @@ package org.agorava.empireavenue.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 abstract class ResponseMixin {
     @JsonCreator
     ResponseMixin(@JsonProperty("meta")
-    MetaMixin meta) {
+                  MetaMixin meta) {
 
     }
 

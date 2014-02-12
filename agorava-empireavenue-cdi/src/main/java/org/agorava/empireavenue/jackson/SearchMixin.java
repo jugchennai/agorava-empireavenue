@@ -22,10 +22,9 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
- **/
+ */
 
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -58,10 +57,6 @@ public class SearchMixin {
     private int maxShares;
     @JsonProperty("trading_status")
     private int tradingStatus;
-
-
-
-
 
 
 }

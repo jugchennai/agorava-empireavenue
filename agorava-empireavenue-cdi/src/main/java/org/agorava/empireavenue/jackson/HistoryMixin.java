@@ -21,22 +21,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
 
 public class HistoryMixin {
-    
-     @JsonCreator
+
+    @JsonCreator
     HistoryMixin(@JsonProperty("date") String date) {
     }
-    
-     
-     @JsonProperty("dividend")
+
+
+    @JsonProperty("dividend")
     private float dividend;
     @JsonProperty("price")
     private float price;
@@ -52,8 +50,8 @@ public class HistoryMixin {
     private float foursquare;
     @JsonProperty("gplus")
     private float gplus;
-   @JsonProperty("instagram")
-   private float instagram;
+    @JsonProperty("instagram")
+    private float instagram;
     @JsonProperty("linkedin")
     private float linkedin;
     @JsonProperty("twitter")
@@ -73,9 +71,5 @@ public class HistoryMixin {
     @JsonProperty("ticker")
     private String ticker;
 
-    
-    
-    
-    
-    
+
 }

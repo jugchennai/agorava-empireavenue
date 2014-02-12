@@ -23,14 +23,14 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-abstract class SearchResponseMixin extends ResponseMixin{
+abstract class SearchResponseMixin extends ResponseMixin {
 
     @JsonCreator
     SearchResponseMixin(@JsonProperty("meta")

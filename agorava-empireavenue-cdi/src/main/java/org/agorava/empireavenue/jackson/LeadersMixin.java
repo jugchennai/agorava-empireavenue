@@ -21,8 +21,8 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
+ * @since 0.7.0
  */
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -30,9 +30,10 @@ public class LeadersMixin {
 
     @JsonCreator
     LeadersMixin(@JsonProperty("ticker") String ticker,
-            @JsonProperty("full_name") String fullName,
-            @JsonProperty("country") String country, @JsonProperty("location") String location) {
+                 @JsonProperty("full_name") String fullName,
+                 @JsonProperty("country") String country, @JsonProperty("location") String location) {
     }
+
     @JsonProperty("max_share")
     private int maxShare;
     @JsonProperty("last_trade")
@@ -49,8 +50,8 @@ public class LeadersMixin {
     private int ranking;
     @JsonProperty("old_ranking")
     private int oldRanking;
-    
-    
+
+
     @JsonProperty("eva_score")
     private float eavScore;
     @JsonProperty("flickr_score")

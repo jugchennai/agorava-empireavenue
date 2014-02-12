@@ -15,15 +15,14 @@
  */
 package org.agorava.empireavenue.response;
 
-import java.util.List;
-
 import org.agorava.empireavenue.model.Count;
 
+import java.util.List;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class CountResponse extends Response<Count> {
     public CountResponse() {
     }

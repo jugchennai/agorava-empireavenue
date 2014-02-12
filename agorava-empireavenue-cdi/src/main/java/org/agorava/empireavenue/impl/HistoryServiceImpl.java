@@ -24,10 +24,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- * 
  */
 @EmpireAvenue
 public class HistoryServiceImpl extends EmpireAvenueBaseService implements HistoryService {
@@ -46,19 +44,19 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
     public HistoryResponse getReceivedDividendsHistory(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-        return getService().post(buildAbsoluteUri(HISTORY_DIVIDENDS_RECEIVED),data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_DIVIDENDS_RECEIVED), data, HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getNetworkscoreHistory() {
-                return getService().get(buildAbsoluteUri(HISTORY_NETWORKSCORE), HistoryResponse.class);
+        return getService().get(buildAbsoluteUri(HISTORY_NETWORKSCORE), HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getNetworkscoreHistory(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-                return getService().post(buildAbsoluteUri(HISTORY_NETWORKSCORE),data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_NETWORKSCORE), data, HistoryResponse.class);
     }
 
     @Override
@@ -66,7 +64,7 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
         Map<String, Object> data = new HashMap<>();
         data.put("days", days);
 
-        return getService().post(buildAbsoluteUri(HISTORY_NETWORKSCORE),data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_NETWORKSCORE), data, HistoryResponse.class);
     }
 
     @Override
@@ -74,26 +72,26 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
         data.put("days", days);
-                return getService().post(buildAbsoluteUri(HISTORY_NETWORKSCORE), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_NETWORKSCORE), data, HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getSharepriceHistory() {
-                return getService().get(buildAbsoluteUri(HISTORY_SHAREPRICE), HistoryResponse.class);
+        return getService().get(buildAbsoluteUri(HISTORY_SHAREPRICE), HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getSharepriceHistory(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-                return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE), data, HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getSharepriceHistory(int hours) {
         Map<String, Object> data = new HashMap<>();
         data.put("hours", hours);
-                return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE), data, HistoryResponse.class);
     }
 
     @Override
@@ -101,26 +99,26 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
         data.put("hours", hours);
-                return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE), data, HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getSharepriceCloseHistory() {
-                return getService().get(buildAbsoluteUri(HISTORY_SHAREPRICE_CLOSE), HistoryResponse.class);
+        return getService().get(buildAbsoluteUri(HISTORY_SHAREPRICE_CLOSE), HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getSharepriceCloseHistory(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-                return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE_CLOSE), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE_CLOSE), data, HistoryResponse.class);
     }
 
     @Override
     public HistoryResponse getSharepriceCloseHistory(int days) {
         Map<String, Object> data = new HashMap<>();
         data.put("days", days);
-                return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE_CLOSE), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHAREPRICE_CLOSE), data, HistoryResponse.class);
     }
 
     @Override
@@ -134,7 +132,7 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
 
     @Override
     public HistoryResponse getSharesHistory() {
-                return getService().get(buildAbsoluteUri(HISTORY_SHARES), HistoryResponse.class);
+        return getService().get(buildAbsoluteUri(HISTORY_SHARES), HistoryResponse.class);
     }
 
 
@@ -142,7 +140,7 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
     public HistoryResponse getSharesBoughtHistory(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-                return getService().post(buildAbsoluteUri(HISTORY_SHARES_BOUGHT), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHARES_BOUGHT), data, HistoryResponse.class);
     }
 
 
@@ -151,9 +149,8 @@ public class HistoryServiceImpl extends EmpireAvenueBaseService implements Histo
 
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-                return getService().post(buildAbsoluteUri(HISTORY_SHARES_SOLD), data, HistoryResponse.class);
+        return getService().post(buildAbsoluteUri(HISTORY_SHARES_SOLD), data, HistoryResponse.class);
     }
-    
-    
-    
+
+
 }
