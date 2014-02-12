@@ -23,10 +23,10 @@ import org.agorava.empireavenue.model.Status;
 import org.agorava.empireavenue.response.*;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ *
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @SuppressWarnings("serial")
 public class EmpireAvenueModule extends SimpleModule {
 
@@ -46,16 +46,16 @@ public class EmpireAvenueModule extends SimpleModule {
 
         context.setMixInAnnotations(ProfileInfoResponse.class, ProfileInfoResponseMixin.class);
         context.setMixInAnnotations(CommunityResponse.class, CommunityResponseMixin.class);
-        
+
         context.setMixInAnnotations(Count.class,CountMixin.class);
         context.setMixInAnnotations(CountResponse.class,CountResponseMixin.class);
-        
+
         context.setMixInAnnotations(BankBalance.class,BankBalanceMixin.class);
         context.setMixInAnnotations(BankBalanceResponse.class,BankBalanceResponseMixin.class);
-        
+
         context.setMixInAnnotations(Leaders.class,LeadersMixin.class);
         context.setMixInAnnotations(LeadersResponse.class,LeadersResponseMixin.class);
-        
+
         context.setMixInAnnotations(History.class,HistoryMixin.class);
         context.setMixInAnnotations(HistoryResponse.class,HistoryResponseMixin.class);
 
@@ -70,6 +70,12 @@ public class EmpireAvenueModule extends SimpleModule {
 
         context.setMixInAnnotations(Lists.class,ListsMixin.class);
         context.setMixInAnnotations(ListsResponse.class,ListsResponseMixin.class);
+
+        context.setMixInAnnotations(Notifications.class,NotificationsMixin.class);
+        context.setMixInAnnotations(NotificationsInfo.class,NotificationsInfoMixin.class);
+        context.setMixInAnnotations(NotificationsResponse.class,NotificationsResponseMixin.class);
+
+
     }
 
 }
