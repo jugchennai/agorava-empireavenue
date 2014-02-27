@@ -10,7 +10,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  * @since 0.7.0
  */
 
-@JsonTypeName("data")
+@JsonTypeName("info")
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class NotificationsInfoMixin {
 

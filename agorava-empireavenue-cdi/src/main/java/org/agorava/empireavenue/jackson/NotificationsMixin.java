@@ -23,7 +23,5 @@ abstract class NotificationsMixin {
     {
 
     }
-    private String type;
-    private String created;
-    private NotificationsInfo noteInfo;
+
 }

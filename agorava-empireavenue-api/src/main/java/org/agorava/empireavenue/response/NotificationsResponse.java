@@ -1,17 +1,17 @@
 package org.agorava.empireavenue.response;
 
-import javax.management.Notification;
 import java.util.List;
+import org.agorava.empireavenue.model.Notifications;
 
 /**
  * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
-public class NotificationsResponse extends Response<Notification> {
+public class NotificationsResponse extends Response<Notifications> {
     public NotificationsResponse() {
     }
 
-    public List<Notification> getAllNotification() {
+    public List<Notifications> getAllNotification() {
         return retrieveAllData();
     }
 
