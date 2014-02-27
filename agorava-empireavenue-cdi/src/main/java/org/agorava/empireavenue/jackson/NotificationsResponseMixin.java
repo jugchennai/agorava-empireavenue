@@ -2,6 +2,7 @@ package org.agorava.empireavenue.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+import org.agorava.empireavenue.model.NotificationsInfo;
 
 import java.util.List;
 
@@ -14,7 +15,8 @@ abstract class NotificationsResponseMixin extends ResponseMixin{
     @JsonCreator
     NotificationsResponseMixin(@JsonProperty("meta")
                                MetaMixin meta, @JsonProperty("data")
-                               List<ListsMixin> data) {
+                               List<ListsMixin> data,@JsonProperty("info")
+    List<NotificationsInfoMixin> info) {
         super(meta);
     }
 
