@@ -38,19 +38,22 @@ public class Notifications {
         this.notificationsInfo = notificationsInfo;
     }
 
+    public boolean isNull() {
+        return notificationsInfo==null ? false : true;
+    }
 
 
     @Override
     public String toString() {
 
 
-
+        System.out.println(":::::::::::::::::::::::::::::::"+this.getNotificationsInfo());
 
         return new StringBuffer()
                 .append("Notifications [ ")
-                .append("Type : "+ type)
-                .append("created :"+ created)
-                .append("info :")
+                .append("Type : "+ this.type)
+                .append(", created :"+ this.created)
+               // .append("info :"+this.getNotificationsInfo().toString()+"")
                 .append("]")
                 .toString();
 

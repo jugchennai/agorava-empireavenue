@@ -422,15 +422,48 @@ public class NotificationsInfo {
         this.subject = subject;
     }
 
-    ;
+   @Override
+   public String toString() {
+
+       return new StringBuffer()
+               .append("info [ ")
+               .append("buyerName:")
+               .append(this.buyerName)
+               .append(",buyerTicker:")
+               .append(this.buyerTicker)
+               .append(",communityId:")
+               .append(this.communityId)
+               .append(",communityName:")
+               .append(this.communityName)
+               .append(",communityNotificationType:")
+               .append(this.communityNotificationType)
+               .append(",communityThreadId:")
+               .append(this.communityThreadId)
+               .append(",communityTitle:")
+               .append(this.communityTitle)
+               .append(",communityTopic:")
+               .append(this.communityTopic)
+               .append(",communityTopicId:")
+               .append(this.communityTopicId)
+               .append(",dividends:")
+               .append(this.dividends)
+               .append(",topic:")
+               .append(this.topic)
+               .append(",toTicker:")
+               .append(this.toTicker)
+               .append(",fromFullName:")
+               .append(this.fromFullName)
+               .append(",fullName:")
+               .append(this.fullName)
+               .append(",earnings:")
+               .append(this.earnings)
+               .append(",gains:")
+               .append(this.gains)
+               .append("]")
+               .toString();
 
 
-
-
-
-
-
-
+   }
 
 
 

@@ -14,9 +14,9 @@ abstract class NotificationsResponseMixin extends ResponseMixin{
 
     @JsonCreator
     NotificationsResponseMixin(@JsonProperty("meta")
-                               MetaMixin meta, @JsonProperty("data")
-                               List<ListsMixin> data,@JsonProperty("info")
-    List<NotificationsInfoMixin> info) {
+                               MetaMixin meta ,@JsonProperty("info")
+    List<NotificationsInfoMixin> info,@JsonProperty("data")
+                               List<NotificationsMixin> data) {
         super(meta);
     }
 
