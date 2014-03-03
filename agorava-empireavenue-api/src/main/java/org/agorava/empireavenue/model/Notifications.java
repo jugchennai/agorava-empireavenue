@@ -13,6 +13,7 @@ public class Notifications {
     private String created;
     private NotificationsInfo notificationsInfo;
 
+
     public String getType() {
         return type;
     }
@@ -29,8 +30,7 @@ public class Notifications {
         this.created = created;
     }
 
-
-    public NotificationsInfo getNotificationsInfo() {
+   public NotificationsInfo getNotificationsInfo() {
         return notificationsInfo;
     }
 
@@ -38,16 +38,8 @@ public class Notifications {
         this.notificationsInfo = notificationsInfo;
     }
 
-    public boolean isNull() {
-        return notificationsInfo==null ? false : true;
-    }
-
-
     @Override
     public String toString() {
-
-
-        System.out.println(":::::::::::::::::::::::::::::::"+this.getNotificationsInfo());
 
         return new StringBuffer()
                 .append("Notifications [ ")
@@ -56,11 +48,5 @@ public class Notifications {
                // .append("info :"+this.getNotificationsInfo().toString()+"")
                 .append("]")
                 .toString();
-
-
     }
-
-
-
-
 }

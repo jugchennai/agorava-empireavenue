@@ -42,7 +42,7 @@ public class PortfolioMixin {
     @JsonProperty("gplus_score")
     private float gplusScore;
 
-  /*  @JsonProperty("sm_portrait")
+    @JsonProperty("sm_portrait")
     private String smPortrait;
     @JsonProperty("lg_portrait")
     private String lgPortrait;
@@ -72,6 +72,130 @@ public class PortfolioMixin {
     @JsonProperty("your_shares_held")
     private int yourSharesHeld;
     @JsonProperty("max_shares")
-    private int maxShares;*/
+    private int maxShares;
+
+
+
+
+    public String getFullName() {
+        return fullName;
+    }
+
+    public float getLastTrade() {
+        return lastTrade;
+    }
+
+    public float getClose() {
+        return close;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public float getEavScore() {
+        return eavScore;
+    }
+
+    public float getFlickrScore() {
+        return flickrScore;
+    }
+
+    public float getTwitterScore() {
+        return twitterScore;
+    }
+
+    public float getFacebookScore() {
+        return facebookScore;
+    }
+
+    public float getFacebookpageScore() {
+        return facebookpageScore;
+    }
+
+    public float getYoutubeScore() {
+        return youtubeScore;
+    }
+
+    public float getLinkedinScore() {
+        return linkedinScore;
+    }
+
+    public float getFoursquareScore() {
+        return foursquareScore;
+    }
+
+    public float getInstagramScore() {
+        return instagramScore;
+    }
+
+    public float getWordpressScore() {
+        return wordpressScore;
+    }
+
+    public float getGplusScore() {
+        return gplusScore;
+    }
+
+    public String getSmPortrait() {
+        return smPortrait;
+    }
+
+    public String getLgPortrait() {
+        return lgPortrait;
+    }
+
+    public String getLocation() {
+        return location;
+    }
+
+    public String getCountry() {
+        return country;
+    }
+
+    public float getYesterdayLowest() {
+        return yesterdayLowest;
+    }
+
+    public float getYesterdayHighest() {
+        return yesterdayHighest;
+    }
+
+    public int getOutstandingShares() {
+        return outstandingShares;
+    }
+
+    public float getPortfolioValue() {
+        return portfolioValue;
+    }
+
+    public float getYesterdayEarnings() {
+        return yesterdayEarnings;
+    }
+
+    public int getShares() {
+        return shares;
+    }
+
+    public int getLastBuyShares() {
+        return lastBuyShares;
+    }
+
+    public String getLastBuy() {
+        return lastBuy;
+    }
+
+    public int getYourSharesHeld() {
+        return yourSharesHeld;
+    }
+
+    public int getMaxShares() {
+        return maxShares;
+    }
+
+
+
+
+
 
 }

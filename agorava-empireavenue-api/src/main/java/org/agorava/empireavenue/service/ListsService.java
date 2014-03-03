@@ -51,7 +51,6 @@ public interface ListsService {
     static final String LISTS_MEMBERS = "lists/members";
     static final String LISTS_LISTEDBY = "lists/listedby";
     static final String LISTS_RECOMMENDEDBY = "lists/recommendedby";
-
     static final String LISTS_ADD = "lists/add";
     static final String LISTS_REMOVE = "lists/remove";
 

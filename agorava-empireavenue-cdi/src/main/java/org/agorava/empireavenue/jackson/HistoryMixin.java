@@ -27,7 +27,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class HistoryMixin {
+abstract class HistoryMixin {
 
     @JsonCreator
     HistoryMixin(@JsonProperty("date") String date) {
@@ -71,5 +71,62 @@ public class HistoryMixin {
     @JsonProperty("ticker")
     private String ticker;
 
+
+    @JsonProperty("dividend")
+    abstract float getDividend();
+
+    @JsonProperty("date")
+    abstract String getDate();
+
+    @JsonProperty("price")
+    abstract float getPrice();
+
+    @JsonProperty("eav")
+    abstract float getEav();
+
+    @JsonProperty("facebook")
+    abstract float getFacebook();
+
+    @JsonProperty("facebookpage")
+    abstract float getFacebookpage();
+
+    @JsonProperty("flickr")
+    abstract float getFlickr();
+
+    @JsonProperty("foursquare")
+    abstract float getFoursquare();
+
+    @JsonProperty("gplus")
+    abstract float getGplus();
+
+    @JsonProperty("instagram")
+    abstract float getInstagram() ;
+
+    @JsonProperty("linkedin")
+    abstract float getLinkedin() ;
+
+    @JsonProperty("twitter")
+    abstract float getTwitter() ;
+
+    @JsonProperty("wordpress")
+    abstract float getWordpress();
+
+    @JsonProperty("youtube")
+    abstract float getYoutube();
+
+    @JsonProperty("shares")
+    abstract int getShares() ;
+
+    @JsonProperty("type")
+    abstract String getType();
+
+    @JsonProperty("full_name")
+    abstract String getFullName() ;
+
+    @JsonProperty("sm_portrait")
+    abstract String getSmPortrait() ;
+
+    @JsonProperty("ticker")
+    abstract String getTicker();
 
 }

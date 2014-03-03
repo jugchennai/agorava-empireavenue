@@ -53,4 +53,52 @@ abstract class ListsMixin {
 
     }
 
+    @JsonProperty("list_type_id")
+    abstract String getListTypeId();
+
+    @JsonProperty("title")
+    abstract String getTitle();
+
+    @JsonProperty("private")
+    abstract int getIsPrivate() ;
+
+    @JsonProperty("allow_privacy_control")
+    abstract int getAllowPrivacyControl() ;
+
+    @JsonProperty("max_users")
+    abstract int getMaxUsers();
+
+    @JsonProperty("user_count")
+    abstract int getUserCount() ;
+
+    @JsonProperty("ticker")
+    abstract String getTicker() ;
+
+    @JsonProperty("full_name")
+    abstract String getFullName() ;
+
+    @JsonProperty("location")
+    abstract String getLocation();
+
+    @JsonProperty("country")
+    abstract String getCountry() ;
+
+    @JsonProperty("outstanding_shares")
+    abstract int getOutstandingShares() ;
+
+    @JsonProperty("change")
+    abstract float getChange();
+
+    @JsonProperty("last_trade")
+    abstract float getLastTrade() ;
+
+    @JsonProperty("close")
+    abstract float getClose() ;
+
+    @JsonProperty("sm_portrait")
+    abstract String getSmPortrait() ;
+
+    @JsonProperty("lg_portrait")
+    abstract String getLgPortrait();
+
 }

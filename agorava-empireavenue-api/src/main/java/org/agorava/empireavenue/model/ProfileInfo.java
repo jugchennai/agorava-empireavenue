@@ -285,6 +285,12 @@ public class ProfileInfo extends UserProfile {
     }
 
     @Override
+    public String getProfileImageUrl() {
+
+        return smPortrait;
+    }
+
+ @Override
     public String toString() {
 
         return new StringBuffer().append("ProfileInfo [").append(ticker).append(",").append(firstName).append(",").append(lastName)
@@ -301,10 +307,5 @@ public class ProfileInfo extends UserProfile {
                 .toString();
     }
 
-    @Override
-    public String getProfileImageUrl() {
-        
-        return smPortrait;
-    }
 
 }

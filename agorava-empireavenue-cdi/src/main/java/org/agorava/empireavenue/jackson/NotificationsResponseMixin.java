@@ -22,4 +22,5 @@ abstract class NotificationsResponseMixin extends ResponseMixin{
 
     @JsonProperty("data")
     abstract List<NotificationsMixin> getData();
+
 }

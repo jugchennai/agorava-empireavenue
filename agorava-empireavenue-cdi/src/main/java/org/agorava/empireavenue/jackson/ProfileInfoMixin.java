@@ -131,4 +131,157 @@ abstract class ProfileInfoMixin {
     @JsonProperty("gplus_score")
     private float gplusScore;
 
+
+
+    @JsonProperty("ticker")
+    abstract String getTicker();
+
+    @JsonProperty("first_name")
+    abstract String getFirstName();
+
+    @JsonProperty("site_name")
+    abstract String getSiteName();
+
+    @JsonProperty("site_url")
+    abstract String getSiteUrl();
+
+    @JsonProperty("last_name")
+    abstract String getLastName();
+
+    @JsonProperty("full_name")
+    abstract String getFullName();
+
+    @JsonProperty("joined")
+    abstract String getJoined();
+
+    @JsonProperty("country")
+    abstract String getCountry();
+
+    @JsonProperty("location")
+    abstract String getLocation();
+
+    @JsonProperty("type")
+    abstract String getType() ;
+
+    @JsonProperty("max_share")
+    abstract int getMaxShare() ;
+
+    @JsonProperty("commission")
+    abstract float getCommission();
+
+    @JsonProperty("last_trade")
+    abstract float getLastTrade();
+
+    @JsonProperty("outstanding_shares")
+    abstract int getOutstandingShares();
+
+    @JsonProperty("total_shares")
+    abstract int getTotalShares();
+
+    @JsonProperty("close")
+    abstract float getClose();
+
+    @JsonProperty("close_money")
+    abstract float getCloseMoney();
+
+    @JsonProperty("open")
+    abstract float getOpen();
+
+    @JsonProperty("yesterday_lowest")
+    abstract float getYesterdayLowest();
+
+    @JsonProperty("yesterday_highest")
+    abstract float getYesterdayHighest();
+
+    @JsonProperty("yesterday_change")
+    abstract float getYesterdayChange();
+
+    @JsonProperty("volume")
+    abstract int getVolume();
+
+    @JsonProperty("sm_portrait")
+    abstract String getSmPortrait();
+
+    @JsonProperty("lg_portrait")
+    abstract String getLgPortrait();
+
+    @JsonProperty("current_status")
+    abstract String getCurrentStatus();
+
+    @JsonProperty("current_status_set")
+    abstract String getCurrentStatusSet();
+
+    @JsonProperty("market_last_close")
+    abstract String getMarketLastClose();
+
+    @JsonProperty("market_last_open")
+    abstract String getMarketLastOpen();
+
+    @JsonProperty("trading_status")
+    abstract String getTradingStatus();
+
+    @JsonProperty("investments_count")
+    abstract int getInvestmentsCount();
+
+    @JsonProperty("shareholders_count")
+    abstract int getShareholdersCount();
+
+    @JsonProperty("thumbs_up_count")
+    abstract int getThumbsUpCount();
+
+    @JsonProperty("thumbs_down_count")
+    abstract int getThumbsDowncount();
+
+    @JsonProperty("shares_owner_count")
+    abstract int getSharesOwnedCount();
+
+    @JsonProperty("listed_count")
+    abstract int getListedCount();
+
+    @JsonProperty("recommended_count")
+    abstract int getRecommendedCount() ;
+
+    @JsonProperty("held_shares")
+    abstract int getHeldShares();
+
+    @JsonProperty("avg_div_per_share")
+    abstract float getAvgDivPerShare();
+
+    @JsonProperty("eva_score")
+    abstract float getEavScore();
+
+    @JsonProperty("flickr_score")
+    abstract float getFlickrScore();
+
+    @JsonProperty("twitter_score")
+    abstract float getTwitterScore();
+
+    @JsonProperty("facebook_score")
+    abstract float getFacebookScore();
+
+    @JsonProperty("facebookpage_score")
+    abstract float getFacebookpageScore() ;
+
+    @JsonProperty("youtube_score")
+    abstract float getYoutubeScore() ;
+
+    @JsonProperty("linkedin_score")
+    abstract float getLinkedinScore();
+
+    @JsonProperty("foursquare_score")
+    abstract float getFoursquareScore();
+
+    @JsonProperty("instagram_score")
+    abstract float getInstagramScore();
+
+    @JsonProperty("wordpress_score")
+    abstract float getWordpressScore();
+
+    @JsonProperty("gplus_score")
+    abstract float getGplusScore();
+
+    @JsonProperty("sm_portrait")
+    abstract String getProfileImageUrl() ;
+
+
 }
