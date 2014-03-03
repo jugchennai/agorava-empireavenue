@@ -11,7 +11,7 @@ We are currently working on implementing EmpireAvenue Service. Status as follows
 GET
 ===
 Profile Information   - rajmahendra
-    profile/notifications - Pending
+    profile/notifications - Kalakkumkarthikeyan(working)
 
 Lists - kalakkumkarthikeyan
 
@@ -44,7 +44,7 @@ GET
 ===
 Profile Information 
 
-Lists -
+Lists - Kalakkumkarthikeyan
 
 Leaders -
 
