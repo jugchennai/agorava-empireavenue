@@ -100,13 +100,13 @@ abstract class HistoryMixin {
     abstract float getGplus();
 
     @JsonProperty("instagram")
-    abstract float getInstagram() ;
+    abstract float getInstagram();
 
     @JsonProperty("linkedin")
-    abstract float getLinkedin() ;
+    abstract float getLinkedin();
 
     @JsonProperty("twitter")
-    abstract float getTwitter() ;
+    abstract float getTwitter();
 
     @JsonProperty("wordpress")
     abstract float getWordpress();
@@ -115,16 +115,16 @@ abstract class HistoryMixin {
     abstract float getYoutube();
 
     @JsonProperty("shares")
-    abstract int getShares() ;
+    abstract int getShares();
 
     @JsonProperty("type")
     abstract String getType();
 
     @JsonProperty("full_name")
-    abstract String getFullName() ;
+    abstract String getFullName();
 
     @JsonProperty("sm_portrait")
-    abstract String getSmPortrait() ;
+    abstract String getSmPortrait();
 
     @JsonProperty("ticker")
     abstract String getTicker();

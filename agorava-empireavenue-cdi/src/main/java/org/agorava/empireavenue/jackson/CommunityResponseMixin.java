@@ -18,21 +18,21 @@ package org.agorava.empireavenue.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 abstract class CommunityResponseMixin extends ResponseMixin {
-    
+
     @JsonCreator
     CommunityResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<CommunityMixin> data) {
-super(meta);
+                           MetaMixin meta,
+                           @JsonProperty("data")
+                           List<CommunityMixin> data) {
+        super(meta);
     }
 
     @JsonProperty("data")

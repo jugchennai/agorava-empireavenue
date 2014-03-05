@@ -15,14 +15,13 @@
  */
 package org.agorava.empireavenue.response;
 
-import java.util.List;
 import org.agorava.empireavenue.model.Leaders;
 
+import java.util.List;
+
 /**
- * 
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- * 
  */
 public class LeadersResponse extends Response<Leaders> {
 

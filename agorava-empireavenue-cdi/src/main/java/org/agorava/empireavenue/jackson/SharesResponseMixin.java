@@ -18,20 +18,19 @@ package org.agorava.empireavenue.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
-import org.agorava.empireavenue.model.Shares;
 
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 abstract class SharesResponseMixin extends ResponseMixin {
     @JsonCreator
     SharesResponseMixin(@JsonProperty("meta")
-                             MetaMixin meta,
-                             @JsonProperty("data")
-                             List<SharesMixin> data) {
+                        MetaMixin meta,
+                        @JsonProperty("data")
+                        List<SharesMixin> data) {
         super(meta);
     }
 

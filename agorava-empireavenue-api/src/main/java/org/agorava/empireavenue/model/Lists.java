@@ -17,7 +17,7 @@
 package org.agorava.empireavenue.model;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 public class Lists {
@@ -105,7 +105,6 @@ public class Lists {
     public String getLgPortrait() {
         return lgPortrait;
     }
-
 
 
     @Override

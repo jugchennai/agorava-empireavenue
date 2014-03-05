@@ -6,19 +6,19 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * @author Karthikeyan Annamalai <writetokarthikeyan@outlfullNameook.com>
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class PortfolioMixin {
+abstract class PortfolioMixin {
 
     @JsonCreator
-    PortfolioMixin(@JsonProperty("full_name")String fullName,@JsonProperty("last_trade")float lastTrade,@JsonProperty("close")float close,@JsonProperty("ticker")String ticker)
-    {
+    PortfolioMixin(@JsonProperty("full_name") String fullName, @JsonProperty("last_trade") float lastTrade, @JsonProperty("close") float close, @JsonProperty("ticker") String ticker) {
 
     }
+
     @JsonProperty("eav_score")
     private float eavScore;
     @JsonProperty("flickr_score")
@@ -75,127 +75,92 @@ public class PortfolioMixin {
     private int maxShares;
 
 
+    @JsonProperty("full_name")
+    abstract String getFullName();
 
+    @JsonProperty("last_trade")
+    abstract float getLastTrade();
 
-    public String getFullName() {
-        return fullName;
-    }
+    @JsonProperty("close")
+    abstract float getClose();
 
-    public float getLastTrade() {
-        return lastTrade;
-    }
+    @JsonProperty("ticker")
+    abstract String getTicker();
 
-    public float getClose() {
-        return close;
-    }
+    @JsonProperty("eva_score")
+    abstract float getEavScore();
 
-    public String getTicker() {
-        return ticker;
-    }
+    @JsonProperty("flickr_score")
+    abstract float getFlickrScore();
 
-    public float getEavScore() {
-        return eavScore;
-    }
+    @JsonProperty("twitter_score")
+    abstract float getTwitterScore();
 
-    public float getFlickrScore() {
-        return flickrScore;
-    }
+    @JsonProperty("facebook_score")
+    abstract float getFacebookScore();
 
-    public float getTwitterScore() {
-        return twitterScore;
-    }
+    @JsonProperty("facebookpage_score")
+    abstract float getFacebookpageScore();
 
-    public float getFacebookScore() {
-        return facebookScore;
-    }
+    @JsonProperty("youtube_score")
+    abstract float getYoutubeScore();
 
-    public float getFacebookpageScore() {
-        return facebookpageScore;
-    }
+    @JsonProperty("linkedin_score")
+    abstract float getLinkedinScore();
 
-    public float getYoutubeScore() {
-        return youtubeScore;
-    }
+    @JsonProperty("foursquare_score")
+    abstract float getFoursquareScore();
 
-    public float getLinkedinScore() {
-        return linkedinScore;
-    }
+    @JsonProperty("instagram_score")
+    abstract float getInstagramScore();
 
-    public float getFoursquareScore() {
-        return foursquareScore;
-    }
+    @JsonProperty("wordpress_score")
+    abstract float getWordpressScore();
 
-    public float getInstagramScore() {
-        return instagramScore;
-    }
+    @JsonProperty("gplus_score")
+    abstract float getGplusScore();
 
-    public float getWordpressScore() {
-        return wordpressScore;
-    }
+    @JsonProperty("sm_portrait")
+    abstract String getSmPortrait();
 
-    public float getGplusScore() {
-        return gplusScore;
-    }
+    @JsonProperty("lg_portrait")
+    abstract String getLgPortrait();
 
-    public String getSmPortrait() {
-        return smPortrait;
-    }
+    @JsonProperty("location")
+    abstract String getLocation();
 
-    public String getLgPortrait() {
-        return lgPortrait;
-    }
+    @JsonProperty("country")
+    abstract String getCountry();
 
-    public String getLocation() {
-        return location;
-    }
+    @JsonProperty("yesterday_lowest")
+    abstract float getYesterdayLowest();
 
-    public String getCountry() {
-        return country;
-    }
+    @JsonProperty("yesterday_highest")
+    abstract float getYesterdayHighest();
 
-    public float getYesterdayLowest() {
-        return yesterdayLowest;
-    }
+    @JsonProperty("outstanding_shares")
+    abstract int getOutstandingShares();
 
-    public float getYesterdayHighest() {
-        return yesterdayHighest;
-    }
+    @JsonProperty("portfolio_value")
+    abstract float getPortfolioValue();
 
-    public int getOutstandingShares() {
-        return outstandingShares;
-    }
+    @JsonProperty("yesterday_earnings")
+    abstract float getYesterdayEarnings();
 
-    public float getPortfolioValue() {
-        return portfolioValue;
-    }
+    @JsonProperty("shares")
+    abstract int getShares();
 
-    public float getYesterdayEarnings() {
-        return yesterdayEarnings;
-    }
+    @JsonProperty("last_buy_shares")
+    abstract int getLastBuyShares();
 
-    public int getShares() {
-        return shares;
-    }
+    @JsonProperty("last_buy")
+    abstract String getLastBuy();
 
-    public int getLastBuyShares() {
-        return lastBuyShares;
-    }
+    @JsonProperty("your_shares_held")
+    abstract int getYourSharesHeld();
 
-    public String getLastBuy() {
-        return lastBuy;
-    }
-
-    public int getYourSharesHeld() {
-        return yourSharesHeld;
-    }
-
-    public int getMaxShares() {
-        return maxShares;
-    }
-
-
-
-
+    @JsonProperty("max_shares")
+    abstract int getMaxShares();
 
 
 }

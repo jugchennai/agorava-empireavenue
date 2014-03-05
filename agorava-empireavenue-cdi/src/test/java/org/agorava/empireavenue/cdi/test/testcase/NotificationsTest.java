@@ -1,8 +1,8 @@
 package org.agorava.empireavenue.cdi.test.testcase;
 
-        import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
-        import org.agorava.empireavenue.model.Notifications;
-        import org.agorava.empireavenue.response.NotificationsResponse;
+import org.agorava.empireavenue.cdi.test.EmpireAvenueTestDeploy;
+import org.agorava.empireavenue.model.Notifications;
+import org.agorava.empireavenue.response.NotificationsResponse;
 import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Test;
 import org.junit.runner.RunWith;

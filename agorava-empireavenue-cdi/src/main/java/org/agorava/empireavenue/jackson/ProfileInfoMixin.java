@@ -21,27 +21,26 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
-@JsonTypeName("data") 
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
+@JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class ProfileInfoMixin {
 
     @JsonCreator
     ProfileInfoMixin(@JsonProperty("id")
-    String id, @JsonProperty("ticker")
-    String ticker, @JsonProperty("first_name")
-    String firstName,
-            @JsonProperty("last_name")
-            String lastName,
-            @JsonProperty("full_name")
-            String fullName, @JsonProperty("joined")
-            String joined,
-            @JsonProperty("country")
-            String country, @JsonProperty("location")
-            String location) {
+                     String id, @JsonProperty("ticker")
+                     String ticker, @JsonProperty("first_name")
+                     String firstName,
+                     @JsonProperty("last_name")
+                     String lastName,
+                     @JsonProperty("full_name")
+                     String fullName, @JsonProperty("joined")
+                     String joined,
+                     @JsonProperty("country")
+                     String country, @JsonProperty("location")
+                     String location) {
     }
 
     @JsonProperty("site_name")
@@ -132,7 +131,6 @@ abstract class ProfileInfoMixin {
     private float gplusScore;
 
 
-
     @JsonProperty("ticker")
     abstract String getTicker();
 
@@ -161,10 +159,10 @@ abstract class ProfileInfoMixin {
     abstract String getLocation();
 
     @JsonProperty("type")
-    abstract String getType() ;
+    abstract String getType();
 
     @JsonProperty("max_share")
-    abstract int getMaxShare() ;
+    abstract int getMaxShare();
 
     @JsonProperty("commission")
     abstract float getCommission();
@@ -239,7 +237,7 @@ abstract class ProfileInfoMixin {
     abstract int getListedCount();
 
     @JsonProperty("recommended_count")
-    abstract int getRecommendedCount() ;
+    abstract int getRecommendedCount();
 
     @JsonProperty("held_shares")
     abstract int getHeldShares();
@@ -260,10 +258,10 @@ abstract class ProfileInfoMixin {
     abstract float getFacebookScore();
 
     @JsonProperty("facebookpage_score")
-    abstract float getFacebookpageScore() ;
+    abstract float getFacebookpageScore();
 
     @JsonProperty("youtube_score")
-    abstract float getYoutubeScore() ;
+    abstract float getYoutubeScore();
 
     @JsonProperty("linkedin_score")
     abstract float getLinkedinScore();
@@ -281,7 +279,7 @@ abstract class ProfileInfoMixin {
     abstract float getGplusScore();
 
     @JsonProperty("sm_portrait")
-    abstract String getProfileImageUrl() ;
+    abstract String getProfileImageUrl();
 
 
 }

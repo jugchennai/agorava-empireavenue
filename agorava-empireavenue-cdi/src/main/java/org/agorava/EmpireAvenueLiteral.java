@@ -16,13 +16,13 @@
 package org.agorava;
 
 import org.agorava.empireavenue.EmpireAvenue;
+
 import javax.enterprise.util.AnnotationLiteral;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class EmpireAvenueLiteral extends AnnotationLiteral<EmpireAvenue> implements EmpireAvenue {
 
     public static EmpireAvenue INSTANCE = new EmpireAvenueLiteral();

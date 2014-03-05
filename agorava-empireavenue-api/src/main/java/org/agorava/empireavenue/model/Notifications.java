@@ -1,8 +1,6 @@
 package org.agorava.empireavenue.model;
 
 
-import java.util.*;
-
 /**
  * @author Karthikeyan Annamalai
  * @since 0.7.0
@@ -30,7 +28,7 @@ public class Notifications {
         this.created = created;
     }
 
-   public NotificationsInfo getNotificationsInfo() {
+    public NotificationsInfo getNotificationsInfo() {
         return notificationsInfo;
     }
 
@@ -43,9 +41,9 @@ public class Notifications {
 
         return new StringBuffer()
                 .append("Notifications [ ")
-                .append("Type : "+ this.type)
-                .append(", created :"+ this.created)
-               // .append("info :"+this.getNotificationsInfo().toString()+"")
+                .append("Type : " + this.type)
+                .append(", created :" + this.created)
+                        // .append("info :"+this.getNotificationsInfo().toString()+"")
                 .append("]")
                 .toString();
     }

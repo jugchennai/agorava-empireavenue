@@ -1,7 +1,8 @@
 package org.agorava.empireavenue.response;
 
-import java.util.List;
 import org.agorava.empireavenue.model.Notifications;
+
+import java.util.List;
 
 /**
  * @author Karthikeyan Annamalai

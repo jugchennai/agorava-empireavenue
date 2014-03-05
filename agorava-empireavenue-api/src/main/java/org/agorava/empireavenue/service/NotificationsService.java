@@ -29,6 +29,7 @@ import org.agorava.empireavenue.response.NotificationsResponse;
  * <p/>
  * API Calls<br/>
  * profile/notifications<br/>
+ *
  * @author Karthikeyan Annamalai
  * @since 0.7.0
  */

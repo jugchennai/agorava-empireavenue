@@ -19,22 +19,19 @@ package org.agorava.empireavenue.service;
 import org.agorava.empireavenue.response.LeadersResponse;
 
 /**
- * 
  * Operations on Leaders Board Information <br/>
- * 
- * 
- * 
+ * <p/>
+ * <p/>
+ * <p/>
  * <b>API Calls</b> <br/>
  * leaders/change<br/>
  * leaders/dividends<br/>
  * leaders/recent<br/>
  * leaders/shareprice<br/>
  * leaders/wealth<br/>
- * 
- * 
- * @author Karthikeyan Annamalai  
+ *
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- * 
  */
 public interface LeadersService {
 
@@ -61,60 +58,54 @@ public interface LeadersService {
     /**
      * Returns all the leader boards by yesterday's change in share price value<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/change<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns all the leaderboards by yesterday's change in share price value
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands(String)
-     * 
      */
     LeadersResponse getAllLeadersChange();
 
     /**
      * Returns People leaderboards by yesterday's change in share price value<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/change/people<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns people leaderboards by yesterday's change in share price value
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands(String)
-     * 
      */
     LeadersResponse getAllLeadersChangePeople();
 
     /**
      * Returns brands leaderboards by yesterday's change in share price value<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/change/brands<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns brands leaderboards by yesterday's change in share price value
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands(String)
-     * 
      */
 
     LeadersResponse getAllLeadersChangeBrands();
@@ -122,22 +113,19 @@ public interface LeadersService {
     /**
      * Returns all the leaderboards by yesterday's change in share price value<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/change<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
-     * 
+     *
      * @param order - in which the result should be returned [ either "desc" (default) or "asc ]
      * @return LeadersResponse Returns all the leaderboards by yesterday's change in share price value
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands(String)
-     * 
      */
 
     LeadersResponse getAllLeadersChange(String order);
@@ -145,21 +133,19 @@ public interface LeadersService {
     /**
      * Returns People leaderboards by yesterday's change in share price value<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/change/people<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @param order - in which the result should be returned [ either "desc" (default) or "asc ]
      * @return LeadersResponse Returns people leaderboards by yesterday's change in share price value
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands(String)
-     * 
      */
 
     LeadersResponse getAllLeadersChangePeople(String order);
@@ -167,55 +153,49 @@ public interface LeadersService {
     /**
      * Returns brands leaderboards by yesterday's change in share price value<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/change/brands<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @param order - in which the result should be returned [ either "desc" (default) or "asc ]
      * @return LeadersResponse Returns brands leaderboards by yesterday's change in share price value
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangeBrands()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChange(String)
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersChangePeople(String)
-     * 
      */
     LeadersResponse getAllLeadersChangeBrands(String order);
 
     /**
      * Returns the leaderboards by Weekly Dividends Paid out to Shareholders<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the leaderboards by Weekly Dividends Paid out to Shareholders
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersDividendsPeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersDividendsBrands()
-     * 
      */
     LeadersResponse getAllLeadersDividends();
 
     /**
      * Returns the people leaderboards by Weekly Dividends Paid out to Shareholders<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/people<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return Returnsthe people leaderboards by Weekly Dividends Paid out to Shareholders
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersDividends()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersDividendsBrands()
-     * 
      */
 
     LeadersResponse getAllLeadersDividendsPeople();
@@ -223,17 +203,15 @@ public interface LeadersService {
     /**
      * Returns the brands leaderboards by Weekly Dividends Paid out to Shareholders<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/brands<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the brands leaderboards by Weekly Dividends Paid out to Shareholders
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersDividends()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersDividendsPeople()
-     * 
      */
 
     LeadersResponse getAllLeadersDividendsBrands();
@@ -241,17 +219,15 @@ public interface LeadersService {
     /**
      * Returns the leaderboards by recent signups<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/recent<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the leaderboards by recent signups
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersRecentPeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersRecentBrands()
-     * 
      */
 
     LeadersResponse getAllLeadersRecent();
@@ -259,17 +235,15 @@ public interface LeadersService {
     /**
      * Returns the people leaderboards by recent signups<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/recent/people<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the people leaderboards by recent signups
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersRecent()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersRecentBrands()
-     * 
      */
 
     LeadersResponse getAllLeadersRecentPeople();
@@ -277,17 +251,15 @@ public interface LeadersService {
     /**
      * Returns the brands leaderboards by recent signups<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/recent/brands<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the brands leaderboards by recent signups
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersRecent()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersRecentPeople()
-     * 
      */
 
     LeadersResponse getAllLeadersRecentBrands();
@@ -295,17 +267,15 @@ public interface LeadersService {
     /**
      * Returns the leaderboards by share price<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/leaders/shareprice<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the leaderboards by share price
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersSharepricePeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersSharepriceBrands()
-     * 
      */
 
     LeadersResponse getAllLeadersShareprice();
@@ -313,34 +283,30 @@ public interface LeadersService {
     /**
      * Returns the people leaderboards by share price<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/leaders/shareprice/people<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the people leaderboards by share price
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersShareprice()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersSharepriceBrands()
-     * 
      */
     LeadersResponse getAllLeadersSharepricePeople();
 
     /**
      * Returns the brands leaderboards by share price<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/leaders/shareprice/brands<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the brands leaderboards by share price
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersShareprice()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersSharepricePeople()
-     * 
      */
 
     LeadersResponse getAllLeadersSharepriceBrands();
@@ -348,34 +314,30 @@ public interface LeadersService {
     /**
      * Returns the leaderboards by wealth<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/leaders/wealth<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the leaderboards by wealth
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersWealthPeople()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersWealthBrands()
-     * 
      */
     LeadersResponse getAllLeadersWealth();
 
     /**
      * Returns the people leaderboards by wealth<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/leaders/wealth/people<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the people leaderboards by wealth
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersWealth()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersWealthBrands()
-     * 
      */
 
     LeadersResponse getAllLeadersWealthPeople();
@@ -383,17 +345,15 @@ public interface LeadersService {
     /**
      * Returns the brands leaderboards by wealth<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/leaders/dividends/leaders/wealth/brands<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <b>Authentication</b>: Required
-     * 
+     *
      * @return LeadersResponse Returns the brands leaderboards by wealth
-     * 
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersWealth()
      * @see org.agorava.empireavenue.service.LeadersService#getAllLeadersWealthPeople()
-     * 
      */
 
     LeadersResponse getAllLeadersWealthBrands();

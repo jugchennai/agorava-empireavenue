@@ -15,22 +15,22 @@
  */
 package org.agorava.empireavenue.jackson;
 
-import java.util.List;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
+import java.util.List;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 abstract class BankBalanceResponseMixin extends ResponseMixin {
     @JsonCreator
     BankBalanceResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<BankBalanceMixin> data) {
-super(meta);
+                             MetaMixin meta,
+                             @JsonProperty("data")
+                             List<BankBalanceMixin> data) {
+        super(meta);
     }
 
     @JsonProperty("data")

@@ -21,7 +21,7 @@ import org.agorava.empireavenue.response.SearchResponse;
 import org.agorava.empireavenue.service.SearchService;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 

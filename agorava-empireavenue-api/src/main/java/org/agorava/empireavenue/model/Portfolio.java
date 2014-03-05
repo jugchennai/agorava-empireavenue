@@ -1,24 +1,21 @@
 package org.agorava.empireavenue.model;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
-
 
 
 public class Portfolio {
 
-    public Portfolio(String fullName,float lastTrade,float close,String ticker)
-    {
+    public Portfolio(String fullName, float lastTrade, float close, String ticker) {
 
-        this.fullName=fullName;
-        this.lastTrade=lastTrade;
-        this.close=close;
-        this.ticker=ticker;
+        this.fullName = fullName;
+        this.lastTrade = lastTrade;
+        this.close = close;
+        this.ticker = ticker;
     }
+
     private String fullName;
     private float lastTrade;
     private float close;
@@ -180,7 +177,8 @@ public class Portfolio {
                 .append(", Ticker :").append(ticker)
                 .append(", Shares :").append(shares)
                 .append(",Close   :").append(close)
-                .append("];").toString();    }
+                .append("];").toString();
+    }
 
 }
 

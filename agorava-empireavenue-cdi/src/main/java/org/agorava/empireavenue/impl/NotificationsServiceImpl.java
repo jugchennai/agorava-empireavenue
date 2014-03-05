@@ -6,7 +6,7 @@ import org.agorava.empireavenue.response.NotificationsResponse;
 import org.agorava.empireavenue.service.NotificationsService;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 @EmpireAvenue

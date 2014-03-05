@@ -9,11 +9,10 @@ import org.agorava.api.oauth.application.OAuthAppSettings;
 import org.agorava.oauth.OAuth20FinalServiceImpl;
 
 /**
-*
-*@author Antoine Sabot-Durand
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Antoine Sabot-Durand
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @GenericBean
 @OAuth(OAuth.OAuthVersion.OTHER)
 public class EmpireAvenueOAuth20Service extends OAuth20FinalServiceImpl {

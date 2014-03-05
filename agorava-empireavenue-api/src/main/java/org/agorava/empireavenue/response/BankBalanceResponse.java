@@ -18,14 +18,14 @@ package org.agorava.empireavenue.response;
 import org.agorava.empireavenue.model.BankBalance;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class BankBalanceResponse extends Response<BankBalance> {
-    public BankBalanceResponse() {}
-    
-    public BankBalance getBankBalance(){
+    public BankBalanceResponse() {
+    }
+
+    public BankBalance getBankBalance() {
         return retrieveData();
     }
 

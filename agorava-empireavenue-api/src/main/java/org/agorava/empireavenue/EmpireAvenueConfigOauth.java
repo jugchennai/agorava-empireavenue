@@ -27,8 +27,10 @@ import org.agorava.spi.ProviderConfigOauth20Final;
  */
 @EmpireAvenue
 public class EmpireAvenueConfigOauth extends ProviderConfigOauth20Final {
-    
-    /** The Constant AUTHORIZE_URL. */
+
+    /**
+     * The Constant AUTHORIZE_URL.
+     */
     private static final String AUTHORIZE_URL = "https://www.empireavenue.com/profile/developer/authorize?client_id=%s&redirect_uri=%s&response_type=code&state=request_auth_code";
 
     /**

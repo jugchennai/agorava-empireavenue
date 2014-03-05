@@ -26,7 +26,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
  */
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
-public class LeadersMixin {
+abstract class LeadersMixin {
 
     @JsonCreator
     LeadersMixin(@JsonProperty("ticker") String ticker,
@@ -50,6 +50,8 @@ public class LeadersMixin {
     private int ranking;
     @JsonProperty("old_ranking")
     private int oldRanking;
+    @JsonProperty("amount")
+    private float amount;
 
 
     @JsonProperty("eva_score")
@@ -74,4 +76,43 @@ public class LeadersMixin {
     private float wordpressScore;
     @JsonProperty("gplus_score")
     private float gplusScore;
+
+
+    @JsonProperty("ranking")
+    abstract int getRanking();
+
+    @JsonProperty("old_ranking")
+    abstract int getOldRanking();
+
+    @JsonProperty("ticker")
+    abstract String getTicker();
+
+    @JsonProperty("full_name")
+    abstract String getFullName();
+
+    @JsonProperty("last_trade")
+    abstract float getLastTrade();
+
+    @JsonProperty("close")
+    abstract float getClose();
+
+    @JsonProperty("sm_portrait")
+    abstract String getSmPortrait();
+
+    @JsonProperty("lg_portrait")
+    abstract String getLgPortrait();
+
+    @JsonProperty("outstanding_shares")
+    abstract int getOutstandingShares();
+
+    @JsonProperty("country")
+    abstract String getCountry();
+
+    @JsonProperty("location")
+    abstract String getLocation();
+
+    @JsonProperty("max_share")
+    abstract int getMaxShare();
+
+
 }

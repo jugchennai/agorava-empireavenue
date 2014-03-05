@@ -17,7 +17,7 @@
 package org.agorava.empireavenue.model;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 public class Shares {
@@ -60,6 +60,6 @@ public class Shares {
 
     @Override
     public String toString() {
-        return  new StringBuffer().append("Shares [ commission :") .append(commission).append("%").toString();
+        return new StringBuffer().append("Shares [ commission :").append(commission).append("%").toString();
     }
 }
