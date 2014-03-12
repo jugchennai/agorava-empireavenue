@@ -17,7 +17,6 @@ package org.agorava.empireavenue.impl;
 
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.EmpireAvenue;
-import org.agorava.empireavenue.response.HistoryResponse;
 import org.agorava.empireavenue.response.PortfolioResponse;
 import org.agorava.empireavenue.service.PortfolioService;
 
@@ -25,7 +24,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 @EmpireAvenue
@@ -40,10 +39,8 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
     public PortfolioResponse getBasePortfolio(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE),data, PortfolioResponse.class);
+        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE), data, PortfolioResponse.class);
     }
-
-
 
 
     @Override
@@ -52,7 +49,7 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
         data.put("ticker", ticker);
         data.put("maxresults", maxresults);
         data.put("page", page);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE),data, PortfolioResponse.class);
+        return getService().post(buildAbsoluteUri(PORTFOLIO_BASE), data, PortfolioResponse.class);
     }
 
     @Override
@@ -64,7 +61,7 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
     public PortfolioResponse getFullPortfolio(String ticker) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
+        return getService().post(buildAbsoluteUri(PORTFOLIO_GET), data, PortfolioResponse.class);
     }
 
 
@@ -73,9 +70,8 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
         Map<String, Object> data = new HashMap<>();
         data.put("page", page);
         data.put("maxresults", maxresults);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
+        return getService().post(buildAbsoluteUri(PORTFOLIO_GET), data, PortfolioResponse.class);
     }
-
 
 
     @Override
@@ -85,7 +81,7 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
         data.put("page", page);
         data.put("ticker", ticker);
 
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);
+        return getService().post(buildAbsoluteUri(PORTFOLIO_GET), data, PortfolioResponse.class);
     }
 
     @Override
@@ -93,6 +89,7 @@ public class PortfolioServiceImpl extends EmpireAvenueBaseService implements Por
         Map<String, Object> data = new HashMap<>();
         data.put("maxresults", maxresults);
         data.put("page", page);
-        return getService().post(buildAbsoluteUri(PORTFOLIO_GET),data, PortfolioResponse.class);    }
+        return getService().post(buildAbsoluteUri(PORTFOLIO_GET), data, PortfolioResponse.class);
+    }
 
 }

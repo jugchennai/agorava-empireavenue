@@ -15,25 +15,24 @@
  */
 package org.agorava.empireavenue.jackson;
 
-import java.math.BigDecimal;
-
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
+import java.math.BigDecimal;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class BankBalanceMixin {
 
     @JsonCreator
     BankBalanceMixin(@JsonProperty("balance")
-    BigDecimal balance) {
+                     BigDecimal balance) {
     }
 
     @JsonProperty("balance")

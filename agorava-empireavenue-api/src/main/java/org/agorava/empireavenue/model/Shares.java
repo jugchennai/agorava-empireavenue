@@ -17,7 +17,7 @@
 package org.agorava.empireavenue.model;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 public class Shares {
@@ -30,43 +30,7 @@ public class Shares {
     private float totalEarned;
 
 
-
-
     public Shares() {
-    }
-
-
-
-    public int getSharesOwned() {
-        return sharesOwned;
-    }
-
-    public void setSharesOwned(int sharesOwned) {
-        this.sharesOwned = sharesOwned;
-    }
-
-    public boolean isSuccess() {
-        return success;
-    }
-
-    public void setSuccess(boolean success) {
-        this.success = success;
-    }
-
-    public float getBankBalance() {
-        return bankBalance;
-    }
-
-    public void setBankBalance(float bankBalance) {
-        this.bankBalance = bankBalance;
-    }
-
-    public float getTotalCharged() {
-        return totalCharged;
-    }
-
-    public void setTotalCharged(float totalCharged) {
-        this.totalCharged = totalCharged;
     }
 
 
@@ -74,21 +38,28 @@ public class Shares {
         return commission;
     }
 
-    public void setCommission(float commission) {
-        this.commission = commission;
+    public boolean isSuccess() {
+        return success;
+    }
+
+    public int getSharesOwned() {
+        return sharesOwned;
+    }
+
+    public float getBankBalance() {
+        return bankBalance;
+    }
+
+    public float getTotalCharged() {
+        return totalCharged;
     }
 
     public float getTotalEarned() {
         return totalEarned;
     }
 
-    public void setTotalEarned(float totalEarned) {
-        this.totalEarned = totalEarned;
-    }
-
-
     @Override
     public String toString() {
-        return  new StringBuffer().append("Shares [ commission :") .append(commission).append("%").toString();
+        return new StringBuffer().append("Shares [ commission :").append(commission).append("%").toString();
     }
 }

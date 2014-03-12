@@ -19,10 +19,9 @@ import org.agorava.api.exception.AgoravaException;
 
 /**
  * Base exception for Agorava EmpireAvenue Services.<br/>
- * 
+ * <p/>
  * This will help you to catch all EmpireAvenue based Exception at the time of contacting to EA Services.<br/>
- * 
- * 
+ *
  * @author Rajmahendra Hegde
  * @since 0.7.0
  */
@@ -31,7 +30,7 @@ public class EmpireAvenueException extends AgoravaException {
 
     /**
      * Instantiates a new empire avenue exception.
-     * 
+     *
      * @param errorMessage the error message
      */
     public EmpireAvenueException(String errorMessage) {

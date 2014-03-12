@@ -16,10 +16,9 @@
 package org.agorava.empireavenue.model;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class Status {
 
     private final String status;

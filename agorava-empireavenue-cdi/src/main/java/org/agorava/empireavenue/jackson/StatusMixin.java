@@ -19,20 +19,20 @@ import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
+
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class StatusMixin {
 
     @JsonCreator
     StatusMixin(@JsonProperty("status")
-    String status,
-            @JsonProperty("content_id")
-            int contentId) {
+                String status,
+                @JsonProperty("content_id")
+                int contentId) {
 
     }
 

@@ -15,20 +15,19 @@
  */
 package org.agorava.empireavenue.cdi.test;
 
+import org.agorava.api.oauth.application.OAuthAppSettings;
+import org.agorava.api.oauth.application.OAuthApplication;
 import org.agorava.empireavenue.EmpireAvenue;
 
 import javax.enterprise.context.ApplicationScoped;
 import javax.enterprise.inject.Produces;
-import org.agorava.api.oauth.application.OAuthAppSettings;
-import org.agorava.api.oauth.application.OAuthApplication;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class EmpireAvenueServiceProducer {
-    
+
     @ApplicationScoped
     @Produces
     @EmpireAvenue

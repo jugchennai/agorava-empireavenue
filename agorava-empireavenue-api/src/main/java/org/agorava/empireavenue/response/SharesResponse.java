@@ -19,15 +19,15 @@ package org.agorava.empireavenue.response;
 import org.agorava.empireavenue.model.Shares;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
-public class SharesResponse extends Response<Shares>{
+public class SharesResponse extends Response<Shares> {
 
     public SharesResponse() {
     }
 
-    public Shares getCommission(){
+    public Shares getCommission() {
         return retrieveData();
     }
 

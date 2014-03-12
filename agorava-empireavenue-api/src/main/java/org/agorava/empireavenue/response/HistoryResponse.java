@@ -15,17 +15,16 @@
  */
 package org.agorava.empireavenue.response;
 
-import java.util.List;
 import org.agorava.empireavenue.model.History;
 
+import java.util.List;
+
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 public class HistoryResponse extends Response<History> {
-     public HistoryResponse() {
+    public HistoryResponse() {
     }
 
     public History getHistory() {

@@ -15,24 +15,28 @@
  */
 package org.agorava.empireavenue.response;
 
-import java.util.List;
-
 import org.agorava.empireavenue.EmpireAvenueException;
 import org.agorava.empireavenue.model.Meta;
+
+import java.util.List;
 
 /**
  * The Class Response.
  *
- * @author Rajmahendra Hegde  
  * @param <T> the generic type
+ * @author Rajmahendra Hegde
  * @since 0.7.0
  */
 public abstract class Response<T> {
-    
-    /** The meta. */
+
+    /**
+     * The meta.
+     */
     private Meta meta;
-    
-    /** The data. */
+
+    /**
+     * The data.
+     */
     private List<T> data;
 
     /**
@@ -89,7 +93,7 @@ public abstract class Response<T> {
         return data.get(0);
     }
 
-   
+
     /**
      * Retrieve all data.
      *

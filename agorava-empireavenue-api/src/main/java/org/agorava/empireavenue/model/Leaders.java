@@ -16,15 +16,13 @@
 package org.agorava.empireavenue.model;
 
 /**
- * 
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- * 
  */
 public class Leaders {
 
     protected Leaders(String ticker,
-            String fullName, String country, String location) {
+                      String fullName, String country, String location) {
         this.ticker = ticker;
         this.fullName = fullName;
         this.country = country;

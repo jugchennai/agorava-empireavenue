@@ -20,13 +20,13 @@ import org.agorava.empireavenue.response.HistoryResponse;
 
 /**
  * Operations on Portfolio   /Portfolio
- *
- *
+ * <p/>
+ * <p/>
  * EmpireAvenue Info:<br/>
  * URI: https://api.empireavenue.com/ <br/>
  * Rate Limit: User <br/>
  * Authentication: Required<br/><br/>
- *
+ * <p/>
  * API Calls<br/>
  * history/dividends<br/>
  * history/dividends/received<br/>
@@ -37,13 +37,11 @@ import org.agorava.empireavenue.response.HistoryResponse;
  * history/shares/bought<br/>
  * history/shares/sold <br/>
  *
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 public interface HistoryService {
-    
+
     static final String HISTORY_DIVIDENDS = "history/dividends";
     static final String HISTORY_DIVIDENDS_RECEIVED = "history/dividends/received";
     static final String HISTORY_NETWORKSCORE = "history/networkscore";
@@ -56,357 +54,311 @@ public interface HistoryService {
     /**
      * Returns the Full Portfolio information for a specific user<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/dividends<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
+     *
      * @return HistoryResponse Returns the Full Portfolio information for a specific user.
-     * 
-     * 
      */
 
 
     HistoryResponse getDividendsHistory();
-    
+
     /**
      * Returns the Full Portfolio information for a specific user and the user specified<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/dividends/received<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/> <b>Authentication</b>: Required
-     * 
+     *
      * @return HistoryResponse Returns the Full Portfolio information for a specific user and the user specified.
-     * 
      * @see org.agorava.empireavenue.service.HistoryService#getReceivedDividendsHistory(String)
-     *  
-     **/
-    
+     */
+
     HistoryResponse getReceivedDividendsHistory();
-    
+
     /**
      * Returns the Full Portfolio information for a specific user and the user specified<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/dividends/received<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
+     *
      * @param ticker The Ticker symbol of whose history is queried
      * @return HistoryResponse Returns the Full Portfolio information for a specific user and the user specified.
      * @see org.agorava.empireavenue.service.HistoryService#getReceivedDividendsHistory()
-     *  
-     **/
+     */
 
     HistoryResponse getReceivedDividendsHistory(String ticker);
-    
+
     /**
      * Returns the network score history recorded at each market close for the user.By default it will return 30 days of network score history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
-     * 
+     *
+     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String)
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(int)
-     * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String,int)
-     *  
-     **/
-    
+     * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String, int)
+     */
+
     HistoryResponse getNetworkscoreHistory();
-    
+
     /**
      * Returns the network score history recorded at each market close for the requested user.By default it will return 30 days of network score history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
-     * 
+     *
+     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(int)
-     * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String,int)
-     *  
-     **/
+     * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String, int)
+     */
 
     HistoryResponse getNetworkscoreHistory(String ticker);
-    
+
     /**
      * Returns the network score history recorded at each market close for the requested user.By default it will return 30 days of network score history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param days The number of days for which the history is queried 
-     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
-     * 
+     *
+     * @param days The number of days for which the history is queried
+     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String)
-     * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String,int)
-     *  
-     **/
+     * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String, int)
+     */
 
     HistoryResponse getNetworkscoreHistory(int days);
+
     /**
      * Returns the network score history recorded at each market close for the requested user.By default it will return 30 days of network score history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/networkscore<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param days The number of days for which the history is queried 
-     * @param ticker The Ticker symbol whose history is queried 
-     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user. 
-     * 
+     *
+     * @param days   The number of days for which the history is queried
+     * @param ticker The Ticker symbol whose history is queried
+     * @return HistoryResponse Returns the network score history recorded at each market close for the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(String)
      * @see org.agorava.empireavenue.service.HistoryService#getNetworkscoreHistory(int)
-     *  
-     **/
+     */
 
     HistoryResponse getNetworkscoreHistory(String ticker, int days);
 
-    
-    
+
     /**
      * Returns the shareprice history for the the requested user. By default it will return 24 hours of share price history. It can bring up to 7 days (168 hours) of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @return HistoryResponse Returns the shareprice history for the the requested user. 
-     * 
+     *
+     * @return HistoryResponse Returns the shareprice history for the the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(int)
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String)
-     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String,int)
-     *  
-     **/
-    
-    
-    
+     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String, int)
+     */
+
+
     HistoryResponse getSharepriceHistory();
-    
-    
+
+
     /**
      * Returns the shareprice history for the the requested user. By default it will return 24 hours of share price history. It can bring up to 7 days (168 hours) of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param ticker The Ticker symbol whose history is queried 
-     * @return HistoryResponse Returns the shareprice history for the the requested user. 
-     * 
+     *
+     * @param ticker The Ticker symbol whose history is queried
+     * @return HistoryResponse Returns the shareprice history for the the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(int)
-     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String,int)
-     *  
-     **/
+     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String, int)
+     */
 
     HistoryResponse getSharepriceHistory(String ticker);
 
     /**
      * Returns the shareprice history for the the requested user. By default it will return 24 hours of share price history. It can bring up to 7 days (168 hours) of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param hours The number of hours for which the history is queried 
-     * @return HistoryResponse Returns the shareprice history for the the requested user. 
-     * 
+     *
+     * @param hours The number of hours for which the history is queried
+     * @return HistoryResponse Returns the shareprice history for the the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String)
-     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String,int)
-     *  
-     **/
-    
-    
+     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String, int)
+     */
+
+
     HistoryResponse getSharepriceHistory(int hours);
+
     /**
      * Returns the shareprice history for the the requested user. By default it will return 24 hours of share price history. It can bring up to 7 days (168 hours) of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param ticker The Ticker symbol whose history is queried 
-     * @param hours The number of hours for which the history is queried 
-     * @return HistoryResponse Returns the shareprice history for the the requested user. 
-     * 
+     *
+     * @param ticker The Ticker symbol whose history is queried
+     * @param hours  The number of hours for which the history is queried
+     * @return HistoryResponse Returns the shareprice history for the the requested user.
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(String)
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceHistory(int)
-     *  
-     **/
-    
+     */
+
     HistoryResponse getSharepriceHistory(String ticker, int hours);
 
     /**
      * Returns the shareprice history recorded at each market close for the the requested user. By default it will return 30 days of closing price history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
+     *
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
-     * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String)
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(int)
-     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String,int)
-     *  
-     **/
-    
-    
+     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String, int)
+     */
+
+
     HistoryResponse getSharepriceCloseHistory();
+
     /**
      * Returns the shareprice history recorded at each market close for the the requested user. By default it will return 30 days of closing price history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param ticker The Ticker symbol whose history is queried 
+     *
+     * @param ticker The Ticker symbol whose history is queried
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
-     * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(int)
-     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String,int)
-     *  
-     **/
+     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String, int)
+     */
 
     HistoryResponse getSharepriceCloseHistory(String ticker);
-    
+
     /**
      * Returns the shareprice history recorded at each market close for the the requested user. By default it will return 30 days of closing price history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * 
-     * @param days The number of days for which the history is queried 
+     *
+     * @param days The number of days for which the history is queried
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
-     * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String)
-     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String,int)
-     *  
-     **/
-    
-    
+     * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String, int)
+     */
+
 
     HistoryResponse getSharepriceCloseHistory(int days);
 
     /**
      * Returns the shareprice history recorded at each market close for the the requested user. By default it will return 30 days of closing price history. It can bring up to 90 days of history.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * @param ticker The Ticker symbol whose history is queried 
-     * @param days The number of days for which the history is queried 
+     *
+     * @param ticker The Ticker symbol whose history is queried
+     * @param days   The number of days for which the history is queried
      * @return HistoryResponse Returns the shareprice history recorded at each market close for the the requested user.
-     * 
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory()
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(String)
      * @see org.agorava.empireavenue.service.HistoryService#getSharepriceCloseHistory(int)
-     *  
-     **/
+     */
     HistoryResponse getSharepriceCloseHistory(String ticker, int days);
-    
+
     /**
      * Returns the share purchase history for the the authenticated user. This does not bring back trades. Max: 50 results.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shareprice/close<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
+     *
      * @return HistoryResponse Returns the share purchase history for the the authenticated user.
-     * 
-   
-     *  
-     **/
-    
+     */
+
     HistoryResponse getSharesHistory();
 
 
     /**
      * Returns the share purchase history for the the authenticated user and the requested user, specifically "buys". This does not bring back trades. Max: 50 results. Authenticated user must own requested user.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shares/bought<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param ticker The Ticker symbol whose history is queried 
-     * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "buys".
      *
-     *  
-     **/
+     * @param ticker The Ticker symbol whose history is queried
+     * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "buys".
+     */
     HistoryResponse getSharesBoughtHistory(String ticker);
 
     /**
      * Returns the share purchase history for the the authenticated user and the requested user, specifically "sells". This does not bring back trades. Max: 50 results. Authenticated user must own requested user.<br/>
      * <br/>
-     * 
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/history/shares/sold<br/>
      * <br/>
-     * 
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
-     * 
-     * @param ticker The Ticker symbol whose history is queried 
-     * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "sells".
      *
-     *  
-     **/
+     * @param ticker The Ticker symbol whose history is queried
+     * @return HistoryResponse Returns the share purchase history for the the authenticated user and the requested user, specifically "sells".
+     */
     HistoryResponse getSharesSoldHistory(String ticker);
-    
-    
-
-    
-    
 
 
-
-
-        
-        
-    
 }

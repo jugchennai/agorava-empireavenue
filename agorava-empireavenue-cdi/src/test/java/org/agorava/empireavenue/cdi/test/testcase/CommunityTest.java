@@ -27,18 +27,17 @@ import static org.junit.Assert.assertNotNull;
 import static org.junit.Assert.assertTrue;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 @RunWith(Arquillian.class)
 public class CommunityTest extends EmpireAvenueTestDeploy {
-    private String twitter="265";
-    private String wordPress="628";
-    private String amazonReview="3891";
+    private String twitter = "265";
+    private String wordPress = "628";
+    private String amazonReview = "3891";
 
-    private int pages=1;
+    private int pages = 1;
+
     @Test
     public void authorizationUrlTest() {
         assertTrue(service.getAuthorizationUrl().startsWith("https"));
@@ -49,15 +48,15 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
         CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getCommunity());
-      
-      
-            System.out.println(communityServiceCommunitiesInfo.getCommunity().toString());
+
+
+        System.out.println(communityServiceCommunitiesInfo.getCommunity().toString());
         System.out.println("--------------------------------------");
     }
 
     @Test
     public void communitiesInfo() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter,wordPress,amazonReview);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter, wordPress, amazonReview);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
         assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);
@@ -71,7 +70,7 @@ public class CommunityTest extends EmpireAvenueTestDeploy {
 
     @Test
     public void communitiesInfoTest2() {
-        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter,wordPress,amazonReview,twitter,wordPress,amazonReview);
+        CommunityResponse communityServiceCommunitiesInfo = communityService.getCommunitiesInfo(twitter, wordPress, amazonReview, twitter, wordPress, amazonReview);
         assertNotNull(communityServiceCommunitiesInfo);
         assertNotNull(communityServiceCommunitiesInfo.getAllCommunity());
         assertTrue(communityServiceCommunitiesInfo.getAllCommunity().size() > 0);

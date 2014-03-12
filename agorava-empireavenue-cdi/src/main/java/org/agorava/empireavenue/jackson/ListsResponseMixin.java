@@ -22,10 +22,10 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
-abstract class ListsResponseMixin extends ResponseMixin{
+abstract class ListsResponseMixin extends ResponseMixin {
 
     @JsonCreator
     ListsResponseMixin(@JsonProperty("meta")

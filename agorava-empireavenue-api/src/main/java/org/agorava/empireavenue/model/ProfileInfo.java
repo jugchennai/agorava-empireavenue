@@ -18,8 +18,7 @@ package org.agorava.empireavenue.model;
 import org.agorava.spi.UserProfile;
 
 /**
- * 
- * @author Rajmahendra Hegde  
+ * @author Rajmahendra Hegde
  * @since 0.7.0
  */
 @SuppressWarnings("serial")
@@ -77,7 +76,7 @@ public class ProfileInfo extends UserProfile {
     private float gplusScore;
 
     public ProfileInfo(String id, String ticker, String firstName, String lastName,
-            String fullName, String joined, String country, String location) {
+                       String fullName, String joined, String country, String location) {
         super(id);
         this.ticker = ticker;
         this.firstName = firstName;
@@ -285,6 +284,12 @@ public class ProfileInfo extends UserProfile {
     }
 
     @Override
+    public String getProfileImageUrl() {
+
+        return smPortrait;
+    }
+
+    @Override
     public String toString() {
 
         return new StringBuffer().append("ProfileInfo [").append(ticker).append(",").append(firstName).append(",").append(lastName)
@@ -301,10 +306,5 @@ public class ProfileInfo extends UserProfile {
                 .toString();
     }
 
-    @Override
-    public String getProfileImageUrl() {
-        
-        return smPortrait;
-    }
 
 }

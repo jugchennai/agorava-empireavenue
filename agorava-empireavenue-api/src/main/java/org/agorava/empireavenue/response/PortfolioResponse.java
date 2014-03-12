@@ -5,13 +5,12 @@ import org.agorava.empireavenue.model.Portfolio;
 import java.util.List;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
-public class PortfolioResponse extends Response<Portfolio>{
+public class PortfolioResponse extends Response<Portfolio> {
 
-    public PortfolioResponse()
-    {
+    public PortfolioResponse() {
 
     }
 

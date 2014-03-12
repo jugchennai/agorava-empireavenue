@@ -22,7 +22,7 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 
@@ -31,7 +31,7 @@ import com.fasterxml.jackson.annotation.JsonTypeName;
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class SharesMixin {
     @JsonCreator
-    public SharesMixin(@JsonProperty("commission")float balance) {
+    public SharesMixin(@JsonProperty("commission") float commission) {
     }
 
 
@@ -47,18 +47,26 @@ abstract class SharesMixin {
     @JsonProperty("total_charged")
     private float totalCharged;
 
-
-
     @JsonProperty("total_earned")
     private float totalEarned;
-
 
 
     @JsonProperty("commission")
     abstract float getCommission();
 
+    @JsonProperty("success")
+    abstract boolean isSuccess();
 
+    @JsonProperty("shares_owned")
+    abstract int getSharesOwned();
 
+    @JsonProperty("bank_balance")
+    abstract float getBankBalance();
 
+    @JsonProperty("total_earned")
+    abstract float getTotalCharged();
+
+    @JsonProperty("total_earned")
+    abstract float getTotalEarned();
 
 }

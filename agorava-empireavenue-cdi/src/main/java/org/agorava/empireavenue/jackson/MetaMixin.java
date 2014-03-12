@@ -21,33 +21,32 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @JsonTypeName("meta")
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class MetaMixin {
 
     @JsonCreator
     MetaMixin(@JsonProperty("total_rows")
-    int totalRows,
-            @JsonProperty("uri")
-            String uri,
-            @JsonProperty("limit")
-            int limit,
-            @JsonProperty("limit_type")
-            String limitType,
-            @JsonProperty("requests")
-            int requests,
-            @JsonProperty("reset")
-            int reset,
-            @JsonProperty("recorded")
-            String recorded,
-            @JsonProperty("premium")
-            boolean premium,
-            @JsonProperty("error")
-    String error) {
+              int totalRows,
+              @JsonProperty("uri")
+              String uri,
+              @JsonProperty("limit")
+              int limit,
+              @JsonProperty("limit_type")
+              String limitType,
+              @JsonProperty("requests")
+              int requests,
+              @JsonProperty("reset")
+              int reset,
+              @JsonProperty("recorded")
+              String recorded,
+              @JsonProperty("premium")
+              boolean premium,
+              @JsonProperty("error")
+              String error) {
     }
 
     @JsonProperty("total_rows")
@@ -73,7 +72,7 @@ abstract class MetaMixin {
 
     @JsonProperty("premium")
     abstract boolean isPremium();
-    
+
     @JsonProperty("error")
     abstract String getError();
 

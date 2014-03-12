@@ -15,26 +15,21 @@
  */
 package org.agorava;
 
-import java.util.HashMap;
-import java.util.Map;
-
+import org.agorava.api.oauth.OAuthService;
 import org.agorava.empireavenue.EmpireAvenue;
+import org.agorava.spi.ProviderApiService;
 
 import javax.inject.Inject;
 
-import org.agorava.api.oauth.OAuthService;
-import org.agorava.spi.ProviderApiService;
-
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class EmpireAvenueBaseService extends ProviderApiService {
 
     public static final String API_ROOT = "https://api.empireavenue.com/";
-    
-    
+
+
     @Inject
     @EmpireAvenue
     private OAuthService service;
@@ -49,9 +44,9 @@ public class EmpireAvenueBaseService extends ProviderApiService {
     public org.agorava.api.oauth.OAuthService getService() {
         return service;
     }
-    
-    
-    protected String makeCommaSeperatedFromArray(String... arrayValue ) {
+
+
+    protected String makeCommaSeperatedFromArray(String... arrayValue) {
         StringBuilder result = new StringBuilder();
         for (String ticker : arrayValue) {
             result.append(ticker);

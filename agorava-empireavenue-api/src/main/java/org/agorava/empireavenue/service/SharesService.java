@@ -19,89 +19,78 @@ import org.agorava.empireavenue.response.SharesResponse;
 
 /**
  * Operations on Shares   /shares
- *
+ * <p/>
  * EmpireAvenue Info:<br/>
  * URI: https://api.empireavenue.com/ <br/>
  * Rate Limit: User <br/>
  * Authentication: Required<br/><br/>
- *
+ * <p/>
  * API Calls<br/>
  * shares/commission/get<br/>
  *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
- **/
+ */
 
 public interface SharesService {
     static final String SHARES_COMMISSION = "shares/commission/get";
 
 
-
-    static final String SHARES_BUY= "shares/buy";
+    static final String SHARES_BUY = "shares/buy";
     static final String SHARES_SELL = "shares/sell";
-
 
 
     /**
      * Returns the commission to be charged between authenticating user and other user. You should be passing in the number of shares that you want the commission for.<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/search/recent<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
-     * @param ticker              // The ticker of the shares for which the commission is enquired
-     * @param numberOfShares    // The number of shares
+     * @param ticker         // The ticker of the shares for which the commission is enquired
+     * @param numberOfShares // The number of shares
      * @return SharesResponse Returns the commission to be charged between authenticating user and other user.
-     *
-     *
      */
 
-    SharesResponse getSharesCommission(String ticker,int numberOfShares);
-
+    SharesResponse getSharesCommission(String ticker, int numberOfShares);
 
 
     /**
      * Buy Shares from requested ticker. Trading falls under separate daily limits aside from the limits set by the API as well. Abuse of the Trading Shares API will result in the application and the IP addresses being permanently banned from Empire Avenue.<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/search/recent<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
-     * @param ticker              // The ticker of the shares that is to be bought
-     * @param numberOfShares    // The number of shares
-     * @param sharePrice    // The price of shares
+     * @param ticker         // The ticker of the shares that is to be bought
+     * @param numberOfShares // The number of shares
+     * @param sharePrice     // The price of shares
      * @return SharesResponse Returns buying status (Success ) and related charges.
      * @see org.agorava.empireavenue.service.SharesService#sellShares(String, int, double)
-     *
-     *
      */
 
-    SharesResponse buyShares(String ticker,int numberOfShares,double sharePrice);
+    SharesResponse buyShares(String ticker, int numberOfShares, double sharePrice);
 
     /**
      * Returns the commission to be charged between authenticating user and other user. You should be passing in the number of shares that you want the commission for.<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/search/recent<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
-     * @param ticker              // The ticker of the shares this is to be sold
-     * @param numberOfShares    // The number of shares
-     * @param sharePrice    // The price of shares
+     * @param ticker         // The ticker of the shares this is to be sold
+     * @param numberOfShares // The number of shares
+     * @param sharePrice     // The price of shares
      * @return SharesResponse Returns selling status (Success ) and related charges.
-     * @see org.agorava.empireavenue.service.SharesService#buyShares(String, int,double)
-     *
+     * @see org.agorava.empireavenue.service.SharesService#buyShares(String, int, double)
      */
-    SharesResponse sellShares(String ticker,int numberOfShares,double sharePrice);
-
-
+    SharesResponse sellShares(String ticker, int numberOfShares, double sharePrice);
 
 
 }

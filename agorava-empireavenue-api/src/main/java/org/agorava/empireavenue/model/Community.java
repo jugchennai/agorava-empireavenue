@@ -17,12 +17,11 @@
 package org.agorava.empireavenue.model;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 public class Community {
-    
+
     private int communityId;
     private String joined;
     private int admin;
@@ -60,10 +59,9 @@ public class Community {
                 .append(",")
                 .append(country)
                 .append("]")
-                .toString(); 
+                .toString();
     }
-    
-    
+
 
     public int getCommunityId() {
         return communityId;
@@ -137,5 +135,5 @@ public class Community {
     public String getCountry() {
         return country;
     }
-    
+
 }

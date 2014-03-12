@@ -34,7 +34,7 @@ public class ConfigProducer {
     @ApplicationScoped
     @Produces
     @EmpireAvenue
-    @OAuthApplication(params = {@Param(name = "prefix",value = "ea")})
+    @OAuthApplication(params = {@Param(name = "prefix", value = "ea")})
     public OAuthAppSettings settings;
 
 

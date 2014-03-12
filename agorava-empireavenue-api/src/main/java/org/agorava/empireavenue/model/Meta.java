@@ -16,8 +16,7 @@
 package org.agorava.empireavenue.model;
 
 /**
- * 
- * @author Rajmahendra Hegde  
+ * @author Rajmahendra Hegde
  * @since 0.7.0
  */
 public class Meta {

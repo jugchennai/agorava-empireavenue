@@ -18,13 +18,12 @@ package org.agorava.empireavenue.jackson;
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
+
 import java.util.List;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- * 
  */
 
 @JsonIgnoreProperties(ignoreUnknown = true)
@@ -32,9 +31,9 @@ abstract class LeadersResponseMixin extends ResponseMixin {
 
     @JsonCreator
     LeadersResponseMixin(@JsonProperty("meta")
-    MetaMixin meta,
-            @JsonProperty("data")
-            List<LeadersMixin> data) {
+                         MetaMixin meta,
+                         @JsonProperty("data")
+                         List<LeadersMixin> data) {
         super(meta);
     }
 

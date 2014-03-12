@@ -25,7 +25,7 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 
@@ -40,7 +40,7 @@ public class SharesServiceImpl extends EmpireAvenueBaseService implements Shares
         data.put("shares", numberOfShares);
         data.put("last_trade", sharePrice);
 
-        return getService().post(buildAbsoluteUri(SHARES_BUY),data, SharesResponse.class);
+        return getService().post(buildAbsoluteUri(SHARES_BUY), data, SharesResponse.class);
     }
 
 
@@ -51,14 +51,14 @@ public class SharesServiceImpl extends EmpireAvenueBaseService implements Shares
         data.put("shares", numberOfShares);
         data.put("last_trade", sharePrice);
 
-        return getService().post(buildAbsoluteUri(SHARES_SELL),data, SharesResponse.class);
-   }
+        return getService().post(buildAbsoluteUri(SHARES_SELL), data, SharesResponse.class);
+    }
 
     @Override
     public SharesResponse getSharesCommission(String ticker, int numberOfShares) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
         data.put("shares", numberOfShares);
-        return getService().post(buildAbsoluteUri(SHARES_COMMISSION),data, SharesResponse.class);
+        return getService().post(buildAbsoluteUri(SHARES_COMMISSION), data, SharesResponse.class);
     }
 }

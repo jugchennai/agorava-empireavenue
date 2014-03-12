@@ -21,22 +21,20 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
- *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
  */
 @JsonTypeName("data")
 @JsonIgnoreProperties(ignoreUnknown = true)
 
-public class HistoryMixin {
-    
-     @JsonCreator
+abstract class HistoryMixin {
+
+    @JsonCreator
     HistoryMixin(@JsonProperty("date") String date) {
     }
-    
-     
-     @JsonProperty("dividend")
+
+
+    @JsonProperty("dividend")
     private float dividend;
     @JsonProperty("price")
     private float price;
@@ -52,8 +50,8 @@ public class HistoryMixin {
     private float foursquare;
     @JsonProperty("gplus")
     private float gplus;
-   @JsonProperty("instagram")
-   private float instagram;
+    @JsonProperty("instagram")
+    private float instagram;
     @JsonProperty("linkedin")
     private float linkedin;
     @JsonProperty("twitter")
@@ -73,9 +71,62 @@ public class HistoryMixin {
     @JsonProperty("ticker")
     private String ticker;
 
-    
-    
-    
-    
-    
+
+    @JsonProperty("dividend")
+    abstract float getDividend();
+
+    @JsonProperty("date")
+    abstract String getDate();
+
+    @JsonProperty("price")
+    abstract float getPrice();
+
+    @JsonProperty("eav")
+    abstract float getEav();
+
+    @JsonProperty("facebook")
+    abstract float getFacebook();
+
+    @JsonProperty("facebookpage")
+    abstract float getFacebookpage();
+
+    @JsonProperty("flickr")
+    abstract float getFlickr();
+
+    @JsonProperty("foursquare")
+    abstract float getFoursquare();
+
+    @JsonProperty("gplus")
+    abstract float getGplus();
+
+    @JsonProperty("instagram")
+    abstract float getInstagram();
+
+    @JsonProperty("linkedin")
+    abstract float getLinkedin();
+
+    @JsonProperty("twitter")
+    abstract float getTwitter();
+
+    @JsonProperty("wordpress")
+    abstract float getWordpress();
+
+    @JsonProperty("youtube")
+    abstract float getYoutube();
+
+    @JsonProperty("shares")
+    abstract int getShares();
+
+    @JsonProperty("type")
+    abstract String getType();
+
+    @JsonProperty("full_name")
+    abstract String getFullName();
+
+    @JsonProperty("sm_portrait")
+    abstract String getSmPortrait();
+
+    @JsonProperty("ticker")
+    abstract String getTicker();
+
 }

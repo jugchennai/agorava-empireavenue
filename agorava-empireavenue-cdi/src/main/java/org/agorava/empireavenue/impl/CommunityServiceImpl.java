@@ -25,10 +25,8 @@ import java.util.HashMap;
 import java.util.Map;
 
 /**
- * 
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- * 
  */
 @EmpireAvenue
 public class CommunityServiceImpl extends EmpireAvenueBaseService implements CommunityService {

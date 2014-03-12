@@ -17,28 +17,21 @@ package org.agorava.empireavenue.impl;
 
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.EmpireAvenue;
+import org.agorava.empireavenue.response.*;
 import org.agorava.empireavenue.service.ProfileService;
-import org.agorava.empireavenue.response.BankBalanceResponse;
-import org.agorava.empireavenue.response.CountResponse;
-import org.agorava.empireavenue.response.ProfileInfoResponse;
-import org.agorava.empireavenue.response.StatusResponse;
 import org.agorava.spi.UserProfile;
 
 import java.util.HashMap;
 import java.util.Map;
 
-import org.agorava.empireavenue.response.CommunityResponse;
-
 /**
- * 
- * @author Rajmahendra Hegde  
+ * @author Rajmahendra Hegde
  * @since 0.7.0
  */
 @EmpireAvenue
 public class ProfileServiceImpl extends EmpireAvenueBaseService implements ProfileService {
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#updateStatus(java.lang.String)
      */
     @Override
@@ -51,7 +44,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo()
      */
     @Override
@@ -60,7 +52,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @return
      */
     @Override
@@ -70,7 +61,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getAllCommunities()
      */
     @Override
@@ -79,7 +69,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getAllCommunitiesFor(String)
      */
     @Override
@@ -91,7 +80,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo(String)
      */
     @Override
@@ -102,13 +90,12 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getProfileInfo(String...)
      */
     @Override
     public ProfileInfoResponse getProfileInfo(String... tickers) {
         Map<String, Object> data = new HashMap<>();
-       
+
         String ticker = makeCommaSeperatedFromArray(tickers);
 
         data.put("ticker", ticker);
@@ -125,8 +112,8 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
 
     /**
      * TODO: Need a GET method with parameter
-     * 
-     * @see org.agorava.empireavenue.ProfileService#getAllShareholders(int,int)
+     *
+     * @see org.agorava.empireavenue.ProfileService#getAllShareholders(int, int)
      */
     @Override
     public ProfileInfoResponse getAllShareholders(int page, int maxresults) {
@@ -137,11 +124,11 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * @see org.agorava.empireavenue.ProfileService#getAllShareholders(String,int,int)
+     * @see org.agorava.empireavenue.ProfileService#getAllShareholders(String, int, int)
      */
     @Override
     public ProfileInfoResponse getAllShareholders(String ticker, int page,
-            int maxresults) {
+                                                  int maxresults) {
         Map<String, Object> data = new HashMap<>();
         data.put("ticker", ticker);
         data.put("page", page);
@@ -150,7 +137,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getCount()
      */
     @Override
@@ -159,7 +145,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getCountFor(String)
      */
     @Override
@@ -170,13 +155,12 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * @see org.agorava.empireavenue.ProfileService#getCountFor(String[])
      */
     @Override
     public CountResponse getCountFor(String... tickers) {
         Map<String, Object> data = new HashMap<>();
-       
+
         String ticker = makeCommaSeperatedFromArray(tickers);
 
         data.put("ticker", ticker);
@@ -184,7 +168,6 @@ public class ProfileServiceImpl extends EmpireAvenueBaseService implements Profi
     }
 
     /**
-     * 
      * {@inheritDoc}
      */
     @Override

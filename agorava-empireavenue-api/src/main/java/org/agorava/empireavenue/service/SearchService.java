@@ -17,44 +17,38 @@
 package org.agorava.empireavenue.service;
 
 import org.agorava.empireavenue.response.SearchResponse;
-import org.agorava.empireavenue.response.SharesResponse;
 
 /**
  * Operations on Search   /Search
- *
+ * <p/>
  * EmpireAvenue Info:<br/>
  * URI: https://api.empireavenue.com/ <br/>
  * Rate Limit: User <br/>
  * Authentication: Required<br/>
  * Limit: 100 results <br/>
- *
+ * <p/>
  * API Calls<br/>
  * search/recent<br/>
  *
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
- *
- **/
-
+ */
 
 
 public interface SearchService {
     static final String SEARCH_RECENT = "search/recent";
 
 
-
     /**
      * Returns the 100 most recent users in Empire Avenue.<br/>
      * <br/>
-     *
+     * <p/>
      * EmpireAvenue : https://api.empireavenue.com/search/recent<br/>
      * <br/>
-     *
+     * <p/>
      * <b>Rate Limit</b>: User <br/><b>Authentication</b>: Required
      *
      * @return SearchResponse Returns the 100 most recent users in Empire Avenue.
-     *
-     *
      */
 
     SearchResponse getRecentUsers();

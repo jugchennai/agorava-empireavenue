@@ -15,17 +15,16 @@
  */
 package org.agorava.empireavenue.impl;
 
-import java.util.HashMap;
-import java.util.Map;
-
 import org.agorava.EmpireAvenueBaseService;
 import org.agorava.empireavenue.EmpireAvenue;
 import org.agorava.empireavenue.response.LeadersResponse;
 import org.agorava.empireavenue.service.LeadersService;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
- * 
- * @author Karthikeyan Annamalai  
+ * @author Karthikeyan Annamalai
  * @since 0.7.0
  */
 @EmpireAvenue

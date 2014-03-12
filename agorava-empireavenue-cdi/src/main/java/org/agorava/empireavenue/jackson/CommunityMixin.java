@@ -21,30 +21,29 @@ import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 
 /**
-*
-* @author Rajmahendra Hegde  
-* @since 0.7.0
-*/
+ * @author Rajmahendra Hegde
+ * @since 0.7.0
+ */
 @JsonTypeName("meta")
 @JsonIgnoreProperties(ignoreUnknown = true)
 abstract class CommunityMixin {
 
     @JsonCreator
     CommunityMixin(@JsonProperty("community_id") int communityId,
-            @JsonProperty("joined") String joined,
-            @JsonProperty("admin") int admin,
-            @JsonProperty("founder") int founder,
-            @JsonProperty("short_name") String shortName,
-            @JsonProperty("type") String type,
-            @JsonProperty("name") String name,
-            @JsonProperty("pic_lg") String picLg,
-            @JsonProperty("pic_sm") String picSm,
-            @JsonProperty("location") String location,
-            @JsonProperty("member_count") int memberCount,
-            @JsonProperty("money") float money,
-            @JsonProperty("influence_score") float influenceScore,
-            @JsonProperty("visibility") String visibility,
-            @JsonProperty("country") String country) {
+                   @JsonProperty("joined") String joined,
+                   @JsonProperty("admin") int admin,
+                   @JsonProperty("founder") int founder,
+                   @JsonProperty("short_name") String shortName,
+                   @JsonProperty("type") String type,
+                   @JsonProperty("name") String name,
+                   @JsonProperty("pic_lg") String picLg,
+                   @JsonProperty("pic_sm") String picSm,
+                   @JsonProperty("location") String location,
+                   @JsonProperty("member_count") int memberCount,
+                   @JsonProperty("money") float money,
+                   @JsonProperty("influence_score") float influenceScore,
+                   @JsonProperty("visibility") String visibility,
+                   @JsonProperty("country") String country) {
     }
 
     @JsonProperty("community_id")
@@ -91,5 +90,6 @@ abstract class CommunityMixin {
 
     @JsonProperty("country")
     abstract String getCountry();
+
 
 }
