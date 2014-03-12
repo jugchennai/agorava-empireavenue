@@ -1,7 +1,6 @@
 package org.agorava.empireavenue.jackson;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import com.fasterxml.jackson.annotation.JsonProperty;
 import com.fasterxml.jackson.annotation.JsonTypeName;
 import org.agorava.empireavenue.model.NotificationsInfo;
@@ -12,12 +11,31 @@ import org.agorava.empireavenue.model.NotificationsInfo;
  */
 
 @JsonTypeName("data")
-@JsonIgnoreProperties(ignoreUnknown = true)
+//@JsonIgnoreProperties(ignoreUnknown = true)
 abstract class NotificationsMixin {
 
     @JsonCreator
-    NotificationsMixin(@JsonProperty("type") String type, @JsonProperty("created") String created, @JsonProperty("info") NotificationsInfo noteInfo) {
+    NotificationsMixin() {
 
     }
 
+    @JsonProperty("type")
+    String type;
+
+    @JsonProperty("created")
+    String created;
+
+    @JsonProperty("info")
+    NotificationsInfo noteInfo;
+
+
+
+    @JsonProperty("info")
+    abstract NotificationsInfo getNoteInfo();
+
+    @JsonProperty("type")
+    abstract String getType() ;
+
+    @JsonProperty("created")
+    abstract String getCreated() ;
 }

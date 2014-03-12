@@ -7,33 +7,25 @@ package org.agorava.empireavenue.model;
  */
 public class Notifications {
 
+    public Notifications()
+    {
+
+    }
+
     private String type;
     private String created;
     private NotificationsInfo notificationsInfo;
 
-
     public String getType() {
         return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
     }
 
     public String getCreated() {
         return created;
     }
 
-    public void setCreated(String created) {
-        this.created = created;
-    }
-
     public NotificationsInfo getNotificationsInfo() {
         return notificationsInfo;
-    }
-
-    public void setNotificationsInfo(NotificationsInfo notificationsInfo) {
-        this.notificationsInfo = notificationsInfo;
     }
 
     @Override
